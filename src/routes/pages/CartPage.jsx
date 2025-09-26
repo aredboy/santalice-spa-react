@@ -56,13 +56,14 @@ export const CartPage = () => {
             </tr>
           ))
         }
-        <th><b>Total:</b></th>
-        <td></td>
-        <td>${calculateTotal()}</td>
-        <td></td>
+        <tr>
+          <th><b>Total:</b></th>
+          <td></td>
+          <td>${calculateTotal()}</td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
-    
     <div className="d-grid gap-2">
       <button 
       className="btn btn-primary"

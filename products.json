@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Alfajor de Pistacho con Chocolate Blanco",
+        "price": 19.99,
+        "description": "Una",
+        "category": "alfajores",
+        "image": "https://drive.google.com/uc?export=view&id=1zKg-ed1Apdxam5cbFe6Zi0tEP7g8tO1c"
+    },
+    {
+        "id": 2,
+        "title": "Budín de Mandarina y Arándanos con glasé de Limón",
+        "price": 12.99,
+        "description": "A ceramic coffee mug.",
+        "category": "budines",
+        "image": "https://example.com/mug.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Torta Brindis",
+        "price": 12.99,
+        "description": "A ceramic coffee mug.",
+        "category": "tortas",
+        "image": "https://example.com/mug.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Key Lime Pie",
+        "price": 12.99,
+        "description": "A ceramic coffee mug.",
+        "category": "tortas",
+        "image": "https://example.com/mug.jpg"
+    }
+]

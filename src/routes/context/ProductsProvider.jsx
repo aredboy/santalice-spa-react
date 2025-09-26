@@ -6,10 +6,18 @@ export const ProductsProvider = ({children}) => {
     const [products, setProducts] = useState([])
 
     const fetchProducts = async() => {
-    const response = await fetch('https://fakestoreapi.com/products')
+    try {
+    // const response = await fetch('https://fakestoreapi.com/products')
+    const response = await fetch('http://localhost:5000/products')
+    if(!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`)
+    }
     const data = await response.json()
     console.log(data)
     setProducts(data)
+    } catch (error) {
+        console.log('Error fetching products:', error)
+    }
     }
 
     useEffect(() => {
