@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
-
+import trashIcon from "../../assets/trash.png"
+import '../styles/cart.css'
 
 export const CartPage = () => {
 
@@ -47,10 +48,10 @@ export const CartPage = () => {
               <td>
                 <button
                   type="button"
-                  className="btn btn-danger"
+                  className="btn"
                   onClick={()=>eliminateItem(item.id)}
                 >
-                  Eliminar
+                  <img className="img-eliminar" src={trashIcon} alt="eliminar" />
                 </button>
               </td>
             </tr>
@@ -64,9 +65,9 @@ export const CartPage = () => {
         </tr>
       </tbody>
     </table>
-    <div className="d-grid gap-2">
+    <div className="d-grid gap-2 col-6 mx-auto mb-5">
       <button 
-      className="btn btn-primary"
+      className="btn btn-primary-buy"
       onClick={handlePrint}
       disabled={shopList < 1}
       >Comprar</button>

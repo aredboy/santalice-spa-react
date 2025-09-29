@@ -1,0 +1,15 @@
+.img-eliminar {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    /* color: #4c5b61 !important; */
+    background-color: transparent !important;
+}
+
+button.btn.btn-primary-buy {
+    background-color: #2dbcc1 !important;
+    color: #f9f8f8 !important;
+}
+button.btn.btn-primary-buy:hover {
+    background-color: hsl(182, 62%, 44%) !important;
+    color: #f9f8f8 !important;
+}

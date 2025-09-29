@@ -1,0 +1,32 @@
+.products-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column by default (mobile) */
+    gap: 1.5rem;
+    justify-items: center; /* centers cards */
+}
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7rem;
+    }
+}

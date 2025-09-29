@@ -1,44 +1,32 @@
-import { useState } from "react"
+import btnAdd from "../../assets/bag.png"
 import '../styles/card.css'
 
-export const Card = ({image, title, price, description, handleAdd, handleEliminate}) => {
+export const Card = ({image, title, price, handleAdd}) => {
 
-    const [added, setAdded] = useState(false)
 
     const clickAdd = () => {
         handleAdd()
-        setAdded(true)
-    }
-    const clickRemove = () => {
-        handleEliminate()
-        setAdded(false)
+        // setAdded(true)
     }
 
   return (
+    <>
     <div className="card">
         <img src={image} alt={title} className="card-img"/>
         <div className="card-content">
-        <h3 className="card-title">{title}</h3>
-        <p className="card-description">{description}</p>
-        <p className="card-price">{price}</p>
+        <h4 className="card-title">{title}</h4>
 
-        {added
-        ? <button 
-        type="button"
-        className="btn-remove"
-        onClick={clickRemove}
-        >
-            Quitar del Carrito
-        </button>
-        : <button 
+        <p className="card-price">${price}</p>
+
+        <button 
         type="button"
         className="btn-add"
         onClick={clickAdd}
         >
-            Agregar al Carrito
+            <img className="img-add" src={btnAdd} alt="Agregar Carrito" />
         </button>
-        }
         </div>
     </div>
+    </>
   )
 }

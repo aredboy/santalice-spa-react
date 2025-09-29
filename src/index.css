@@ -1,0 +1,10 @@
+html,
+body * {
+    font-family: "EB Garamond", serif !important;
+    font-optical-sizing: auto !important;
+    font-style: normal !important;
+    letter-spacing: .02em;
+    background-color: #f9f8f8;
+}
+
+

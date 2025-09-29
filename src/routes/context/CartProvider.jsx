@@ -33,12 +33,19 @@ export const CartProvider = ({children}) => {
     const [shopList, dispatch] = useReducer(shopReducer, initialState)
 
     const addItem = (shop) => {
-        shop.quantity = 1
-        const action = {
-            type: '[CART] Add shop',
-            payload: shop
-        }
-        dispatch(action)
+        const exists = shopList.find(item => item.id === shop.id)
+        if(exists) {
+            dispatch({
+                type: '[CART] Increase Item Quantity',
+                payload: shop.id
+            });
+        } else {
+                const action = {
+                type: '[CART] Add shop',
+                payload: { ...shop, quantity: 1 }
+                }
+                dispatch(action)
+            }
     }
     const increaseQuantity = (id) => {
         const action = {
@@ -62,8 +69,10 @@ export const CartProvider = ({children}) => {
         dispatch(action)
     }
 
+    const cartCount = shopList.reduce((acc, item) => acc + item.quantity, 0)
+
   return (
-    <CartContext.Provider value={{shopList, addItem, increaseQuantity, decreaseQuantity, eliminateItem}}>
+    <CartContext.Provider value={{shopList, cartCount, addItem, increaseQuantity, decreaseQuantity, eliminateItem}}>
         {children}
     </CartContext.Provider>
   )
