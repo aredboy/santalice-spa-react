@@ -17,7 +17,7 @@ export const CartPage = () => {
 
   return (
     <>
-    <table className="table">
+    <table className="table-cart">
       <thead>
         <tr>
           <th scope="col">Nombre</th>
@@ -31,7 +31,7 @@ export const CartPage = () => {
           shopList.map(item => (
             <tr key={item.id}>
               <th>{item.title}</th>
-              <td>{item.price}</td>
+              <td>${item.price}</td>
               <td>
                 <button 
                   className="btn btn-outline-primary"

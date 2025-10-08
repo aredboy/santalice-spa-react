@@ -1,0 +1,24 @@
+html,
+body *, #root {
+    height: 100% !important;
+    margin: 0 !important;
+    font-family: "EB Garamond", serif !important;
+    font-optical-sizing: auto !important;
+    font-style: normal !important;
+    letter-spacing: .02em;
+    background-color: #f9f8f8;
+}
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-main {
+    position: static;
+    flex: 1 1 auto;
+    display: block;
+    z-index: 0;
+    overflow: visible;
+}

@@ -1,0 +1,42 @@
+.products-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.products-h4 {
+    padding-left: 1rem;
+    color: #4c5b61;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    padding: 0;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+    box-sizing: border-box;
+}
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+    .grid-container {
+        gap: 1.5rem;
+    }
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+    .grid-container {
+        gap: 2rem;
+    }
+}

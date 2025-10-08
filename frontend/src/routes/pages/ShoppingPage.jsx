@@ -27,14 +27,13 @@ export const ShoppingPage = () => {
   return (
     <>
     <div className="products-grid">
-    <h4>
+    <h4 className="products-h4">
       {category ? category.toUpperCase() : 'Todos nuestros productos:'}
     </h4>
     <hr />
       <div className="grid-container">
       {filteredProducts.length > 0 ? (
         filteredProducts.map(product => (
-        <div key={product.id} className="col-12 col-md-4 mb-3">
         <Card
           key={product.id}
           image={product.image}
@@ -44,7 +43,6 @@ export const ShoppingPage = () => {
           handleAdd={() => handleAdd(product)}
           handleEliminate={() => handleEliminate(product.id)}
         ></Card>
-        </div>
         ))
       ) : (
         <p>No hay productos en esta categoría.</p>

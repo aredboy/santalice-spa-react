@@ -1,0 +1,442 @@
+
+.app-navbar {
+    position: relative;
+    display: flex;
+    direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f8f8;
+    padding: 40px 5px;
+    border-bottom: 0.5px solid #4c5b61;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 0 0;
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+@media (max-width: 992px) {
+    .nav-top {
+    display: flex;
+    justify-content: space-between; /* logo left, hamburger right */
+    width: 100%;
+    align-items: center;
+    padding: 0 1rem 20px 1rem;
+    }
+    .app-navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .logo {
+        order: 0;
+    }
+    .hamburger {
+        order: 1;
+        align-self: flex-end;
+        justify-self: flex-start;
+        padding: 0 40px 10px 0;
+    }
+    .nav-links {
+        order: 2;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        margin-top: 40px;
+        padding-left: 20px;
+        display: none;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    
+    
+    .nav-links li:last-child {
+        align-self: flex-end;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-item.dropdown {
+        position: relative;
+    }
+    .nav-item.dropdown .dropdown-menu {
+        display: block !important;
+    }
+}
+
+.nav-link {
+    font-size: 24px;
+    font-weight: 500;
+    color: #4c5b61;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar-link:hover {
+    color: #2dbcc1;
+}
+
+
+.logo {
+    flex: 0;
+    width: 300px;
+}
+.navbar-brand::after {
+    color: #2dbcc1;
+}
+
+/* Hamburger Menu */
+
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+    order: 3;
+}
+
+/* Desktop Styles */
+
+
+@media (min-width: 992px) {
+    .hamburger {
+        display: none;
+    }
+    .app-navbar {
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 1200px) {
+    .nav-left {
+        flex: 0; 
+    }
+    .app-navbar {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+    }
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end !important;
+        flex: 1;
+        padding-left: 10px;
+        margin-left: auto;
+        gap: 10px;
+        position: relative;
+    }
+    .nav-links li:last-child {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1300px) {
+    .nav-links {
+        padding-left: 30px;
+        gap: 30px;
+    }
+}
+/* ---------- simple dropdown (no bootstrap) ---------- */
+
+/* wrapper */
+.simple-dropdown-wrap {
+    position: relative;
+    display: inline-block; /* fits inline in navbar */
+    /* margin: 0;
+    padding: 0; */
+}
+
+/* trigger */
+.dropdown-trigger {
+  background: none;
+  border: none;
+  color: #4c5b61;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  /* padding: 0;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+  white-space: nowrap; */
+  /* height: auto !important; */
+}
+
+/* menu hidden by default */
+.simple-dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+    background: #f9f8f8;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
+    position: absolute;
+    min-width: 180px;
+    left: 0;
+    top: calc(100% - 2px);
+    z-index: 9999; /* force above main */
+    /* display: none;
+    min-height: 200px !important; 
+    overflow: hidden;
+ */
+}
+
+.simple-dropdown-item > a,
+.simple-dropdown-item > button {
+  display: block; 
+  padding: 0.45rem 1rem;
+  color: #4c5b61;
+  text-decoration: none;
+}
+
+.simple-dropdown-item:hover > a,
+.simple-dropdown-item:hover > button {
+    color: #2dbcc1;
+}
+/* ---------- Desktop: open on hover (>= 992px) ---------- */
+@media (min-width: 992px) {
+  /* show on hover; CSS-only for desktop (no JS required) */
+    .simple-dropdown-wrap:hover > .simple-dropdown,
+    .simple-dropdown-wrap:focus-within > .simple-dropdown,
+    .simple-dropdown.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+}
+/* ---------- Mobile: click toggles (below 992px) ---------- */
+@media (max-width: 991.98px) {
+/* 
+    .simple-dropdown-wrap {
+        display: block;
+        width: 100%;
+    } */
+
+    .simple-dropdown {
+        position: relative;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: none;
+        border-radius: 0;
+        background: transparent;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        transform: none;
+        /* padding: 0; */
+    }
+
+    /* If the dropdown is used outside of the main mobile menu, clicking the trigger
+        will toggle the .open class and show the menu because of the component state. */
+    .simple-dropdown.open { 
+        pointer-events: auto;
+        opacity: 1;
+        max-height: 500px;
+        padding: .5rem 0;
+        background: #f9f8f8;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+}
+
+/*------Cart-------*/
+
+
+
+a.myorder {
+    font-size: 24px;
+    font-weight: 500;
+    color: #4c5b61 !important;
+    padding-top: 7.3px;
+    /* width: auto; */
+    margin-left: auto;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+.main-cart {
+    color: #4c5b61 !important;
+    padding-bottom: 8px !important;
+    transition: none !important;
+    border: none;
+    width: 2.5em;
+}
+
+.main-cart-vertical {
+    color: #4c5b61 !important;
+    padding-bottom: 1px !important;
+    transition: none !important;
+    border: none;
+    width: 2em;
+}
+
+@media (max-width: 992px) {
+    a.myorder {
+        font-size: 20px !important;
+    }
+}
+@media (max-width: 1300px) {
+    a.myorder {
+        padding-top: 7.3px !important;
+        font-size: 24px !important;
+    }
+    .main-cart {
+        padding-bottom: 8px !important;
+    }
+    .main-cart-vertical .css-2ao5rv-MuiBadge-badge {
+        margin: 8px -17px 0 0 !important;
+    }
+}
+
+.main-cart-vertical .css-2ao5rv-MuiBadge-badge {
+    font-size: 1.1rem !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+    margin: 8px -25px 0 0 !important;
+}
+
+.css-2ao5rv-MuiBadge-badge {
+    font-size: 1.1rem !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+    margin: 8px -3px 0 0px !important;
+    height: auto !important;
+}
+
+/* ----------------- Strong, final dropdown patch (place at file end) ----------------- */
+
+/* prevent ancestor clipping (increase specificity if other rules override) */
+.app-navbar, .nav-links, .nav-left, .nav-right, nav, header {
+  overflow: visible !important;
+}
+
+/* Ensure open always reveals dropdown (useful while debugging and to allow click toggle) */
+.simple-dropdown.open {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  display: block !important;
+}
+
+/* base wrapper + trigger */
+.simple-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #4c5b61;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* base dropdown list (shared defaults) */
+.simple-dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+  transition: opacity .18s ease, transform .18s ease, max-height .28s ease;
+  z-index: 3000;
+}
+
+/* ---------- DESKTOP (>= 992px): absolute menu with shadow + radius ---------- */
+@media (min-width: 992px) {
+  .simple-dropdown {
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+    min-width: 200px;
+    background: #f9f8f8;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    overflow: visible;          /* show shadow outside box */
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+  }
+
+  /* show on hover or when open class is added */
+  .simple-dropdown-wrap:hover > .simple-dropdown,
+  .simple-dropdown-wrap:focus-within > .simple-dropdown,
+  .simple-dropdown.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* ensure each item */
+  .simple-dropdown-item > a,
+  .simple-dropdown-item > button {
+    display: block;
+    padding: .45rem 1rem;
+    color: #4c5b61;
+    text-decoration: none;
+  }
+}
+
+/* ---------- MOBILE (< 992px): inline, toggles via .open, slide down w/ max-height ---------- */
+@media (max-width: 991.98px) {
+  .simple-dropdown-wrap { display: block; width: 100%; }
+  .simple-dropdown {
+    position: relative;
+    width: 100%;
+    max-height: 0;               /* collapsed */
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+  }
+  .simple-dropdown.open {
+    max-height: 600px;           /* large enough to fit items */
+    opacity: 1;
+    pointer-events: auto;
+    padding: .5rem 0;
+    background: #f9f8f8;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+
+  .simple-dropdown-item > a,
+  .simple-dropdown-item > button {
+    display: block;
+    padding: .5rem 1rem;
+    color: #4c5b61;
+    text-decoration: none;
+  }
+
+  /* only add extra spacing to the next li when dropdown's parent li has "open" */
+  .nav-links li.nav-item.open + li {
+    margin-top: 1rem;
+    transition: margin-top .28s ease;
+  }
+}

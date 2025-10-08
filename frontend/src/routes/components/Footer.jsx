@@ -4,11 +4,10 @@ import '../styles/footer.css'
 export const Footer = () => {
     return (
         <>
-        <footer className="custom-footer py-4 mt-auto">
+        <footer className="custom-footer py-4">
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 mb-3">
-                        <h5>Navegación</h5>
                         <ul className="list-unstyled">
                             <li>
                                 <NavLink

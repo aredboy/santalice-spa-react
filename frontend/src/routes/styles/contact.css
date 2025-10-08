@@ -1,0 +1,95 @@
+.contact-form {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  font-family: inherit;
+  color: #213638;
+}
+
+.contact-form h3 {
+  margin: 0 0 1rem 0;
+  color: #4c5b61;
+}
+
+.field {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: #4c5b61;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #e3e3e3;
+  background: #fafafa;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: #213638;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2dbcc1;
+  box-shadow: 0 4px 14px rgba(45,188,193,0.08);
+}
+
+.error {
+  color: #b32a2a;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-send {
+  background: #2dbcc1;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-send[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+}
+
+.result.success {
+  background: #e6fffb;
+  color: #00695c;
+}
+
+.result.error {
+  background: #fff1f1;
+  color: #b32a2a;
+}
