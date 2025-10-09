@@ -1,6 +1,6 @@
 .contact-form {
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0 auto !important;
   background: #fff;
   padding: 1.25rem;
   border-radius: 10px;
@@ -10,18 +10,18 @@
 }
 
 .contact-form h3 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem 0 !important;
   color: #4c5b61;
 }
 
 .field {
   display: block;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem !important;
 }
 
 .label {
   display: block;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.35rem !important;
   font-weight: 600;
   color: #4c5b61;
   font-size: 0.95rem;
@@ -38,7 +38,7 @@ textarea {
   background: #fafafa;
   box-sizing: border-box;
   font-size: 1rem;
-  color: #213638;
+  color: #4c5b61;
 }
 
 input:focus,

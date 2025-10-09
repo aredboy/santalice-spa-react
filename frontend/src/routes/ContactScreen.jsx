@@ -39,42 +39,70 @@ export function ContactScreen() {
     setErrors((es) => ({ ...es, [name]: undefined }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setResult(null);
+const handleSubmit = (e) => {
+  e.preventDefault();
+  setResult(null);
 
-    const errs = validate();
-    if (Object.keys(errs).length) {
-      setErrors(errs);
-      return;
-    }
+  const errs = validate();
+  if (Object.keys(errs).length) {
+    setErrors(errs);
+    return;
+  }
 
-    setSending(true);
-    try {
-      // Ajusta la URL y la forma de enviar según tu backend.
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+  setSending(true);
 
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(text || "Error al enviar el formulario.");
-      }
+  try {
+    const actionUrl = "https://formsubmit.co/germanrojo.biologistic@gmail.com";
 
-      setResult({ type: "success", message: "Mensaje enviado correctamente. ¡Gracias!" });
-      setForm({ nombre: "", email: "", asunto: "Consulta general", comentarios: "" });
-    } catch (err) {
-      setResult({ type: "error", message: "Error al enviar. Intenta nuevamente más tarde." });
-      console.error("Contact form error:", err);
-    } finally {
-      setSending(false);
-    }
-  };
+    // crear form temporal
+    const tempForm = document.createElement("form");
+    tempForm.action = actionUrl;
+    tempForm.method = "POST";
+    tempForm.style.display = "none";
+    // abrir en nueva pestaña para no abandonar SPA:
+    tempForm.target = "_blank";
+
+    const append = (name, value) => {
+      const inp = document.createElement("input");
+      inp.type = "hidden";
+      inp.name = name;
+      inp.value = value ?? "";
+      tempForm.appendChild(inp);
+    };
+
+    // datos reales del state (no hardcode)
+    append("nombre", form.nombre);
+    append("email", form.email);
+    append("asunto", form.asunto);
+    append("comentarios", form.comentarios);
+
+    // campos especiales para FormSubmit
+    append("_captcha", "false"); // opcional
+    append("_subject", `Contacto: ${form.asunto}`); // asunto del mail
+    // append("_next", "https://tu-dominio.com/gracias"); // si quieres redirigir a /gracias
+
+    document.body.appendChild(tempForm);
+    tempForm.submit();
+    document.body.removeChild(tempForm);
+
+    setResult({ type: "success", message: "Mensaje enviado. Revisa tu correo para confirmar si es la primera vez." });
+    setForm({ nombre: "", email: "", asunto: "Consulta general", comentarios: "" });
+  } catch (err) {
+    console.error(err);
+    setResult({ type: "error", message: "Error al enviar. Intenta nuevamente." });
+  } finally {
+    setSending(false);
+  }
+};
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate>
+    <form 
+      className="contact-form" 
+      onSubmit={handleSubmit} 
+      noValidate
+      action="https://formsubmit.co/germanrojo.biologistic@gmail.com" 
+      method="POST"
+      >
       <h3>Contactanos</h3>
 
       <label className="field">
