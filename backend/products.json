@@ -5,7 +5,8 @@
         "price": 19.99,
         "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate.",
         "category": "masdulces",
-        "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/src/public/images/alfajornegro.png"
+        
+        "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/frontend/src/public/images/alfajornegro.png"
         },
     {
         "id": 2,
@@ -13,7 +14,7 @@
         "price": 12.99,
         "description": "Una mezcla suave de jugo de limón con una variedad de arándanos, frutillas, moras y frambuesas. Cobertura de glasé cítrico y, ¡un touch del ingrediente secreto de Alice! Piacere!!",
         "category": "budines",
-        "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/src/public/images/budinlimon.png"
+        "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/frontend/src/public/images/budinlimon.png"
     },
     {
         "id": 3,
@@ -21,14 +22,14 @@
         "price": 12.99,
         "description": "Torta Selva Negra con crema chantilly y cerezas🍒. Todo con un delicioso almíbar al kirsch.",
         "category": "tortas",
-        "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/src/public/images/selvanegra.png"
+        "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/frontend/src/public/images/selvanegra.png"
     },
     {
         "id": 4,
         "title": "Torta Apple Crumble",
         "price": 12.99,
-        "description": "¿Sabían que esta delicia fue un invento por necesidad en la Segunda Guerra Mundial? Efectivamente, como había racionalización y debían usar la fruta madura, crearon este increíble postre. Pocos ingredientes, gran sabor. El Apple Crumble de Alice respeta la receta original, pero con una deliciosa base que acompaña la dulzura y la acidez de la manzana por igual",
+        "description": "¿Sabían que esta delicia fue un invento por necesidad en la Segunda Guerra Mundial? Efectivamente, como había racionalización y debían usar la fruta madura, crearon este increíble postre. Pocos ingredientes, gran sabor. El Apple Crumble de Alice respeta la receta original, pero con una deliciosa base que acompaña la dulzura y la acidez de la manzana por igual.",
         "category": "tortas",
-        "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/src/public/images/applecrumple.png"
+        "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/frontend/src/public/images/applecrumple.png"
     }
 ]

@@ -19,7 +19,7 @@ export const CartPage = () => {
     <>
     <table className="table-cart">
       <thead>
-        <tr>
+        <tr className="table-row">
           <th scope="col">Nombre</th>
           <th scope="col">Precio</th>
           <th scope="col">Cantidad</th>
@@ -29,26 +29,26 @@ export const CartPage = () => {
       <tbody>
         {
           shopList.map(item => (
-            <tr key={item.id}>
-              <th>{item.title}</th>
-              <td>${item.price}</td>
-              <td>
+            <tr key={item.id} className="table-row">
+              <th className="table-head-title">{item.title}</th>
+              <td className="table-content-price">${item.price}</td>
+              <td className="table-content-btn-container">
                 <button 
-                  className="btn btn-outline-primary"
+                  className="btn-decrease"
                   onClick={()=> decreaseQuantity(item.id)}
                   >-
                 </button>
-                <button className="btn btn-primary">{item.quantity}</button>
+                <button className="btn-quantity">{item.quantity}</button>
                 <button 
-                  className="btn btn-outline-primary"
+                  className="btn-increase"
                   onClick={()=> increaseQuantity(item.id)}
                   >+
                 </button>
               </td>
-              <td>
+              <td className="table-content-btn-container">
                 <button
                   type="button"
-                  className="btn"
+                  className="btn-eliminate"
                   onClick={()=>eliminateItem(item.id)}
                 >
                   <img className="img-eliminar" src={trashIcon} alt="eliminar" />
@@ -58,7 +58,7 @@ export const CartPage = () => {
           ))
         }
         <tr>
-          <th><b>Total:</b></th>
+          <th className="table-row"><b>Total:</b></th>
           <td></td>
           <td>${calculateTotal()}</td>
           <td></td>
@@ -67,7 +67,7 @@ export const CartPage = () => {
     </table>
     <div className="d-grid gap-2 col-6 mx-auto mb-5">
       <button 
-      className="btn btn-primary-buy"
+      className="btn-buy"
       onClick={handlePrint}
       disabled={shopList < 1}
       >Comprar</button>

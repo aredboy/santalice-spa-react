@@ -1,21 +1,136 @@
-.cart-table {
+/* === BASE LAYOUT (MOBILE FIRST) === */
+body {
+  background: #f9f8f8;
+  color: #4c5b61;
+  font-family: inherit;
+}
+
+.table-cart {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-}   
+  background: white;
+  margin: 10px auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.table-row th,
+.table-row td {
+  padding: 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.table-cart thead {
+  background: #f1fdfd;
+}
+
+.table-row th {
+  text-align: left;
+  font-weight: 600;
+  color: #2dbcc1;
+}
+
+.table-head-title {
+  font-weight: 500;
+}
+
+.table-content-price {
+  font-weight: 500;
+  color: #4c5b61;
+}
+
+/* === BUTTON GROUP FOR QUANTITY === */
+.table-content-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-family: inherit;
+}
+
+/* Quantity Adjust Buttons */
+.btn-decrease,
+.btn-increase {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #e4f8f9;
+  color: #2dbcc1;
+  font-weight: bold;
+}
+
+.btn-decrease:hover,
+.btn-increase:hover {
+  background: #2dbcc1;
+  color: white;
+}
+
+.btn-quantity {
+  padding: 6px 12px;
+  min-width: 40px;
+  border-radius: 4px;
+  background: #f9f8f8;
+  border: 1px solid #eee;
+  color: #4c5b61;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* Delete Button */
+.btn-eliminate {
+  background: transparent;
+  padding: 4px;
+}
 
 .img-eliminar {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
-    /* color: #4c5b61 !important; */
-    background-color: transparent !important;
+  width: 20px;
+  opacity: 0.7;
+  transition: 0.2s;
 }
 
-button.btn.btn-primary-buy {
-    background-color: #2dbcc1 !important;
-    color: #f9f8f8 !important;
+.img-eliminar:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
-button.btn.btn-primary-buy:hover {
-    background-color: hsl(182, 62%, 44%) !important;
-    color: #f9f8f8 !important;
+
+/* === BUY BUTTON === */
+.btn-buy {
+  background: #2dbcc1;
+  color: white;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.btn-buy:hover:not(:disabled) {
+  background: #27a1a6;
+}
+
+.btn-buy:disabled {
+  background: #b9e7e9;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+/* === RESPONSIVE UPGRADE ON BIGGER SCREENS === */
+@media (min-width: 768px) {
+  .table-cart {
+    width: 90%;
+  }
+
+  .table-row th,
+  .table-row td {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
 }
