@@ -1,4 +1,4 @@
-.custom-footer * {
+.custom-footer *{
     background-color: #4c5b61 !important;
     color: #f9f8f8 !important;
     text-align: left;
@@ -9,9 +9,25 @@
 }
 
 .custom-footer .container {
-    flex-direction: row;
+    flex-direction: column;
 }
 
+.row {
+    flex-direction: column;
+}
+
+@media(min-width:666px) {
+    .row {
+        flex-direction: row !important;
+    }
+    .custom-footer .container {
+        flex-direction: row !important;
+    }
+    .list-unstyled .li {
+        padding: 0 !important;
+    }
+
+}
 
 .col-md-4 {
     flex-direction: column;

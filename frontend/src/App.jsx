@@ -9,6 +9,7 @@ import { LoginScreen } from "./routes/LoginScreen"
 import { Cart } from "./routes/components/Cart"
 import { ShoppingPage } from "./routes/pages/ShoppingPage"
 import { CartPage } from "./routes/pages/CartPage"
+import { Product } from "./routes/components/Product";
 import { ProductsProvider } from "./routes/context/ProductsProvider"
 import { CartProvider } from "./routes/context/CartProvider"
 import { Footer } from "./routes/components/Footer"
@@ -32,6 +33,7 @@ export const App = () => {
                         <Route path='/cart' element={ <Cart></Cart> }></Route>
                         <Route path='/products' element={ <ShoppingPage></ShoppingPage> }></Route>
                         <Route path='/products/:category' element={ <ShoppingPage></ShoppingPage> }></Route>
+                        <Route path='/product/:id' element={ <Product></Product> }></Route>
                         <Route path='/cartpage' element={ <CartPage></CartPage> }></Route>
                         <Route path='/*' element={ <Navigate to='/'/> }></Route>
                     </Routes>

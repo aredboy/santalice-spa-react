@@ -377,7 +377,7 @@ a.myorder {
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     overflow: visible;          /* show shadow outside box */
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-2px);
     pointer-events: none;
   }
 
@@ -398,6 +398,9 @@ a.myorder {
     color: #4c5b61;
     text-decoration: none;
   }
+  a.portal-dropdown-item.active {
+    margin-top: 1rem !important;
+}
 }
 
 /* ---------- MOBILE (< 992px): inline, toggles via .open, slide down w/ max-height ---------- */

@@ -1,0 +1,94 @@
+/* MOBILE-FIRST: por defecto (<= 767px) usamos columna */
+.product-page {
+  display: flex;
+  flex-direction: column;         /* columna en móvil */
+  gap: 1rem;
+  margin: 2rem auto;
+  width: 100%;
+  box-sizing: border-box;
+  /* evita overflow oculto global que tapa contenidos */
+  overflow: visible;
+  max-width: 1100px;
+  padding: 1rem;
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: column;         /* imagen encima, contenido debajo */
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;                   /* important para que children puedan encogerse */
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+/* imagen/media en móvil: ocupan todo el ancho */
+.product-media {
+  width: 100%;
+  flex: 0 0 auto;
+  display: block;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;               /* no más alta que el viewport */
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* info: debajo en móvil */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+  color: #4c5b61;
+}
+
+/* empuja acciones al final del column */
+.product-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+    .product-page {
+    padding: 3rem;
+    }
+}
+/* DESKTOP — a partir de 992px hacemos layout en fila */
+@media (min-width: 992px) {
+  .product-page {
+    padding: 2rem;
+  }
+
+  .product-detail {
+    flex-direction: row;           /* imagen a la izquierda, info a la derecha */
+    align-items: start;
+  }
+
+  .product-media {
+    flex: 0 0 360px;               /* ancho fijo razonable para la imagen */
+    width: 360px;
+    display: block;
+  }
+
+  .product-image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border-radius: 12px;
+  }
+
+  .product-info {
+    flex: 1 1 auto;
+    padding-left: 1.5rem;
+    min-width: 0;
+  }
+
+  .product-price { padding-top: 0.25rem; }
+}

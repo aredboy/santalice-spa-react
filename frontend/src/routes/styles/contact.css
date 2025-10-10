@@ -1,7 +1,7 @@
 .contact-form {
   max-width: 720px;
-  margin: 0 auto !important;
-  background: #fff;
+  margin: 2rem auto !important;
+  background: #f9f8f8;
   padding: 1.25rem;
   border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -40,6 +40,18 @@ textarea {
   font-size: 1rem;
   color: #4c5b61;
 }
+
+.select {
+  color: #4c5b61;
+}
+
+select option:hover {
+  box-shadow: 0 0 10px 100px red inset !important;
+  color:white;
+}
+select option:checked{
+  box-shadow: 0 0 10px 100px red inset !important;
+  }
 
 input:focus,
 select:focus,
