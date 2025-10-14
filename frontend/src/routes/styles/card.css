@@ -8,8 +8,8 @@
   gap: 1rem;
   border: none;
   background-color: #f9f8f8;
-  border-radius: 10px;
-  padding: 14px;
+  border-radius: 16px;
+  padding: 0;
   align-items: stretch;
   width: 100%;
   min-width: 0;
@@ -18,11 +18,17 @@
   overflow: visible;
   cursor : pointer;
   transition: box-shadow 0.2s ease;
-  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: rgba(0, 0, 0, 0.1) ;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .product-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.img-container {
+  border-radius: 20px;
 }
 
 .product-card .product-img {
@@ -31,15 +37,18 @@
   height: 100%;
   aspect-ratio: 8/2;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 17px;
   display: block;
-  transition: box-shadow 0.3s ease, border 0.3s ease;
+  box-sizing: border-box;
+  /* transition: border 0.3s ease; */
+  border: 3px solid rgb(45, 188, 193, 0.8);
 }
 
 .product-card:hover .product-img,
 .product-card:focus-within .product-img {
-  box-shadow: 0 0 8px 3px rgba(45, 188, 193, 0.6);
-  border: none;
+    outline: none;
+    border-color: rgb(45, 188, 193, 0.8);
+    box-shadow: 1px 1px 0px rgb(45, 188, 193, 0.8);
 }
 
 .product-card .product-content {
@@ -54,6 +63,7 @@
     "price add";
   gap: 0.5rem;
   align-content: stretch;
+  border-radius: 16px;
 }
 
 @media (max-width: 768px) {
@@ -63,6 +73,7 @@
 }
 
 .product-title-link {
+  padding-top: 7px;
   text-decoration: none;
 }
 
@@ -78,10 +89,13 @@
   justify-self: start;
 }
 
-.product-card .product-price {
+.price-container{
   grid-area: price;
+  overflow: hidden;
+}
+.product-card .product-price {
   margin: 0;
-  padding: 18px 0 0 5px;
+  padding: 10px 0 0 5px;
   font-style: normal;
   color: #4c5b61;
   font-weight: 500;
@@ -92,13 +106,21 @@
 
 .img-add {
   cursor: pointer;
-  width: 2.5rem !important;
+  width: 3rem !important;
 }
 
+@media (min-width: 992px) {
+  .product-price {
+    padding-top: 28px !important;
+  }
+  .img-add{
+    width: 3.5rem !important;
+  }
+}
 .product-card .btn-add {
   grid-area: add;
   border: none !important;
-  padding: 10px 10px;
+  padding: 8px 10px;
   border-radius: 6px;
   cursor: pointer;
   align-self: end;
@@ -106,16 +128,8 @@
   background: none;
 }
 
-.img-add:hover {
-  border-radius: 6px;
-  transition: box-shadow 0.3s ease, border 0.3s ease;
-  box-shadow: 0 0 8px 2px rgba(45, 188, 193, 0.6);
-  border: none;
-}
 
 .img-add:active {
-  transition: box-shadow 0.1s ease, border 0.1s ease;
-  box-shadow: 0 0 8px 2px rgba(45, 188, 193, 0.1);
   transform: scale(0.95);
 }
 

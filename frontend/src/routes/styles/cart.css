@@ -2,19 +2,28 @@
 body {
   background: #f9f8f8;
   color: #4c5b61;
-  font-family: inherit;
+  /* font-family: inherit; */
 }
 
 .table-cart {
-  width: 100%;
+  display: table !important;
+  table-layout: auto !important;
+  width: 100% !important;
+  margin: 0 !important;
+  height: auto !important;
   border-collapse: collapse;
   background: white;
-  margin: 10px auto;
-  border-radius: 6px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+@media (min-width: 992px) {
+  .table-cart{
+    margin: 10px auto !important;
+
+  }
+}
 .table-row th,
 .table-row td {
   padding: 12px;
@@ -28,25 +37,29 @@ body {
 
 .table-row th {
   text-align: left;
-  font-weight: 600;
-  color: #2dbcc1;
+  font-size: 22px !important;
+  font-weight:600;
+  color: #4c5b61;
 }
 
 .table-head-title {
-  font-weight: 500;
+  font-weight: 500 !important;
+  font-size: 22px !important;
 }
 
 .table-content-price {
-  font-weight: 500;
+  font-size: 20px !important;
+  font-weight: 400;
   color: #4c5b61;
 }
 
 /* === BUTTON GROUP FOR QUANTITY === */
 .table-content-btn-container {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   gap: 5px;
-  justify-content: center;
+  white-space: nowrap;
+  /* justify-content: center; */
 }
 
 button {
@@ -110,6 +123,7 @@ button {
   border-radius: 6px;
   margin-top: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  /* align-self: center; */
 }
 
 .btn-buy:hover:not(:disabled) {
@@ -122,6 +136,22 @@ button {
   opacity: 0.75;
 }
 
+.gap-2.col-6.mx-auto.mb-5 {
+    display: block;
+    justify-self: center;
+    margin: 1rem 0 !important;
+}
+
+.table-row-total {
+  font-size: 24px;
+  padding: 1rem;
+  justify-self: auto;
+}
+
+.table-price-total{
+  padding-left: 10px;
+  font-size: 20px;
+}
 /* === RESPONSIVE UPGRADE ON BIGGER SCREENS === */
 @media (min-width: 768px) {
   .table-cart {

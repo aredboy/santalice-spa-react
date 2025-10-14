@@ -6,11 +6,17 @@
 
 .products-h4 {
     padding-left: 1rem;
+    padding-bottom: .5rem;
     color: #4c5b61;
+    top: 107px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 24px;
+    border-bottom: #4c5b61 1px ;
 }
 
+hr {
+    box-shadow: 10px 4px 14px rgba(45,188,193,0.08);
+}
 .row {
     margin: 0 !important;
 }

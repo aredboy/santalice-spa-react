@@ -3,7 +3,7 @@
   margin: 2rem auto !important;
   background: #f9f8f8;
   padding: 1.25rem;
-  border-radius: 10px;
+  border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
   font-family: inherit;
   color: #213638;
@@ -11,6 +11,7 @@
 
 .contact-form h3 {
   margin: 0 0 1rem 0 !important;
+  font-size: 28px;
   color: #4c5b61;
 }
 
@@ -21,10 +22,11 @@
 
 .label {
   display: block;
-  margin-bottom: 0.35rem !important;
+  margin-bottom: 0.5rem!important;
+  padding-left: .4rem;
   font-weight: 600;
   color: #4c5b61;
-  font-size: 0.95rem;
+  font-size: 20px;
 }
 
 input[type="text"],
@@ -33,12 +35,18 @@ select,
 textarea {
   width: 100%;
   padding: 0.55rem 0.75rem;
-  border-radius: 8px;
+  border-radius: 16px;
   border: 1px solid #e3e3e3;
   background: #fafafa;
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: 18px;
   color: #4c5b61;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: #999999;
 }
 
 .select {
@@ -73,16 +81,18 @@ textarea:focus {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  justify-content: center;
 }
 
 .btn-send {
   background: #2dbcc1;
   color: white;
   border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 16px;
   cursor: pointer;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .btn-send[disabled] {

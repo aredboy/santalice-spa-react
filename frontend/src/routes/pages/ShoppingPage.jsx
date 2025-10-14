@@ -30,7 +30,6 @@ export const ShoppingPage = () => {
     <h4 className="products-h4">
       {category ? category.toUpperCase() : 'Todos nuestros productos:'}
     </h4>
-    <hr />
       <div className="grid-container">
       {filteredProducts.length > 0 ? (
         filteredProducts.map(product => (

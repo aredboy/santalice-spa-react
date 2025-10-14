@@ -58,9 +58,9 @@ export const CartPage = () => {
           ))
         }
         <tr>
-          <th className="table-row"><b>Total:</b></th>
+          <th className="table-row-total"><b>Total:</b></th>
+          <td className="table-price-total">${calculateTotal()}</td>
           <td></td>
-          <td>${calculateTotal()}</td>
           <td></td>
         </tr>
       </tbody>

@@ -78,7 +78,7 @@
 
 .nav-link {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
     color: #4c5b61;
     text-decoration: none;
     white-space: nowrap;
@@ -178,28 +178,31 @@
   /* height: auto !important; */
 }
 
-/* menu hidden by default */
+
+
 .simple-dropdown {
-    list-style: none;
-    margin: 0;
-    padding: 0.25rem 0;
-    background: #f9f8f8;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    opacity: 0;
-    transform: translateY(-6px);
-    pointer-events: none;
-    transition: opacity .18s ease, transform .18s ease;
-    position: absolute;
-    min-width: 180px;
-    left: 0;
-    top: calc(100% - 2px);
-    z-index: 9999; /* force above main */
-    /* display: none;
-    min-height: 200px !important; 
-    overflow: hidden;
- */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 6px 18px;
+  background: #f9f8f8;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity .22s ease, transform .22s ease;
+  pointer-events: none;
 }
+
+.simple-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 
 .simple-dropdown-item > a,
 .simple-dropdown-item > button {
@@ -214,7 +217,7 @@
     color: #2dbcc1;
 }
 /* ---------- Desktop: open on hover (>= 992px) ---------- */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   /* show on hover; CSS-only for desktop (no JS required) */
     .simple-dropdown-wrap:hover > .simple-dropdown,
     .simple-dropdown-wrap:focus-within > .simple-dropdown,
@@ -224,8 +227,9 @@
         pointer-events: auto;
     }
 }
+
 /* ---------- Mobile: click toggles (below 992px) ---------- */
-@media (max-width: 991.98px) {
+@media (max-width: 1200px) {
 /* 
     .simple-dropdown-wrap {
         display: block;
@@ -260,15 +264,101 @@
     }
 }
 
+/* ===================== FORCE-DROPDOWN (paste at file end) ===================== */
+
+/* ===== Fix dropdown stretched by global height:100% rule ===== */
+@media (min-width: 1200px) {
+  /* Ensure dropdown itself is not forced to 100% height */
+  .simple-dropdown {
+    /* Treat as a normal block list (no flex stretching) */
+    display: block !important;
+    position: fixed !important; /* portal sets top/left/width inline, keep fixed */
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 8px 6px !important;
+    gap: 0 !important;
+    background: #f9f8f8 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease, visibility .02s linear;
+    pointer-events: none;
+    white-space: nowrap; /* prevent wrapping of single-line items */
+    z-index: 2000 !important;
+  }
+
+  /* When open, reveal and allow interaction */
+  .simple-dropdown.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    /* transform: translateY(0) !important; */
+    pointer-events: auto !important;
+    left: 0 !important;
+    padding-left: 630px !important;
+    width: 100% !important;
+    border-bottom: 1px #4c5b61 solid;
+    box-shadow: 10px 4px 14px #4c5b61;
+
+}
+
+  /* items stacked vertically, compact spacing */
+  .simple-dropdown > .simple-dropdown-item {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .simple-dropdown-item > a,
+  .simple-dropdown-item > button {
+    display: block !important;
+    padding: 10px 12px !important;
+    margin: 0 !important;
+    color: #4c5b61 !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: 4px;
+  }
+
+  .simple-dropdown-item:hover > a,
+  .simple-dropdown-item:hover > button {
+    /* background: rgba(45,188,193,0.08) !important; */
+    color: #2dbcc1 !important;
+  }
+
+  /* Push the main down when dropdown is open.
+     Target both <main> and .app-main (handles different markup). */
+  .app-navbar.dropdown-open + main,
+  .app-navbar.dropdown-open ~ main,
+  .app-navbar.dropdown-open + .app-main,
+  .app-navbar.dropdown-open ~ .app-main {
+    margin-top: calc(var(--dropdown-open-height, 0px) + 155px) !important;
+    transition: margin-top .18s ease !important;
+  }
+}
+
+/* fallback push-down */
+@media (min-width: 1200px) {
+  .app-navbar.dropdown-open + main,
+  .app-navbar.dropdown-open ~ .app-main {
+    margin-top: calc(var(--dropdown-open-height, 0px) + 8px);
+    transition: margin-top .18s ease;
+  }
+}
+
+
+
 /*------Cart-------*/
-
-
 
 a.myorder {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
     color: #4c5b61 !important;
-    padding-top: 7.3px;
+    padding-top: 7.4px;
     /* width: auto; */
     margin-left: auto;
     text-decoration: none;
@@ -281,7 +371,7 @@ a.myorder {
     padding-bottom: 8px !important;
     transition: none !important;
     border: none;
-    width: 2.5em;
+    width: 2.2em;
 }
 
 .main-cart-vertical {
@@ -366,7 +456,7 @@ a.myorder {
 }
 
 /* ---------- DESKTOP (>= 992px): absolute menu with shadow + radius ---------- */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .simple-dropdown {
     position: absolute;
     top: calc(100% - 2px);
@@ -393,18 +483,14 @@ a.myorder {
   /* ensure each item */
   .simple-dropdown-item > a,
   .simple-dropdown-item > button {
-    display: block;
+    /* display: block; */
     padding: .45rem 1rem;
     color: #4c5b61;
     text-decoration: none;
   }
-  a.portal-dropdown-item.active {
-    margin-top: 1rem !important;
 }
-}
-
 /* ---------- MOBILE (< 992px): inline, toggles via .open, slide down w/ max-height ---------- */
-@media (max-width: 991.98px) {
+@media (max-width: 1200px) {
   .simple-dropdown-wrap { display: block; width: 100%; }
   .simple-dropdown {
     position: relative;

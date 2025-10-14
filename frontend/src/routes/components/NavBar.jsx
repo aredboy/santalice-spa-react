@@ -3,7 +3,7 @@ import { Badge } from "@mui/material"
 import { useContext, useState } from "react"
 import { CartContext } from "../context/CartContext"
 import  Dropdown  from "./Dropdown"
-import cartIcon from "../../assets/bag.png"
+import cartIcon from "../../assets/bag1.png"
 import logoIcon from "../../assets/logo.png"
 import '../styles/navbar.css'
 
@@ -38,13 +38,19 @@ export const NavBar = () => {
             </li>
 
             <li className={`nav-item ${open ? "open" : ""}`}>
-                <Dropdown label={<span className="nav-link">NUESTROS PRODUCTOS</span>}>
+                <Dropdown 
+                    label={
+                    <NavLink to="/products" className="nav-link">
+                        NUESTROS PRODUCTOS
+                    </NavLink>
+                    }
+                >
                     <NavLink to="/products/budines" className="portal-dropdown-item" >BUDINES</NavLink>
                     <NavLink to="/products/tortas" className="portal-dropdown-item" >TORTAS</NavLink>
                     <NavLink to="/products/masdulces" className="portal-dropdown-item" >MÁS DULCES</NavLink>
-                    <NavLink to="/products" className="portal-dropdown-item" >TODOS</NavLink>
                 </Dropdown>
             </li>
+
             <li>
                 <NavLink to='/contact' className="nav-link">CONTACTO</NavLink>
             </li>
