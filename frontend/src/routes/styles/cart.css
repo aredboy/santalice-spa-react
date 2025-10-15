@@ -120,7 +120,7 @@ button {
   color: white;
   padding: 12px 20px;
   font-size: 15px;
-  border-radius: 6px;
+  border-radius: 14px;
   margin-top: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   /* align-self: center; */
@@ -157,10 +157,13 @@ button {
   .table-cart {
     width: 90%;
   }
-
+  
   .table-row th,
   .table-row td {
     padding: 14px 18px;
     font-size: 15px;
+  }
+  .table-price-total{
+    padding-left: 16px;
   }
 }
