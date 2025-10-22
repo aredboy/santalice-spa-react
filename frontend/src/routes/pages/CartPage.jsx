@@ -17,6 +17,7 @@ export const CartPage = () => {
 
   return (
     <>
+    <h4></h4>
     <table className="table-cart">
       <thead>
         <tr className="table-row">

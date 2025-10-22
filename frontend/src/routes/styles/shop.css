@@ -10,9 +10,14 @@
     color: #4c5b61;
     top: 107px;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 34px;
     border-bottom: #4c5b61 1px ;
+    font-weight: 700;
+    font-style: italic !important;
+    justify-self: center;
+    padding: 33px 0;
 }
+
 
 hr {
     box-shadow: 10px 4px 14px rgba(45,188,193,0.08);
@@ -26,7 +31,7 @@ hr {
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 1rem;
     width: 100%;
-    padding: 0;
+    padding: 0 0 2rem 0;
     justify-items: stretch;
     align-items: stretch;
     grid-auto-rows: 1fr;
@@ -44,5 +49,6 @@ hr {
 @media (min-width: 1024px) {
     .grid-container {
         gap: 2rem;
+        padding-bottom: 2rem;
     }
 }

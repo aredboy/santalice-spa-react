@@ -24,11 +24,17 @@ export const ShoppingPage = () => {
     eliminateItem(id)
   }
 
+  const sentenceCase = (s) => {
+  if (!s) return '';
+  const normalized = s.replace(/[-_]+/g, ' '); // optional
+  return normalized.charAt(0).toUpperCase() + normalized.slice(1).toLowerCase();
+}
+
   return (
     <>
     <div className="products-grid">
     <h4 className="products-h4">
-      {category ? category.toUpperCase() : 'Todos nuestros productos:'}
+      {category ? sentenceCase(category) : 'Nuestros productos'}
     </h4>
       <div className="grid-container">
       {filteredProducts.length > 0 ? (

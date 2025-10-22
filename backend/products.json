@@ -5,7 +5,6 @@
         "price": 19.99,
         "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate.",
         "category": "masdulces",
-        
         "image": "https://raw.githubusercontent.com/aredboy/santalice-spa-react/master/frontend/src/public/images/alfajornegro.png"
         },
     {

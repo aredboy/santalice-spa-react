@@ -19,7 +19,7 @@ export const Card = ({image, title, price, id, handleAdd}) => {
             <h4 className="product-title">{title}</h4>
           </Link>
           <div className="price-container">
-          <p className="product-price">Precio por unidad: ${price}</p>
+          <p className="product-price">Precio: ${price}</p>
           </div>
           <button 
           type="button"

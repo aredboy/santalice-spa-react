@@ -154,43 +154,6 @@
         gap: 30px;
     }
 }
-/* ---------- simple dropdown (no bootstrap) ---------- */
-
-
-/* trigger */
-/* .dropdown-trigger {
-  background: none;
-  border: none;
-  color: #4c5b61;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-} */
-
-
-
-/* .simple-dropdown {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  padding: 6px 18px;
-  background: #f9f8f8;
-  border-radius: 0;
-  box-shadow: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-6px);
-  transition: opacity .22s ease, transform .22s ease;
-  pointer-events: none;
-} */
-
-/* .simple-dropdown.open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-} */
 
 .simple-dropdown-item > a,
 .simple-dropdown-item > button {
@@ -251,6 +214,7 @@
     pointer-events: auto !important;
     left: 0 !important;
     padding-left: 50% !important;
+    padding-bottom: 20px !important;
     width: 100% !important;
     border-bottom: 1px rgba(76, 91, 97, 0.22) solid;
     box-shadow: 10px 10px 14px -8px rgba(76, 91, 97, 0.22) !important;
@@ -326,13 +290,18 @@ a.myorder {
     white-space: nowrap;
 }
 
+span.MuiBadge-root.btn.main-cart.css-63ezxx-MuiBadge-root * {
+    margin-left: -7px !important;
+    margin-bottom: -5px !important;
+    background: none;
+}
 
 .main-cart {
     color: #4c5b61 !important;
-    padding-bottom: 8px !important;
+    padding: 0 0 10px 0 !important;
     transition: none !important;
     border: none;
-    width: 2.2em;
+    width: 2em;
 }
 
 .main-cart-vertical {
@@ -365,7 +334,7 @@ a.myorder {
     font-size: 1.1rem !important;
     font-style: normal !important;
     font-weight: 800 !important;
-    margin: 8px 3px 0 0px !important;
+    margin: 7px 13px 0 0 !important;
     height: auto !important;
 }
 
@@ -412,7 +381,7 @@ a.myorder {
 @media (min-width: 1200px) {
   .simple-dropdown {
     position: absolute;
-    top: calc(100% - 2px);
+    /* top: calc(100% - 2px) !important; */
     left: 0;
     min-width: 200px;
     background: #f9f8f8;
@@ -481,5 +450,102 @@ a.myorder {
   .nav-links li.nav-item.open + li {
     margin-top: 1rem;
     transition: margin-top .28s ease;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ----------------- CANCEL dropdown push-down (desktop only) ----------------- */
+/* Keep this at the end of navbar.css to override previous rules that push main down */
+@media (min-width: 1200px) {
+  .app-navbar.dropdown-open + main,
+  .app-navbar.dropdown-open ~ main,
+  .app-navbar.dropdown-open + .app-main,
+  .app-navbar.dropdown-open ~ .app-main {
+    /* neutralize any margin-top previously applied */
+    margin-top: 0 !important;
+    transition: none !important;
+  }
+}
+
+/* ----------------- DESKTOP modal-style dropdown + backdrop (>=1200px) ----------------- */
+@media (min-width: 1200px) {
+  :root {
+  --dropdown-transition-duration: 350ms;
+  --dropdown-ease: cubic-bezier(.2,.9,.2,1);
+}
+  /* the backdrop element is injected by the portal and has inline top = coords.top */
+  .dropdown-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* top should be set inline by the portal to start below the navbar (coords.top) */
+    background: rgba(0,0,0,0.14);
+    z-index: 1990;                 /* behind dropdown but above normal content */
+    transition: opacity .18s ease;
+    opacity: 0;
+    transition: opacity var(--dropdown-transition-duration) var(--dropdown-ease);
+    will-change: opacity;
+    pointer-events: none;          /* clicking it will close the dropdown via the handler */
+  }
+  .dropdown-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .dropdown-backdrop.closing {
+    opacity: 0;
+    pointer-events: none;
+  }
+  /* hide backdrop when dropdown closed (optional JS/class could toggle) */
+  .dropdown-backdrop.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ensure portal dropdown is fixed and sits above the backdrop */
+  .dropdown-portal-root .simple-dropdown,
+  .simple-dropdown {
+    position: fixed !important;   /* portal already sets inline top/left but force fixed */
+    z-index: 2000 !important;  
+    opacity: 0;
+    transform: translateY(-6px) scaleY(0.99);
+    transform-origin: top center;
+    transition: opacity var(--dropdown-transition-duration) var(--dropdown-ease),
+                transform var(--dropdown-transition-duration) var(--dropdown-ease);
+    will-change: opacity, transform;
+    pointer-events: none;
+       /* above the backdrop */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important; /* modal shadow */
+    border-radius: 6px !important;
+    background: #f9f8f8 !important;
+    overflow: visible !important;
+    /* keep the appearance transitions already defined */
+  }
+
+  /* keep closed state hidden (if your JS toggles class .open) */
+  .simple-dropdown:not(.open) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) scaleY(0.995) !important;
+  }
+
+  .simple-dropdown.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) scaleY(1) !important;
+    top: 99px !important;
+  }
+    .dropdown-backdrop.closing {
+    opacity: 0;
+    pointer-events: none;
   }
 }

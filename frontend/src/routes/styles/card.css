@@ -20,11 +20,11 @@
   transition: box-shadow 0.2s ease;
   outline: none;
   border: rgba(0, 0, 0, 0.1) ;
-  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.5);
 }
 
 .product-card:hover {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
 }
 
 .img-container {
@@ -80,7 +80,7 @@
 .product-card .product-title {
   grid-area: title;
   color: #4c5b61;
-  margin: 0;
+  margin: 10px 0 0 0 !important;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
@@ -95,7 +95,7 @@
 }
 .product-card .product-price {
   margin: 0;
-  padding: 9px 0 0 5px;
+  padding: 29px 0 0 5px;
   font-style: normal;
   color: #4c5b61;
   font-weight: 500;
@@ -106,7 +106,7 @@
 
 .img-add {
   cursor: pointer;
-  width: 2.6rem !important;
+  width: 3.5rem !important;
 }
 
 @media (min-width: 1200px) {
@@ -115,13 +115,13 @@
     font-size: 1.3rem !important;
   }
   .img-add{
-    width: 3.3rem !important;
+    width: 3.5rem !important;
   }
 }
 .product-card .btn-add {
   grid-area: add;
   border: none !important;
-  padding: 8px 10px;
+  padding: 18px 18px;
   border-radius: 6px;
   cursor: pointer;
   align-self: end;
