@@ -55,8 +55,8 @@ export const NavBar = () => {
                 <NavLink to='/contact' className="nav-link">CONTACTO</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink to='/cartpage' className="myorder">
-                    MI PEDIDO
+                <NavLink to='/cartpage' className="myorder" aria-label="Mi pedido">
+                    <span className="myorder-label">MI PEDIDO</span>
                     <Badge badgeContent={cartCount} color="none" className="btn main-cart" type="button">
                         <img src={cartIcon} alt="carrito" className="main-cart" />
                     </Badge>

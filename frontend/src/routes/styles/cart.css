@@ -116,14 +116,15 @@ button {
 
 /* === BUY BUTTON === */
 .btn-buy {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   background: #2dbcc1;
   color: white;
-  padding: 12px 20px;
-  font-size: 15px;
-  border-radius: 14px;
-  margin-top: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-  /* align-self: center; */
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .btn-buy:hover:not(:disabled) {
