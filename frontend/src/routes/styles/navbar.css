@@ -51,9 +51,6 @@
         flex-direction: column;
         align-items: stretch;
     }
-    .logo {
-        order: 0;
-    }
     .hamburger {
         order: 1;
         align-self: flex-end;
@@ -86,10 +83,6 @@
     }
     .nav-item.dropdown .dropdown-menu {
         display: block !important;
-    }
-    .logo {
-      flex: 0;
-      width: 300px;
     }
 }
 
@@ -150,6 +143,10 @@
     .nav-links li:last-child {
         display: flex;
         align-items: center;
+    }
+    .logo {
+      flex: 0;
+      width: 300px;
     }
 }
 
@@ -297,7 +294,7 @@ a.myorder {
 
 .main-cart {
   color: #4c5b61 !important;
-  padding: 0 0 10px 0 !important;
+  padding: 0 0 7px 0 !important;
   transition: none !important;
   border: none;
   width: 2em;
@@ -338,9 +335,6 @@ a.myorder {
     a.myorder {
         padding-top: 7.3px !important;
         font-size: 24px !important;
-    }
-    .main-cart {
-        padding-bottom: 8px !important;
     }
 }
 
@@ -421,7 +415,10 @@ a.myorder {
 }
 /* ---------- MOBILE (< 992px): inline, toggles via .open, slide down w/ max-height ---------- */
 @media (max-width: 1200px) {
-  .simple-dropdown-wrap { display: block; width: 100%; }
+  .simple-dropdown-wrap { 
+    display: block; 
+    width: 100%; 
+  }
   .simple-dropdown {
     position: relative;
     width: 100%;
@@ -479,7 +476,9 @@ a.myorder {
     margin-top: 0 !important;
     transition: none !important;
   }
+
 }
+
 
 /* ----------------- DESKTOP modal-style dropdown + backdrop (>=1200px) ----------------- */
 @media (min-width: 1200px) {
@@ -487,47 +486,20 @@ a.myorder {
   --dropdown-transition-duration: 350ms;
   --dropdown-ease: cubic-bezier(.2,.9,.2,1);
 }
-  /* the backdrop element is injected by the portal and has inline top = coords.top */
-  .dropdown-backdrop {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* top should be set inline by the portal to start below the navbar (coords.top) */
-    background: rgba(0,0,0,0.14);
-    z-index: 1990;                 /* behind dropdown but above normal content */
-    transition: opacity .18s ease;
-    opacity: 0;
-    transition: opacity var(--dropdown-transition-duration) var(--dropdown-ease);
-    will-change: opacity;
-    pointer-events: none;          /* clicking it will close the dropdown via the handler */
-  }
-  .dropdown-backdrop.open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .dropdown-backdrop.closing {
-    opacity: 0;
-    pointer-events: none;
-  }
-  /* hide backdrop when dropdown closed (optional JS/class could toggle) */
-  .dropdown-backdrop.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
 
   /* ensure portal dropdown is fixed and sits above the backdrop */
   .dropdown-portal-root .simple-dropdown,
   .simple-dropdown {
-    position: fixed !important;   /* portal already sets inline top/left but force fixed */
-    z-index: 2000 !important;  
+    position: absolute !important;   /* portal already sets inline top/left but force fixed */
+    z-index: 2000 !important;
+    box-sizing: border-box !important;
     opacity: 0;
     transform: translateY(-6px) scaleY(0.99);
     transform-origin: top center;
     transition: opacity var(--dropdown-transition-duration) var(--dropdown-ease),
                 transform var(--dropdown-transition-duration) var(--dropdown-ease);
     will-change: opacity, transform;
-    pointer-events: none;
+    pointer-events: auto;
        /* above the backdrop */
     box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important; /* modal shadow */
     border-radius: 6px !important;
@@ -549,9 +521,32 @@ a.myorder {
     visibility: visible !important;
     pointer-events: auto !important;
     transform: translateY(0) scaleY(1) !important;
-    top: 99px !important;
+    top: var(--dropdown-top, auto);
+    /* top: 108px !important; */
   }
-    .dropdown-backdrop.closing {
+
+  .dropdown-portal-root .dropdown-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* top is set inline in JS (coords.top) */
+    background: rgba(0,0,0,0.08);
+    z-index: 1990;
+    pointer-events: none;
+    transition: opacity .18s ease;
+    opacity: 0;
+  }
+  .dropdown-backdrop.closing {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .dropdown-portal-root .dropdown-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+    /* hide backdrop when dropdown closed (optional JS/class could toggle) */
+  .dropdown-backdrop.hidden {
     opacity: 0;
     pointer-events: none;
   }

@@ -1,7 +1,9 @@
 .products-grid {
     display: grid;
     gap: 1.5rem;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .products-h4 {
@@ -41,14 +43,15 @@ hr {
 /* tablet breakpoint */
 @media (min-width: 768px) {
     .grid-container {
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 }
 
 /* desktop breakpoint */
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
     .grid-container {
-        gap: 2rem;
+        gap: 1.75rem;
         padding-bottom: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
     }
 }

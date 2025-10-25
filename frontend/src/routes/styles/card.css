@@ -4,7 +4,7 @@
   box-sizing: border-box;
   display: grid;
   flex: 1;
-  grid-template-columns: minmax(180px, 220px) 1fr; /* wider image column */
+  grid-template-columns: minmax(250px, 220px) 1fr; /* wider image column */
   gap: 1rem;
   border: none;
   background-color: #f9f8f8;
@@ -12,6 +12,7 @@
   padding: 0;
   align-items: stretch;
   width: 100%;
+  max-width: 100%;
   min-width: 0;
   height: auto;
   min-height: 180px;
@@ -35,7 +36,8 @@
   width: 100%;
   max-width: 100%;
   height: 100%;
-  aspect-ratio: 8/2;
+  min-height: 250px;
+  aspect-ratio: 8/4;
   object-fit: cover;
   border-radius: 16px;
   display: block;
@@ -55,20 +57,23 @@
   min-width: 0;
   height: 100% !important;
   display: grid;
+  grid-template-columns: 1fr minmax(36px, auto);
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "title title"
     ". ."
     "price add";
-  gap: 0.5rem;
   align-content: stretch;
   border-radius: 16px;
+  gap: .3rem;
 }
 
 @media (max-width: 768px) {
   .product-card .product-content{
     min-width: 0px;
+    grid-template-columns: 1fr minmax(36px, auto);
+    gap: .3rem;
   }
 }
 
@@ -87,6 +92,11 @@
   word-wrap: break-word;
   align-self: start;
   justify-self: start;
+}
+
+.product-card .card-desc {
+  display: none;
+  margin: 0;
 }
 
 .price-container{
@@ -109,14 +119,84 @@
   width: 3.5rem !important;
 }
 
+@media (max-width: 480px) {
+  .product-card {
+    grid-template-columns: 1fr; /* single column on small screens */
+    grid-template-rows: auto auto; /* two rows */
+    gap: 0.5rem;
+    min-height: unset;
+  }
+}
+
 @media (min-width: 1200px) {
-  .product-price {
-    padding-top: 28px !important;
+  .product-card {
+    grid-template-columns: 250px 1fr !important; 
+    min-height: 220px !important;
+  }
+  .product-card .img-container {
+    display: bloc !important;
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+    align-self: stretch !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+  }
+  .product-card .product-img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;          /* cancel previous min-height forcing tall images */
+    aspect-ratio: auto !important;     /* cancel mobile aspect ratio if present */
+    object-fit: cover !important;                 /* crop to fit without distortion */
+    display: block !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border: 4px solid rgba(45,188,193,0.8) !important;
+  }
+  .product-card .product-content {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+      "title title"
+      "desc desc"
+      "price add";
+    gap: 0.5rem;
+    height: 100%;
+    align-self: stretch !important;
+    align-content: stretch;
+  }
+  .product-card .product-title {
+    grid-area: title;
+    margin: 0;
+  }
+  .product-card .card-desc {
+    /* display: grid; */
+    grid-area: desc;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    color: #4c5b61;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    padding: 0.7rem 0.5rem 0 0.1rem;
+    text-overflow: ellipsis;
+    max-height: calc(1.4em * 3);
+  }
+  .product-card .product-price {
+    /* padding-top: 28px !important; */
+    grid-area: price;
+    padding: 2.5rem 0 0 0;
     font-size: 1.3rem !important;
+  }
+  .product-card .btn-add {
+    grid-area: add;
   }
   .img-add{
     width: 3.5rem !important;
   }
+
 }
 .product-card .btn-add {
   grid-area: add;
@@ -129,19 +209,10 @@
   background: none;
 }
 
-
 .img-add:active {
   transform: scale(0.95);
 }
 
-@media (max-width: 480px) {
-  .product-card {
-    grid-template-columns: 1fr; /* single column on small screens */
-    grid-template-rows: auto auto; /* two rows */
-    gap: 0.75rem;
-    min-height: unset;
-  }
-}
 
   /* Estilos para el carrito */
   .cart {
