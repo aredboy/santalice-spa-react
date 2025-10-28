@@ -16,7 +16,7 @@
     flex-direction: column;
 }
 
-@media(min-width:666px) {
+@media(min-width: 992px) {
     .row {
         flex-direction: row !important;
     }
@@ -45,6 +45,7 @@
     /* background-color: #4c5b61 !important;
     color: #f9f8f8 !important; */
     text-decoration: none;
+    white-space: break-spaces;
 }
 
 .custom-footer a:hover {

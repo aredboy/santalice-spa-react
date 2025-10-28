@@ -51,7 +51,7 @@ export function Product() {
         <div className="product-info">
           <h1 className="product-title">{product.title}</h1>
           <p className="product-desc">{product.description}</p>
-          <p className="product-price">${Number(product.price).toFixed(2)}</p>
+          <p className="product-price">Precio por unidad: ${Number(product.price).toFixed(2)}</p>
 
           <div className="product-actions-1">
             <button className="btn-add-to-cart" onClick={handleAdd}>Agregar al carrito</button>
