@@ -53,9 +53,10 @@ export function Product() {
           <p className="product-desc">{product.description}</p>
           <p className="product-price">${Number(product.price).toFixed(2)}</p>
 
-          <div className="product-actions">
+          <div className="product-actions-1">
             <button className="btn-add-to-cart" onClick={handleAdd}>Agregar al carrito</button>
-
+          </div>
+          <div className="product-actions-2">
             <Link
               to={categorySlug ? `/products/${categorySlug}` : '/products'}
               className="btn-back"

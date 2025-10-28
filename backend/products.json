@@ -9,14 +9,86 @@
         },
     {
         "id": 2,
-        "title": "Budín de Limón y Frutos Rojos",
-        "price": 12.99,
-        "description": "Una mezcla suave de jugo de limón con una variedad de arándanos, frutillas, moras y frambuesas. Cobertura de glasé cítrico y, ¡un touch del ingrediente secreto de Alice! Piacere!!",
+        "title": "Alfajor de Chocolate rellenos con Ganache de Chocolate al Café",
+        "price": 19.99,
+        "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate.",
+        "category": "masdulces",
+        "image": "/images/alfajornegro.png"
+        },
+    {
+        "id": 3,
+        "title": "Alfajor de Chocolate rellenos con Ganache de Chocolate al Café, Dulce de Leche o Dulce de Leche al Cognac",
+        "price": 19.99,
+        "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate.",
+        "category": "masdulces",
+        "image": "/images/alfajornegro.png"
+        },
+    {
+        "id": 4,
+        "title": "Alfajor de Chocolate relleno de Dulce de Leche y Nuez",
+        "price": 19.99,
+        "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate.",
+        "category": "masdulces",
+        "image": "/images/alfajornegro.png"
+        },
+    {
+        "id": 5,
+        "title": "Alfajor de Chocolate relleno de Dulce de Leche y Nuez",
+        "price": 19.99,
+        "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate.",
+        "category": "masdulces",
+        "image": "/images/alfajornegro.png"
+        },
+    {
+        "id": 6,
+        "title": "Alfajor de Chocolate relleno de Dulce de Leche y Nuez",
+        "price": 19.99,
+        "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate.",
+        "category": "masdulces",
+        "image": "/images/alfajornegro.png"
+        },
+    {
+        "id": 7,
+        "title": "Budín de Mandarina, Limón y Semillitas de Amapola",
+        "price": 17000,
+        "description": "Una mezcla suave de jugo de limón con una variedad de arándanos, frutillas, moras y frambuesas. Cobertura de glasé cítrico y, ¡un touch del ingrediente secreto de Alice! Piacere!! Pesa casi un kilo. Salen 12 porciones aproximadamente.",
         "category": "budines",
         "image": "/images/budinlimon.png"
     },
     {
-        "id": 3,
+        "id": 8,
+        "title": "Budín Marmolado",
+        "price": 18000,
+        "description": "Una mezcla suave de jugo de limón con una variedad de arándanos, frutillas, moras y frambuesas. Cobertura de glasé cítrico y, ¡un touch del ingrediente secreto de Alice! Piacere!! Pesa casi un kilo. Salen 12 porciones aproximadamente.",
+        "category": "budines",
+        "image": "/images/budinlimon.png"
+    },
+    {
+        "id": 9,
+        "title": "Budín Inglés (Con pasas negras, rubias y nueces)",
+        "price": 18500,
+        "description": "Una mezcla suave de jugo de limón con una variedad de arándanos, frutillas, moras y frambuesas. Cobertura de glasé cítrico y, ¡un touch del ingrediente secreto de Alice! Piacere!! Pesa casi un kilo. Salen 12 porciones aproximadamente.",
+        "category": "budines",
+        "image": "/images/budinlimon.png"
+    },
+    {
+        "id": 10,
+        "title": "Budín de Limón y Frutos Rojos",
+        "price": 18000,
+        "description": "Una mezcla suave de jugo de limón con una variedad de arándanos, frutillas, moras y frambuesas. Cobertura de glasé cítrico y, ¡un touch del ingrediente secreto de Alice! Piacere!!  Pesa casi un kilo. Salen 10 porciones aproximadamente.",
+        "category": "budines",
+        "image": "/images/budinlimon.png"
+    },
+    {
+        "id": 12,
+        "title": "Pastafrola de Membrillo",
+        "price": 22000,
+        "description": "Hecha con membrillo casero, manteca y huevos frescos. La clásica pastafrola argentina, con un toque especial de Alice. Pesa más de un kilo. Salen entre 12 y 15 porciones aproximadamente.",
+        "category": "budines",
+        "image": "/images/budinlimon.png"
+    },
+    {
+        "id": 13,
         "title": "Torta Selva Negra",
         "price": 12.99,
         "description": "Torta Selva Negra con crema chantilly y cerezas🍒. Todo con un delicioso almíbar al kirsch.",
@@ -24,7 +96,7 @@
         "image": "/images/selvanegra.png"
     },
     {
-        "id": 4,
+        "id": 14,
         "title": "Torta Apple Crumble",
         "price": 12.99,
         "description": "¿Sabían que esta delicia fue un invento por necesidad en la Segunda Guerra Mundial? Efectivamente, como había racionalización y debían usar la fruta madura, crearon este increíble postre. Pocos ingredientes, gran sabor. El Apple Crumble de Alice respeta la receta original, pero con una deliciosa base que acompaña la dulzura y la acidez de la manzana por igual.",
