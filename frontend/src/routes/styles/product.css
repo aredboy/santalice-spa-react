@@ -26,6 +26,7 @@
 /* imagen/media en móvil: ocupan todo el ancho */
 .product-media {
   /* width: 100%; */
+  position: relative;
   max-width: 750px;
   /* box-sizing: border-box; */
   flex: 0 0 auto;
@@ -45,6 +46,41 @@
   /* border-radius: 16px; */
   display: block;
   aspect-ratio: 1/1;
+}
+
+/* arrow buttons placed inside the image */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none; 
+  border: none;
+  width: 44px;    /* click target size */
+  height: 44px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.product-media .carousel-arrow.left  { left: 10px;  } /* left arrow 10px from left */
+.product-media .carousel-arrow.right { right: 10px; } /* right arrow 10px from right */
+
+.carousel-arrow.left {
+  background-image: url('/icons/arrowleft.png');
+}
+.carousel-arrow.right {
+  background-image: url('/icons/arrowright.png');
+}
+
+/* hover state (swap to 2x or to a darker circle) */
+.carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.03);
+}
+.carousel-arrow:active {
+  background-color: none;
 }
 
 /* info: debajo en móvil */
@@ -88,7 +124,7 @@
 }
 
 .product-actions-2 {
-  padding-top: 5rem;
+  padding-top: 4rem;
   align-self: center;
 }
 
@@ -172,14 +208,48 @@
     border-radius: 16px;
     display: block;
   }
+  .product-media .carousel-arrow.left  {
+    left:5%;  
+  }
+  .product-media .carousel-arrow.right { 
+    right:5%; 
+    /* margin-top: 50%; */
+  }
+  .product-actions-1 {
+    align-self: end;
+    padding-right: 0;
+    padding-top: 2rem;
+  }
   .product-actions-2 {
     padding-top: 11rem;
     align-self: start;
+    margin-left: -1rem;
   }
 }
 
 @media (min-width: 1250px) {
   .product-info {
     gap: 2.5rem; 
+    max-width: 550px;
+  }
+    .product-media .carousel-arrow.right { 
+    right:10%; 
+    /* margin-top: 50%; */
+  }
+}
+
+@media (min-width: 1350px) {
+  .product-media .carousel-arrow.right { 
+    right:15%; 
+  }
+}
+@media (min-width: 1450px) {
+  .product-media .carousel-arrow.right { 
+    right:20%; 
+  }
+}
+@media (min-width: 1540px) {
+  .product-media .carousel-arrow.right { 
+    right:30%; 
   }
 }
