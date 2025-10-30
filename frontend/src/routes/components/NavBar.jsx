@@ -45,8 +45,8 @@ export const NavBar = () => {
                     </NavLink>
                     }
                 >
-                    <NavLink to="/products/budines" className="portal-dropdown-item" >BUDINES</NavLink>
                     <NavLink to="/products/tortas" className="portal-dropdown-item" >TORTAS</NavLink>
+                    <NavLink to="/products/budines" className="portal-dropdown-item" >BUDINES</NavLink>
                     <NavLink to="/products/masdulces" className="portal-dropdown-item" >MÁS DULCES</NavLink>
                 </Dropdown>
             </li>

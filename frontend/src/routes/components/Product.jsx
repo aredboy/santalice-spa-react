@@ -117,6 +117,8 @@ export function Product() {
           <div className="product-actions-1">
             <button className="btn-add-to-cart" onClick={handleAdd}>Agregar al carrito</button>
           </div>
+        </div>
+      </div>
           <div className="product-actions-2">
             <Link
               to={categorySlug ? `/products/${categorySlug}` : '/products'}
@@ -125,8 +127,6 @@ export function Product() {
               ← Volver
             </Link>
           </div>
-        </div>
-      </div>
     </main>
   );
 }
