@@ -313,7 +313,7 @@ a.myorder {
     font-size: 1.1rem !important;
     font-style: normal !important;
     font-weight: 800 !important;
-    margin: 7px 7px 0 0 !important;
+    margin: 17px 27px 0 0 !important;
     height: auto !important;
 }
 
@@ -328,7 +328,7 @@ a.myorder {
       width: 3em;
     }
     .css-2ao5rv-MuiBadge-badge {
-        margin: 12px 12px 0 0 !important;
+        margin: 17px 27px 0 0 !important;
     }
 }
 @media (max-width: 1300px) {
@@ -549,5 +549,8 @@ a.myorder {
   .dropdown-backdrop.hidden {
     opacity: 0;
     pointer-events: none;
+  }
+    .css-2ao5rv-MuiBadge-badge {
+    margin: 19px 27px 0 0 !important;
   }
 }

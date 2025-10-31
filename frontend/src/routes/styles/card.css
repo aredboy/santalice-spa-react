@@ -4,7 +4,7 @@
   box-sizing: border-box;
   display: grid;
   flex: 1;
-  grid-template-columns: minmax(230px, 200px) 1fr; /* wider image column */
+  grid-template-columns: minmax(220px, 250px) 1fr; /* wider image column */
   gap: 1rem;
   border: none;
   background-color: #f9f8f8;
@@ -14,6 +14,7 @@
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  max-width: 800px;
   height: auto;
   min-height: 180px;
   overflow: visible;
@@ -79,13 +80,14 @@
 
 .product-title-link {
   padding-top: 10px;
+  border-radius: 16px;
   text-decoration: none;
+  grid-area: title;
 }
 
 .product-card .product-title {
-  grid-area: title;
   color: #4c5b61;
-  margin: 10px 0 0 0 !important;
+  margin: 10px 0 0 12px !important;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
@@ -102,24 +104,69 @@
 .price-container{
   grid-area: price;
   overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 1rem !important;
 }
 .product-card .product-price {
-  margin: 0;
-  padding: 29px 0 0 5px;
+  margin: 0 0 8px 0 !important;
+  padding: 19px 0 0 15px;
   font-style: normal;
   color: #4c5b61;
   font-weight: 500;
   font-size: 1.2rem;
   align-self: end;
   justify-self: start;
+  white-space: nowrap;
 }
-
-.img-add {
+.btn-add {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  grid-area: add;
+  border: none !important;
+  padding: 0 8px 0 18px;
+  margin: 0 0.6rem 0 0 !important;
+  border-radius: 16px;
   cursor: pointer;
-  width: 3.5rem !important;
+  align-self: end;
+  justify-self: end;
+  font-size: 1.2rem;
+  /* background: none; */
+  color: #f9f8f8 !important;
+  background-color: transparent !important;
+}
+.btn-span {
+  display: none;
+  padding: 0;
+  padding-top: 20px !important;
+  margin-bottom: -28px !important;
+  color: white !important;
+  justify-self: center;
+  align-self: center ;
+  background-color: transparent !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  white-space: nowrap;
+}
+.img-add-picture { 
+  display: inline-block;
+  vertical-align: middle; 
+  padding: 0 0 5px 0;
+  background: transparent;
+}
+.img-add {
+  /* display: none; */
+  cursor: pointer;
+  margin: .5rem 0 0 0 !important;
+  width: 2.8rem !important;
+  height: 2.8rem !important;
+  background-color: transparent !important;
+  border-radius: 16px;
+  /* padding: 0.1rem .2rem .1rem .2rem !important; */
+
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .product-card {
     grid-template-columns: 1fr; /* single column on small screens */
     grid-template-rows: auto auto; /* two rows */
@@ -130,7 +177,7 @@
 
 @media (min-width: 1200px) {
   .product-card {
-    grid-template-columns: 250px 1fr !important; 
+    grid-template-columns:250px 1fr !important; 
     min-height: 220px !important;
   }
   .product-card .img-container {
@@ -178,6 +225,7 @@
     -webkit-line-clamp: 3;
     overflow: hidden;
     color: #4c5b61;
+    background: transparent;
     font-size: 1.2rem;
     line-height: 1.4;
     padding: 0.7rem 0.5rem 0 0.1rem;
@@ -187,26 +235,38 @@
   .product-card .product-price {
     /* padding-top: 28px !important; */
     grid-area: price;
-    padding: 2.5rem 0 0 0;
+    padding: 19px 0 0 0;
     font-size: 1.3rem !important;
   }
   .product-card .btn-add {
+    display: inline-flex !important;
     grid-area: add;
+    /* height: inline-flex !important; */
+    max-height: 62px !important;
+    padding: 0 0 0px 12px;
+    margin: 0 .5rem .6rem 0 !important;
+    background-color: #2dbcc1 !important;
+  }
+  .btn-span {
+    display: block !important;
+    padding: 0;
+    margin-bottom: -16px !important;
+    color: white !important;
+    justify-self: center;
+    align-self: center ;
+    background-color: transparent !important;
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
+    white-space: nowrap;
   }
   .img-add{
-    width: 3.5rem !important;
+    width: 2.2em !important;
+    padding: 0 5px 0 0 !important;
+    background-color: #2dbcc1 !important;
   }
-
-}
-.product-card .btn-add {
-  grid-area: add;
-  border: none !important;
-  padding: 18px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-  align-self: end;
-  justify-self: end;
-  background: none;
+  .img-add-picture {
+    padding: 0 0 5px 0;
+  }
 }
 
 .img-add:active {

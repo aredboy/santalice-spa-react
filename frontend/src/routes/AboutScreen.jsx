@@ -88,8 +88,8 @@ export function AboutScreen({
               <p className="lead">She believes that cooking is a conversation — with the ingredients, the season, and the people we share the table with. Each plate tells a short story, and every menu is a new chapter.</p>
 
               <div className="cta-row">
-                <button className="btn primary">Book a tasting</button>
-                <button className="btn outline">View menu</button>
+                <button className="btn primary">Agendá un pedido</button>
+                <button className="btn outline">Conocé el menú</button>
               </div>
             </div>
           </div>

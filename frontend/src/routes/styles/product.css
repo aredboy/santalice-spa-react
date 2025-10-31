@@ -146,8 +146,9 @@
   border-radius: 16px;
   height: 31px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-  color: white;
-  background: hsl(197, 12%, 40%);
+  border: 1px solid hsl(197, 12%, 40%);
+  color: hsl(197, 12%, 40%);
+  background: transparent;
   text-decoration: none;
   font-weight: 500;
   font-size: 24px;
@@ -156,8 +157,8 @@
   padding: 1rem 1.8rem;
 }
 .btn-back:hover {
+  color: #f8f8f8 !important;
   background: hsl(197, 12%, 44%);
-  
 }
 
 @media (max-width: 425px) {

@@ -1,4 +1,5 @@
-import btnAdd from "../../assets/bag1.png"
+import btnAddLarge from "../../assets/bag3.png"
+import btnAddSmall from "../../assets/bag1.png"
 import { Link } from "react-router-dom"
 import '../styles/card.css'
 
@@ -23,12 +24,17 @@ export const Card = ({image, title, price, id, handleAdd, description}) => {
           <p className="product-price">Precio: ${price}</p>
           </div>
           <button 
-          type="button"
-          className="btn-add"
-          onClick={clickAdd}
-          aria-label={`Agregar ${title}`}
+            type="button"
+            className="btn-add"
+            onClick={clickAdd}
+            aria-label={`Agregar ${title}`}
           >
-          <img className="img-add" src={btnAdd} alt="Agregar al Carrito" />
+            <span className="btn-span">Añadir al Pedido</span>
+            <picture className="img-add-picture" aria-hidden="true">
+
+              <source media="(min-width: 1200px)" srcSet={btnAddLarge} />
+              <img src={btnAddSmall} alt="Agregar al Carrito" className="img-add" />
+            </picture>
           </button>
         </div>
     </article>
