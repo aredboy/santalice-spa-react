@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom"
 import { Badge } from "@mui/material"
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { CartContext } from "../context/CartContext"
 import  Dropdown  from "./Dropdown"
 import cartIcon from "../../assets/bag1.png"
@@ -13,31 +13,61 @@ export const NavBar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false)
 
-    const toggleMenu = () => setMenuOpen((s) => !s)
+      // track whether viewport is "mobile" (< 992px)
+    const [isMobile, setIsMobile] = useState(
+        typeof window !== "undefined" ? window.innerWidth < 768 : false
+    );
+
+    useEffect(() => {
+        function handleResize() {
+        const mobile = window.innerWidth < 768;
+        setIsMobile(mobile);
+        // if switching to desktop, ensure menu is closed
+        if (!mobile && menuOpen) setMenuOpen(false);
+        }
+        window.addEventListener("resize", handleResize, { passive: true });
+        // run once in case initial render differs
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+    }, [menuOpen]);
+
+    const toggleMenu = () => {
+        // only toggle on mobile — desktop will be independent
+        if (isMobile) setMenuOpen((s) => !s);
+    };
+
     
     const closeMobile = () => setMenuOpen(false)
 
     return (
     <>
-    <nav className="app-navbar">
+    <nav className={`app-navbar ${menuOpen && isMobile ? "menu-open" : ""}`}>
         <div className="nav-top">
             <div className="nav-left">
                 <Link to='/' className="nav-logo" onClick={closeMobile}>
                     <img src={logoIcon} alt="logo" className="logo"/>
                 </Link>
             </div>
-            <button className="hamburger" onClick={toggleMenu}  aria-expanded={menuOpen}>
-                ☰{/* <span className="navbar-toggler-icon"></span> */}
-            </button>
+            <div className="nav-right">
+                <NavLink to='/cartpage' className="myorder nav-top-myorder" aria-label="Mi pedido">
+                    <span className="myorder-label">MI PEDIDO</span>
+                    <Badge badgeContent={cartCount} color="none" className="btn main-cart" type="button">
+                        <img src={cartIcon} alt="carrito" className="main-cart" />
+                    </Badge>
+                </NavLink>
+                <button className="hamburger" onClick={toggleMenu} aria-label="Toggle-menu" aria-expanded={isMobile ? menuOpen : false}>
+                    ☰{/* <span className="navbar-toggler-icon"></span> */}
+                </button>
+            </div>
         </div>
-        <ul className={`nav-links ${menuOpen ? 'open' : '' }`}>
+        <ul className={`nav-links ${menuOpen && isMobile ? 'open' : '' }`}>
             <li>
                 <NavLink to='/about' className="nav-link" onClick={closeMobile}>
                     SOBRE MÍ
                 </NavLink>
             </li>
 
-            <li className={`nav-item ${open ? "open" : ""}`}>
+            <li className='nav-item'>
                 <Dropdown 
                     label={
                     <NavLink to="/products" className="nav-link">

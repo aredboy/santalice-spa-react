@@ -247,6 +247,13 @@
     margin: 0 .5rem .6rem 0 !important;
     background-color: #2dbcc1 !important;
   }
+  .product-card .btn-add:hover {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  .product-card .btn-add:active {
+    transform: scale(0.97);
+    box-shadow: none;
+  }
   .btn-span {
     display: block !important;
     padding: 0;

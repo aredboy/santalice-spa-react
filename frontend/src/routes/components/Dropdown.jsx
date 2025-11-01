@@ -61,7 +61,7 @@ useEffect(() => {
   // media query watcher
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(min-width: 1200px)");
+    const mq = window.matchMedia("(min-width: 768px)");
     const sync = () => setIsDesktop(Boolean(mq.matches));
     sync();
     const listener = () => sync();
