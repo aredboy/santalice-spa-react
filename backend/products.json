@@ -51,7 +51,7 @@
         "id": 7,
         "title": "Tortitas de Lemon Pie",
         "price": 30000,
-        "description": "Pequeñas tortitas de Lemon Pie. Base de masa quebrada, relleno de crema de limón y merengue italiano. Cobertura de merengue italiano. Se venden por docena.",
+        "description": "Pequeñas tortitas de Lemon Pie. Base de masa quebrada, relleno de crema de limón y merengue italiano. Cobertura de merengue italiano. Box de 12 unidades.",
         "category": "tortas",
         "image": "/images/MiniLemonPies.png"
     },
@@ -59,7 +59,7 @@
         "id": 8,
         "title": "Tortitas de Apple Crumble",
         "price": 24000,
-        "description": "Pequeñas tortitas de Apple Crumble. Base de masa quebrada, relleno de manzana y crumble de manteca. Cobertura de crumble de manteca y almendras tostadas. Se venden por docena.",
+        "description": "Pequeñas tortitas de Apple Crumble. Base de masa quebrada, relleno de manzana y crumble de manteca. Cobertura de crumble de manteca y almendras tostadas. Box de 12 unidades.",
         "category": "tortas",
         "image": "/images/miniapplecrumble.jpg"
     },
@@ -110,7 +110,7 @@
         "id": 14,
         "title": "Cinnamon Rolls con Frosting",
         "price": 26000,
-        "description": "Cinnamon Rolls con frosting de queso crema, manteca, vainilla y azúcar impalpable. Se venden por 15 unidades.",
+        "description": "Cinnamon Rolls con frosting de queso crema, manteca, vainilla y azúcar impalpable. Bandeja de 15 unidades.",
         "category": "masdulces",
         "image": "/images/cinnamonrolls.jpg"
     },
@@ -118,7 +118,7 @@
         "id": 15,
         "title": "Alfajorcitos Chicos de Chocolate rellenos de Dulce de Leche y Nuez",
         "price": 12800,
-        "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate. Se venden por docena.",
+        "description": "Alfajorcitos con corazón de nuez envueltos en rico dulce de leche con cobertura de chocolate. Box de 12 unidades.",
         "category": "masdulces",
         "image": "/images/alfajornegro.png"
     },
@@ -126,7 +126,7 @@
         "id": 16,
         "title": "Alfajorcitos Chicos de Chocolate rellenos con Ganache de Chocolate al Café",
         "price": 12800,
-        "description": "Alfajorcitos rellenos con Ganache de chocolate al café y cubiertos de chocolate. Se venden por docena.",
+        "description": "Alfajorcitos rellenos con Ganache de chocolate al café y cubiertos de chocolate. Box de 12 unidades.",
         "category": "masdulces",
         "image": "/images/alfajornegro.png"
     },
@@ -150,7 +150,7 @@
         "id": 19,
         "title": "Alfajorcito Chico de Maizena relleno de Dulce de Leche cubierto con Ralladura de Coco",
         "price": 4900,
-        "description": "Alfajorcitos chicos de maizena con relleno de dulce de leche y cobertura de coco rallado. 3cm de diámetro aproximado. Se vende por docena.",
+        "description": "Alfajorcitos chicos de maizena con relleno de dulce de leche y cobertura de coco rallado. 3cm de diámetro aproximado. Box de 12 unidades.",
         "category": "masdulces",
         "image": "/images/alfajornegro.png"
     },
@@ -158,7 +158,7 @@
         "id": 20,
         "title": "Alfajor Grande de Maizena",
         "price": 7700,
-        "description": "Alfajores de maizena con relleno de dulce de leche y cobertura de coco rallado. 4cm de diámetro aproximado. Se vende por docena.",
+        "description": "Alfajores de maizena con relleno de dulce de leche y cobertura de coco rallado. 4cm de diámetro aproximado. Box de 12 unidades.",
         "category": "masdulces",
         "image": "/images/alfajornegro.png"
     }
