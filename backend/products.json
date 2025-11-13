@@ -45,7 +45,7 @@
         "price": 32000,
         "description": "Bizcochuelo de vainilla relleno con duraznos en almíbar, crema chantilly y merengue. Cobertura de chantilly y merengue.",
         "category": "tortas",
-        "image": "/images/applecrumple.png"
+        "image": "/images/tortasantaelivia.jpg"
     },
     {
         "id": 7,
@@ -53,7 +53,10 @@
         "price": 30000,
         "description": "Pequeñas tortitas de Lemon Pie. Base de masa quebrada, relleno de crema de limón y merengue italiano. Cobertura de merengue italiano. Box de 12 unidades.",
         "category": "tortas",
-        "image": "/images/MiniLemonPies.png"
+        "image": [
+            "/images/MiniLemonPies.png",
+            "/images/MiniLemonPies1.jpg"
+        ]
     },
     {
         "id": 8,
@@ -77,7 +80,10 @@
         "price": 17000,
         "description": "Una mezcla suave de jugo de limón con una variedad de arándanos, frutillas, moras y frambuesas. Cobertura de glasé cítrico y, ¡un touch del ingrediente secreto de Alice! Piacere!! Pesa casi un kilo. Salen 12 porciones aproximadamente.",
         "category": "budines",
-        "image": "/images/budinlimon.png"
+        "image": [
+            "/images/budinmandarina.jpg",
+            "/images/budinmandarina1.jpg"
+        ]
     },
     {
         "id": 11,
@@ -85,7 +91,10 @@
         "price": 18000,
         "description": "Una mezcla suave de jugo de limón con una variedad de arándanos, frutillas, moras y frambuesas. Cobertura de glasé cítrico y, ¡un touch del ingrediente secreto de Alice! Piacere!! Pesa casi un kilo. Salen 12 porciones aproximadamente.",
         "category": "budines",
-        "image": "/images/budinmarmolado.png"
+        "image": [
+            "/images/budinmarmolado.png",
+            "/images/budinmarmolado1.jpg"
+        ]
     },
     {
         "id": 12,
@@ -136,7 +145,10 @@
         "price": 4000,
         "description": "Alfajor de Chocolate relleno con Ganache de Chocolate al Café, Dulce de Leche o Dulce de Leche al Cognac. Con 6cm de diámetro aproximado. Se vende por unidad.",
         "category": "masdulces",
-        "image": "/images/alfajornegro.png"
+        "image": [
+            "/images/alfajornegro.png",
+            "/images/alfajornegro1.jpg"
+        ]
         },
     {
         "id": 18,
