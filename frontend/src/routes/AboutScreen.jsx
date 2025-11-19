@@ -3,8 +3,9 @@
 //     <div>AboutScreen</div>
 //   )
 // }
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import SplitMaskedText from "./components/SplitMaskedText";
 import './styles/about.css'
 
 // AboutChef.jsx
@@ -19,7 +20,6 @@ export function AboutScreen({
   imageSrc = "images/ali.png",
   name = "Chef Alicia Della Siega",
   role = "Head Chef & Dueña",
-  bio = `Mariana brings 20 years of artisanal baking and home-cooking experience to the table. She blends traditional techniques with playful, seasonal flavors — always sourcing locally and cooking with heart. Her signature is simple: honest ingredients, confident hands, and an eye for beauty.`,
 }) {
   // Parallax tilt for image on pointer move (desktop)
   const x = useMotionValue(0);
@@ -28,6 +28,7 @@ export function AboutScreen({
   const rotateY = useTransform(x, [-40, 40], [-8, 8]);
   const imgRef = useRef(null);
   const wrapRef = useRef(null);
+  const splitRef = useRef(null);
 
   function handlePointer(e) {
     const rect = imgRef.current?.getBoundingClientRect();
@@ -83,9 +84,25 @@ export function AboutScreen({
             </div>
 
             <div className="bio-block">
-              <p className="lead">{bio}</p>
 
-              <p className="lead">She believes that cooking is a conversation — with the ingredients, the season, and the people we share the table with. Each plate tells a short story, and every menu is a new chapter.</p>
+              <SplitMaskedText ref={splitRef} className="lead">
+                {`Soy Profesora de Lengua y Literatura y apasionada por la cocina.
+                Desde mi infancia me interesó todo lo que tuviera que ver con el ambiente culinario. Tuve muy
+                lindos modelos para seguir: mi mamá, la primera, que renegaba de la cocina pero que lo hacía
+                súper bien; y mi tía abuela, Eli, maestra absoluta. Sentía una gran curiosidad por saber cómo se
+                preparaban los alimentos y coleccionaba recetas de la revista Anteojito, en la que la querida
+                Blanca Cotta publicaba ¨Mis comiditas¨. Teníamos permiso para usar la cocina y practicar,
+                siempre con la debida supervisión. En esa época, ensayamos bizcochuelos, arrollados, tortas y
+                galletitas.
+                La cocina siempre es un acto de amor, es la forma de brindarse con el alma a nuestros seres
+                queridos. Nunca voy a olvidar las manos de la tía Eli al hacer la comida. Sólo con presionar un
+                trozo de pan casero para hacernos los sándwiches que nos encantaban, mostraba la magia que le
+                aportaba el cariño que nos tenía. A la hora de la siesta, con ella veíamos los programas de la
+                ecónoma Nilda de Siemienczuck, siempre con un cuadernito al lado para anotar las recetas.
+                Inolvidables su pastel de manzana americano y las deliciosas pastas caseras. Contenían el
+                ingrediente secreto, el que en este emprendimiento de Sant´Alice tratamos de poner en todo lo
+                que hacemos: mucho amor.`}
+              </SplitMaskedText>
 
               <div className="cta-row">
                 <button className="btn primary">Agendá un pedido</button>
