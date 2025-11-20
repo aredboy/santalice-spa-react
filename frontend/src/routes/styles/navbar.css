@@ -723,7 +723,7 @@ a.myorder {
   }
     .app-navbar .nav-links,
     .nav-links {
-      gap: 18px !important;
+      gap: 28px !important;
   }
   .nav-link {
     font-size: 24px !important;

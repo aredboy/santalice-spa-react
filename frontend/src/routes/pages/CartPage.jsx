@@ -11,8 +11,16 @@ export const CartPage = () => {
     return shopList.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
   }
 
-  const handlePrint = () => {
-    print()
+  const handlePurchase = () => {
+    const phoneNumber = "5491161377819";
+    let message = "¡Hola! Me gustaría hacer el siguiente pedido:\n\n";
+    shopList.forEach(item => {
+      const subtotal = (item.price * item.quantity).toFixed(2);
+      message += `- ${item.title} (Cantidad: ${item.quantity}) - Subtotal: $${subtotal}\n`;
+    })
+    message += `\nTotal a pagar: $${calculateTotal()}\n\nGracias!`;
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
   }
 
   return (
@@ -69,7 +77,7 @@ export const CartPage = () => {
     <div className="d-grid gap-2 col-6 mx-auto mb-5">
       <button 
       className="btn-buy"
-      onClick={handlePrint}
+      onClick={handlePurchase}
       disabled={shopList < 1}
       >Comprar</button>
     </div>

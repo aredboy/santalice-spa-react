@@ -1,9 +1,9 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Card } from "../components/Card"
 import { ProductsContext } from "../context/ProductsContext"
 import { CartContext } from "../context/CartContext"
 import { useParams } from "react-router-dom"
-import whatsapp from "../../assets/whatsapp.png"
+import whatsapp from "../../assets/whatsapp_edited.png"
 import '../styles/shop.css'
 
 export const ShoppingPage = () => {
@@ -13,6 +13,9 @@ export const ShoppingPage = () => {
   const { products } = useContext(ProductsContext)
 
   const { addItem, eliminateItem } = useContext(CartContext)
+
+  const DEFAULT_BOTTOM = 20
+  const [bottomOffset, setBottomOffset] = useState(DEFAULT_BOTTOM)
 
   const filteredProducts = category
     ? products.filter(product => product.category.toLowerCase() === category.toLowerCase())
@@ -30,6 +33,36 @@ export const ShoppingPage = () => {
     const normalized = s.replace(/[-_]+/g, ' '); // optional
     return normalized.charAt(0).toUpperCase() + normalized.slice(1).toLowerCase();
   }
+
+  // 2. The Magic Scroll Logic
+  useEffect(() => {
+    const handleScroll = () => {
+      // Select your footer element. 
+      // If your footer has a class, use querySelector('.footer-class')
+      const footer = document.querySelector('.custom-footer'); 
+      
+      if (!footer) return;
+
+      const footerRect = footer.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Check if the top of the footer is visible in the viewport
+      if (footerRect.top < windowHeight) {
+        // Calculate how much of the footer is visible
+        const overlap = windowHeight - footerRect.top;
+        // Set bottom to (Default 40px) + (Amount of footer visible) + (Buffer 10px)
+        setBottomOffset(40 + overlap + 10); 
+      } else {
+        // Reset to default if footer is not visible
+        setBottomOffset(40);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup listener on unmount
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const phoneNumber = '5491161377819';
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
@@ -70,6 +103,7 @@ export const ShoppingPage = () => {
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
+        style={{ bottom: `${bottomOffset}px` }}
       >
         {/* If you have react-icons installed, use <FaWhatsapp /> here. 
             If not, use an img tag like below: */}

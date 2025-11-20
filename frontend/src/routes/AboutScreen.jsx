@@ -1,20 +1,7 @@
-// export const AboutScreen = () => {
-//   return (
-//     <div>AboutScreen</div>
-//   )
-// }
 import { useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import SplitMaskedText from "./components/SplitMaskedText";
 import './styles/about.css'
-
-// AboutChef.jsx
-// Mobile-first, responsive "About me" / chef profile component
-// Design tokens from your brief:
-//   background: #f9f8f8
-//   text: #4c5b61
-//   accent: #2dbcc1
-// Font: EB Garamond (import recommended in your index.html or global CSS)
 
 export function AboutScreen({
   imageSrc = "images/ali.png",

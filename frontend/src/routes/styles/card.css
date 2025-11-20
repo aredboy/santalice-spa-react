@@ -241,6 +241,9 @@
   .product-card .btn-add {
     display: inline-flex !important;
     grid-area: add;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s;
     /* height: inline-flex !important; */
     max-height: 62px !important;
     padding: 0 0 0px 12px;
@@ -253,6 +256,32 @@
   .product-card .btn-add:active {
     transform: scale(0.97);
     box-shadow: none;
+  }
+  /* 2. The Shine Element (The Flash) */
+.btn-shine-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%; /* The width of the light beam */
+    height: 100%;
+    
+    /* The "Light" Gradient */
+    background: linear-gradient(
+      to right, 
+      rgba(255, 255, 255, 0) 0%, 
+      rgba(255, 255, 255, 0.4) 20%, 
+      rgba(255, 255, 255, 1) 50%, 
+      rgba(255, 255, 255, 0.4) 80%, 
+      rgba(255, 255, 255, 0) 100%
+    );
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    /* Skew it for a dynamic diagonal look */
+    /* transform: skewX(-25deg) translateX(-150%);  */
+    mix-blend-mode: overlay;
+    /* Ensure it doesn't block clicks or sit on top of text */
+    z-index: 1; 
+    pointer-events: none;
+    opacity: 0;
   }
   .btn-span {
     display: block !important;
