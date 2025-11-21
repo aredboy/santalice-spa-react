@@ -1,5 +1,6 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { CartContext } from "../context/CartContext"
+import { AddressModal } from "../components/AddressModal"
 import trashIcon from "../../assets/trash.png"
 import '../styles/cart.css'
 
@@ -7,24 +8,41 @@ export const CartPage = () => {
 
   const {shopList, increaseQuantity, decreaseQuantity, eliminateItem} = useContext(CartContext)
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const calculateTotal = () => {
     return shopList.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
   }
 
-  const handlePurchase = () => {
+  const handlePurchase = (deliveryData) => {
     const phoneNumber = "5491161377819";
-    let message = "¡Hola! Me gustaría hacer el siguiente pedido:\n\n";
+    let message = `¡Hola! Soy ${deliveryData.name}. Me gustaría connfirmar el siguiente pedido:\n\n`;
     shopList.forEach(item => {
       const subtotal = (item.price * item.quantity).toFixed(2);
       message += `- ${item.title} (Cantidad: ${item.quantity}) - Subtotal: $${subtotal}\n`;
     })
-    message += `\nTotal a pagar: $${calculateTotal()}\n\nGracias!`;
+    message += `\nTotal sin envío: $${calculateTotal()}\n\nGracias!`;
+    message += `--------------------------\n`;
+    if (deliveryData.type === "pickup") {
+      message += `Tipo de entrega: *Retiro en local*.\n`;
+      message += `(Coordiná la dirección y el horario de retiro con nuestro representante.)\n`;
+    } else {
+      message += `Tipo de entrega: *Envío a domicilio*.\n`;
+      message += `Dirección: ${deliveryData.address}, ${deliveryData.city}.\n`;
+      message += `Teléfono de contacto: ${deliveryData.phone}.\n`;
+    }
+    
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
   }
 
   return (
     <>
+    <AddressModal
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      onConfirm={handlePurchase}
+    />
     <h4></h4>
     <table className="table-cart">
       <thead>
@@ -77,8 +95,8 @@ export const CartPage = () => {
     <div className="d-grid gap-2 col-6 mx-auto mb-5">
       <button 
       className="btn-buy"
-      onClick={handlePurchase}
-      disabled={shopList < 1}
+      onClick={() => setIsModalOpen(true)}
+      disabled={shopList.length < 1}
       >Comprar</button>
     </div>
     </>
