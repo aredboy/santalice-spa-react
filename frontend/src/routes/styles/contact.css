@@ -70,14 +70,15 @@ textarea:focus {
 }
 
 .error {
-  color: #b32a2a;
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
-  display: block;
+    color: #b32a2a;
+    font-size: 1rem;
+    margin-top: 0.25rem !important;
+    margin-left: .25rem !important;
+    display: block;
 }
 
 .actions {
-  margin-top: 0.75rem;
+  margin-top: 0.75rem !important;
   display: flex;
   gap: 0.5rem;
   align-items: center;

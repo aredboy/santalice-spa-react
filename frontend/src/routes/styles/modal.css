@@ -84,7 +84,9 @@
     font-size: 0.9rem;
     font-weight: bold;
 }
-input[type="text"]{
+input[type="text"],
+input[type="tel"]
+{
     width: 100%;
     padding: 0.55rem 0.75rem;
     border-radius: 16px;
@@ -102,12 +104,20 @@ input:focus {
     border-color: #2dbcc1;
     box-shadow: 0 4px 14px rgba(45,188,193,0.08);
 }
+.error-msg {
+    color: #b32a2a;
+    font-size: 1rem;
+    margin-top: 0.25rem !important;
+    margin-left: .25rem !important;
+    display: block;
+}
+
 .pickup-info {
     background: #f9f9f9;
     padding: 15px;
     border-radius: 6px;
     margin-bottom: 20px;
-    font-size: 0.9rem;
+    font-size: 20px;
 }
 
 .btn-confirm-modal {

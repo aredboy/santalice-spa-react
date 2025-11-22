@@ -82,3 +82,7 @@ a.nav-logo {
 .link {
     width: 1.7rem;
 }
+
+h5 {
+    font-size: 24px !important;
+}

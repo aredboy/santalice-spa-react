@@ -9,7 +9,7 @@ body {
   display: table !important;
   table-layout: auto !important;
   width: 100% !important;
-  margin: 0 !important;
+  margin: 2.5rem 0 !important;
   height: auto !important;
   border-collapse: collapse;
   background: white;
@@ -20,7 +20,7 @@ body {
 
 @media (min-width: 992px) {
   .table-cart{
-    margin: 10px auto !important;
+    margin: 2.5rem 10px auto !important;
 
   }
 }
@@ -140,7 +140,7 @@ button {
 .gap-2.col-6.mx-auto.mb-5 {
     display: block;
     justify-self: center;
-    margin: 1rem 0 !important;
+    margin: 2.5rem 0 !important;
 }
 
 .table-row-total {

@@ -94,10 +94,12 @@ export const CartPage = () => {
     </table>
     <div className="d-grid gap-2 col-6 mx-auto mb-5">
       <button 
-      className="btn-buy"
-      onClick={() => setIsModalOpen(true)}
-      disabled={shopList.length < 1}
-      >Comprar</button>
+        className="btn-buy"
+        onClick={() => setIsModalOpen(true)}
+        disabled={shopList.length < 1}
+      >
+        Comprar
+      </button>
     </div>
     </>
   )

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { NavLink } from "react-router-dom"
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import SplitMaskedText from "./components/SplitMaskedText";
 import './styles/about.css'
@@ -92,8 +93,15 @@ export function AboutScreen({
               </SplitMaskedText>
 
               <div className="cta-row">
-                <button className="btn primary">Agendá un pedido</button>
-                <button className="btn outline">Conocé el menú</button>
+                <button 
+                  className="btn primary"
+                  
+                >
+                    Agendá un pedido
+                </button>
+                    <NavLink to="/products" className="nav-link">
+                      <button className="btn outline" >Conocé el menú</button>
+                    </NavLink>
               </div>
             </div>
           </div>
