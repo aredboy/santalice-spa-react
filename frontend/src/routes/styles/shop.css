@@ -77,3 +77,39 @@ hr {
     transform: scale(1.005); /* Slight zoom on hover */
     background-color: none;
 }
+
+.order-float {
+    position: fixed;
+    /* Allows the width to grow with the text */
+    width: auto; 
+    height: auto;
+    right: 15px;
+    
+    /* VISIBLE Colors */
+    background-color: #000; /* Black background */
+    color: #fff;            /* White text */
+    
+    /* Pill Shape */
+    border-radius: 50px;
+    padding: 12px 25px;     /* Comfortable padding around text */
+    
+    /* Text Styling */
+    text-align: center;
+    font-size: 16px;        /* Readable text size */
+    font-weight: bold;
+    text-decoration: none;  /* Removes the underline from the Link */
+    
+    /* Layering and Animation */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Nice shadow */
+    transition: bottom 0.1s ease-out, transform 0.2s ease-in-out;
+}
+
+.order-float:hover {
+    transform: scale(1.05);
+    background-color: #333; /* Dark grey on hover */
+    color: #fff;
+}

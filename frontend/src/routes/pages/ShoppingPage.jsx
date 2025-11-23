@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react"
 import { Card } from "../components/Card"
 import { ProductsContext } from "../context/ProductsContext"
 import { CartContext } from "../context/CartContext"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import whatsapp from "../../assets/whatsapp_edited.png"
 import '../styles/shop.css'
 
@@ -11,8 +11,7 @@ export const ShoppingPage = () => {
   const { category } = useParams()
 
   const { products } = useContext(ProductsContext)
-
-  const { addItem, eliminateItem } = useContext(CartContext)
+  const { addItem, eliminateItem, appointment } = useContext(CartContext)
 
   const DEFAULT_BOTTOM = 20
   const [bottomOffset, setBottomOffset] = useState(DEFAULT_BOTTOM)
@@ -98,21 +97,37 @@ export const ShoppingPage = () => {
           )}
         </div>
       </div>
-      <a 
-        href={whatsappUrl}
-        className="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ bottom: `${bottomOffset}px` }}
-      >
-        {/* If you have react-icons installed, use <FaWhatsapp /> here. 
-            If not, use an img tag like below: */}
-        <img 
-            src={whatsapp}
-            alt="WhatsApp" 
-            style={{width: '100%', height: '100%', background: 'transparent'}}
-        />
-      </a>
+      {appointment ? (
+        <Link 
+          to="/cartpage" 
+          className="order-float" 
+          style={{
+            background: '#000', 
+            textDecoration: 'none',
+            bottom: `${bottomOffset}px`
+            }}>
+          <span style={{
+            fontSize: '14px', 
+            fontWeight: 'bold'
+            }}>
+              Ira a tu Pedido
+          </span>
+        </Link>
+      ) : (
+        <a 
+          href={whatsappUrl}
+          className="whatsapp-float"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ bottom: `${bottomOffset}px` }}
+        >
+          <img 
+              src={whatsapp}
+              alt="WhatsApp" 
+              style={{width: '100%', height: '100%', background: 'transparent'}}
+          />
+        </a>
+      )}
     </>
   )
 }

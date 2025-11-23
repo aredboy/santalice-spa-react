@@ -13,6 +13,7 @@ import { Product } from "./routes/components/Product";
 import { ProductsProvider } from "./routes/context/ProductsProvider"
 import { CartProvider } from "./routes/context/CartProvider"
 import { Footer } from "./routes/components/Footer"
+// import { AppointmentModal } from "./routes/components/AppointmentModal"
 import './index.css';
 
 export const App = () => {

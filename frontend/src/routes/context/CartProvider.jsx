@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useReducer, useState } from 'react'
 import { CartContext } from './CartContext'
 
 const initialState = []
@@ -31,6 +31,8 @@ const initialState = []
 export const CartProvider = ({children}) => {
 
     const [shopList, dispatch] = useReducer(shopReducer, initialState)
+
+    const [appointment, setAppointment] = useState(null)
 
     const addItem = (shop) => {
         const exists = shopList.find(item => item.id === shop.id)
@@ -69,10 +71,18 @@ export const CartProvider = ({children}) => {
         dispatch(action)
     }
 
+    const scheduleOrder = (data) => {
+        setAppointment(data);
+    }
+
+    const clearAppointment = () => {
+        setAppointment(null);
+    }
+
     const cartCount = shopList.reduce((acc, item) => acc + item.quantity, 0)
 
   return (
-    <CartContext.Provider value={{shopList, cartCount, addItem, increaseQuantity, decreaseQuantity, eliminateItem}}>
+    <CartContext.Provider value={{shopList, cartCount, addItem, increaseQuantity, decreaseQuantity, eliminateItem, appointment, scheduleOrder, clearAppointment}}>
         {children}
     </CartContext.Provider>
   )

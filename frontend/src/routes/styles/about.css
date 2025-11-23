@@ -72,7 +72,7 @@
     display: block;
     object-fit: cover;
     border-radius: 50%;
-    border: 6px solid white;
+    border: 6px solid #8fc1c1;
     position: relative;
     /* z-index: 2;  */
     will-change: transform; 

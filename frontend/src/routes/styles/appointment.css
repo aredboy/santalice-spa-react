@@ -1,0 +1,113 @@
+.appointment-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+}
+.appointment-sheet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Takes up 85% of screen height */
+    background: white;
+    border-radius: 20px ;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.native-date-input {
+    width: 95%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    font-family: inherit;
+    margin-top: 5px;
+}
+.native-date-input:focus {
+    border-color: #000;
+    outline: none;
+    background-color: #fff;
+}
+.btn-proceed {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Form Styling */
+.form-row {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-row label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
+}
+.form-row input[type="text"],
+.form-row select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+/* Toggle Buttons (Radio) */
+.form-toggle {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+.form-toggle label {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+.form-toggle label.active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+.form-toggle input {
+    display: none;
+} /* Hide the actual radio circle */
+
+.btn-proceed {
+    width: 100%;
+    padding: 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}

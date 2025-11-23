@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { createPortal } from "react-dom";
+import { CartContext } from "../context/CartContext";
 import gsap from "gsap";
 import "../styles/modal.css";
 
@@ -12,6 +13,8 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
         city: "",
         phone: "",
     });
+
+    const { appointment } = useContext(CartContext);
 
     const modalRef = useRef(null);
     const overlayRef = useRef(null);
@@ -41,8 +44,23 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
         setErrors({});
     }, [tab])
 
+    // 2. Pre-fill logic using useEffect
+    useEffect(() => {
+        if (appointment && isOpen) {
+            setTab(appointment.type); // 'delivery' or 'pickup'
+            setFormData(prev => ({
+                ...prev,
+                name: appointment.name || "",
+                address: appointment.address || "",
+                // We keep city/phone empty to force verification, or add them if collected in calendar
+            }));
+        }
+    }, [appointment, isOpen]); // Run when modal opens or appointment changes
+
     if (!isOpen) return null;
 
+    const modalTitle = appointment ? "Verificá los datos del envío" : "¿Cómo entregamos tu pedido?";
+    
     // 2. Validation Logic (Adapted from ContactScreen)
     const validate = () => {
         const errs = {};
@@ -99,7 +117,7 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
         <div className="modal-overlay" ref={overlayRef}>
             <div className="modal-box" ref={modalRef}>
                 <div className="modal-header">
-                    <h3 className="modal-h3">¿Cómo entregamos tu pedido?</h3>
+                    <h3 className="modal-h3">{modalTitle}</h3>
                     <button className="modal-close-btn" onClick={onClose}>&times;</button>
                 </div>
                 

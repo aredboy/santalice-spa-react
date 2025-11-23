@@ -1,12 +1,14 @@
 import { useContext, useState } from "react"
 import { CartContext } from "../context/CartContext"
 import { AddressModal } from "../components/AddressModal"
+// import { format } from "date/fns"
+// import { es } from "date-fns/locale"
 import trashIcon from "../../assets/trash.png"
 import '../styles/cart.css'
 
 export const CartPage = () => {
 
-  const {shopList, increaseQuantity, decreaseQuantity, eliminateItem} = useContext(CartContext)
+  const {shopList, increaseQuantity, decreaseQuantity, eliminateItem, appointment} = useContext(CartContext)
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -16,6 +18,8 @@ export const CartPage = () => {
 
   const handlePurchase = (deliveryData) => {
     const phoneNumber = "5491161377819";
+
+
     let message = `¡Hola! Soy ${deliveryData.name}. Me gustaría connfirmar el siguiente pedido:\n\n`;
     shopList.forEach(item => {
       const subtotal = (item.price * item.quantity).toFixed(2);

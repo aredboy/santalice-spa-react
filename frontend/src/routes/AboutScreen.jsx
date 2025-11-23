@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom"
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { AppointmentModal } from "./components/AppointmentModal";
 import SplitMaskedText from "./components/SplitMaskedText";
 import './styles/about.css'
 
@@ -18,6 +19,8 @@ export function AboutScreen({
   const wrapRef = useRef(null);
   const splitRef = useRef(null);
 
+  const [showAppointment, setShowAppointment] = useState(false);
+
   function handlePointer(e) {
     const rect = imgRef.current?.getBoundingClientRect();
     if (!rect) return;
@@ -34,6 +37,10 @@ export function AboutScreen({
 
   return (
     <>
+    <AppointmentModal
+      isOpen={showAppointment}
+      onClose={()=> setShowAppointment(false)}
+    />
     <section
       aria-labelledby="about-chef-title"
       className="about-chef-root"
@@ -95,7 +102,7 @@ export function AboutScreen({
               <div className="cta-row">
                 <button 
                   className="btn primary"
-                  
+                  onClick={() => setShowAppointment(true)}
                 >
                     Agendá un pedido
                 </button>
