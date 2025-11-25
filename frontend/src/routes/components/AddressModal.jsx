@@ -51,7 +51,9 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
             setFormData(prev => ({
                 ...prev,
                 name: appointment.name || "",
+                phone: appointment.phone || "",
                 address: appointment.address || "",
+                city: appointment.city || "",
                 // We keep city/phone empty to force verification, or add them if collected in calendar
             }));
         }
@@ -153,10 +155,17 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
                     </div>
 
                     {tab === "pickup" ? (
+                    <>
                         <div className="pickup-info">
                             <p>📍 <b>Dirección del local:</b> A convenir con nuestro representante.</p>
                             <p>🕒 <b>Horarios:</b> A convenir.</p>
                         </div>
+                        <div className="form-group">
+                            <span className="label info-text">
+                                Los pedidos se confirman con el 50% de adelanto.
+                            </span><br />
+                        </div>
+                    </>
                     ) : (
                         <>
                             <div className="form-group">
@@ -203,9 +212,9 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
 
                             <div className="form-group">
                                 <span className="label info-text">
-                                    El costo del envío dependerá de la distancia y será informado una vez calculado.<br></br>
+                                    El costo y tiempo del envío dependerá de la distancia y será informado una vez calculado.<br></br>
                                     Los pedidos se confirman con el 50% de adelanto.
-                                </span>
+                                </span><br />
                             </div>
                         </>
                     )}

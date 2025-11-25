@@ -1,22 +1,30 @@
 .appointment-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 90%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 2000;
+    position: fixed !important;
+    /* inset: 0; */
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px); /* Nice blur effect */
+    z-index: 9999;
     opacity: 0;
     pointer-events: none;
+    box-sizing: border-box;
 }
 .appointment-sheet {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    margin: 0;
+    box-sizing: border-box;
     height: auto; /* Takes up 85% of screen height */
-    background: white;
-    border-radius: 20px ;
+    /* border-radius: 20px ; */
     padding: 20px;
     overflow-y: auto;
     box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2);
@@ -26,53 +34,47 @@
 }
 .calendar-container {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: start;
+    margin-bottom: 10px;
 }
-.native-date-input {
-    width: 95%;
-    padding: 15px;
-    font-size: 1.2rem;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-    font-family: inherit;
-    margin-top: 5px;
-}
-.native-date-input:focus {
-    border-color: #000;
-    outline: none;
-    background-color: #fff;
-}
-.btn-proceed {
-    width: 100%;
-    padding: 15px;
-    background: #000;
-    color: #fff;
-    border: none;
-    font-size: 1.1rem;
-    margin-top: 10px;
-    cursor: pointer;
-}
+
 
 /* Form Styling */
 .form-row {
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    margin: 1rem auto !important;
+    text-align: left;
+    color: #213638;
 }
 .form-row label {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #333;
+    display: block;
+    margin-bottom: 0.5rem !important;
+    padding-left: .4rem;
+    font-weight: 600;
+    color: #4c5b61;
+    font-size: 20px;
 }
 .form-row input[type="text"],
+.form-row input[type="tel"],
+.form-row input[type="date"],
 .form-row select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border-radius: 16px;
+    border: 1px solid #e3e3e3;
+    background: #fafafa;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #4c5b61;
+}
+.form-row input[type="text"]::placeholder,
+.form-row input[type="tel"]::placeholder,
+.form-row input[type="date"]::placeholder {
+    color: #999999; 
+}
+.form-row input:focus {
+    outline: none;
+    border-color: #2dbcc1;
+    box-shadow: 0 4px 14px rgba(45,188,193,0.08);
 }
 /* Toggle Buttons (Radio) */
 .form-toggle {
@@ -82,32 +84,39 @@
 }
 .form-toggle label {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    padding: .8rem 1.2rem;
+    border: 1px solid hsl(197, 12%, 40%);
+    border-radius: 16px;
     text-align: center;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 20px;
     transition: all 0.2s;
 }
 .form-toggle label.active {
-    background-color: #000;
+    background-color: #2dbcc1;
     color: #fff;
-    border-color: #000;
+    border-color: #2dbcc1;
 }
 .form-toggle input {
     display: none;
 } /* Hide the actual radio circle */
 
+.error-msg {
+    color: #b32a2a;
+    font-size: 1rem;
+    margin-top: 0.25rem !important;
+    margin-left: .45rem !important;
+    display: block;
+}
+
 .btn-proceed {
-    width: 100%;
-    padding: 16px;
-    background: #000;
-    color: #fff;
+background: #2dbcc1;
+    color: white;
     border: none;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    padding: 0.9rem 1.8rem 1rem 1.8rem !important;
+    border-radius: 16px;
     cursor: pointer;
-    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    transition: background 0.3s;
 }

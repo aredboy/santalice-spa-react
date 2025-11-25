@@ -83,15 +83,15 @@ hr {
     /* Allows the width to grow with the text */
     width: auto; 
     height: auto;
-    right: 15px;
+    right: 25px;
     
     /* VISIBLE Colors */
-    background-color: #000; /* Black background */
-    color: #fff;            /* White text */
+    background-color: #2dbcc1; /* Black background */
+    color: none;            /* White text */
     
     /* Pill Shape */
-    border-radius: 50px;
-    padding: 12px 25px;     /* Comfortable padding around text */
+    border-radius: 16px;
+    padding: 0 0 0 25px;     /* Comfortable padding around text */
     
     /* Text Styling */
     text-align: center;
@@ -107,9 +107,33 @@ hr {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Nice shadow */
     transition: bottom 0.1s ease-out, transform 0.2s ease-in-out;
 }
-
+.order-float span {
+    background: transparent;
+    color: #f9f8f8;
+    /* margin: 0 !important; */
+    font-size: 1.5rem;
+    font-weight: 400;
+}
 .order-float:hover {
     transform: scale(1.05);
     background-color: #333; /* Dark grey on hover */
     color: #fff;
+}
+.btn-2 {
+    border-radius: 16px;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    padding: 0.6rem 1.8rem 0 0 !important;
+}
+
+@media (min-width: 768px) {
+    .order-float {
+        padding: 0 12px 0 20px;
+    }
+    .btn-2 {
+        padding: .6rem .4rem 0 0 !important;
+    }
+    
 }

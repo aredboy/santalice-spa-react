@@ -110,6 +110,7 @@
         margin: 0 10px 27px 0 !important;
         background: none;
         border: none;
+        color: #4c5b61;
         font-size: 2rem;
         cursor: pointer;
         display: block;
@@ -153,7 +154,7 @@
       font-size: 22px !important;
     }
   .css-2ao5rv-MuiBadge-badge {
-    padding: 15px 28px 0 0 !important;
+    padding: 16px 21px 0 0 !important;
   }
 }
 
@@ -407,7 +408,7 @@ a.myorder {
   font-size: 1.1rem !important;
   font-style: normal !important;
   font-weight: 800 !important;
-  margin: 17px 27px 0 0 !important;
+  margin: 16px 21px 0 0 !important;
   height: auto !important;
 }
 
@@ -422,7 +423,7 @@ a.myorder {
       width: 2.5em;
     }
     .css-2ao5rv-MuiBadge-badge {
-        margin: 12px 27px 0 0 !important;
+        margin: 16px 21px 0 0 !important;
     }
 }
 @media (max-width: 1300px) {

@@ -1,9 +1,11 @@
 import { useContext, useState, useEffect } from "react"
 import { Card } from "../components/Card"
+import { Badge } from "@mui/material"
 import { ProductsContext } from "../context/ProductsContext"
 import { CartContext } from "../context/CartContext"
 import { useParams, Link } from "react-router-dom"
 import whatsapp from "../../assets/whatsapp_edited.png"
+import cartIcon from "../../assets/bag3.png"
 import '../styles/shop.css'
 
 export const ShoppingPage = () => {
@@ -11,7 +13,7 @@ export const ShoppingPage = () => {
   const { category } = useParams()
 
   const { products } = useContext(ProductsContext)
-  const { addItem, eliminateItem, appointment } = useContext(CartContext)
+  const { addItem, eliminateItem, appointment, cartCount } = useContext(CartContext)
 
   const DEFAULT_BOTTOM = 20
   const [bottomOffset, setBottomOffset] = useState(DEFAULT_BOTTOM)
@@ -102,16 +104,16 @@ export const ShoppingPage = () => {
           to="/cartpage" 
           className="order-float" 
           style={{
-            background: '#000', 
+            background: '#2dbcc1', 
             textDecoration: 'none',
             bottom: `${bottomOffset}px`
             }}>
-          <span style={{
-            fontSize: '14px', 
-            fontWeight: 'bold'
-            }}>
-              Ira a tu Pedido
+          <span>
+              Ir a tu Pedido
           </span>
+          <Badge badgeContent={cartCount} color="none" className="btn-2 main-cart" type="button">
+              <img src={cartIcon} alt="carrito" className="main-cart" />
+          </Badge>
         </Link>
       ) : (
         <a 
@@ -124,7 +126,11 @@ export const ShoppingPage = () => {
           <img 
               src={whatsapp}
               alt="WhatsApp" 
-              style={{width: '100%', height: '100%', background: 'transparent'}}
+              style={{
+                width: '100%', 
+                height: '100%', 
+                background: 'transparent'
+              }}
           />
         </a>
       )}

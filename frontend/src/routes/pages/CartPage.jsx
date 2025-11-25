@@ -1,8 +1,6 @@
 import { useContext, useState } from "react"
 import { CartContext } from "../context/CartContext"
 import { AddressModal } from "../components/AddressModal"
-// import { format } from "date/fns"
-// import { es } from "date-fns/locale"
 import trashIcon from "../../assets/trash.png"
 import '../styles/cart.css'
 
@@ -18,9 +16,25 @@ export const CartPage = () => {
 
   const handlePurchase = (deliveryData) => {
     const phoneNumber = "5491161377819";
+    let message = "";
 
+    if (appointment) {
+      const dateObj = new Date(appointment.date);
+      const dateString = dateObj.toLocaleDateString('es-AR', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long'
+      })
+      message = `¡Hola! Soy ${deliveryData.name}.\n`; 
+      message = `Me gustaría agendar un pedido para el ${dateString}.\n`;
+      message = `Tipo de evento: ${appointment.eventType}.\n\n`;
+      message = `-------------------------\n`;
+      message = `MI PEDIDO:\n`;
+    } else {
+      message = `¡Hola! Soy ${deliveryData.name}.\n`; 
+      message = `Me gustaría confirmar el siguiente pedido:\n\n`;
+    }
 
-    let message = `¡Hola! Soy ${deliveryData.name}. Me gustaría connfirmar el siguiente pedido:\n\n`;
     shopList.forEach(item => {
       const subtotal = (item.price * item.quantity).toFixed(2);
       message += `- ${item.title} (Cantidad: ${item.quantity}) - Subtotal: $${subtotal}\n`;
@@ -28,12 +42,12 @@ export const CartPage = () => {
     message += `\nTotal sin envío: $${calculateTotal()}\n\nGracias!`;
     message += `--------------------------\n`;
     if (deliveryData.type === "pickup") {
-      message += `Tipo de entrega: *Retiro en local*.\n`;
+      message += `Tipo de entrega: 📦 *Retiro en local*.\n`;
       message += `(Coordiná la dirección y el horario de retiro con nuestro representante.)\n`;
     } else {
       message += `Tipo de entrega: *Envío a domicilio*.\n`;
       message += `Dirección: ${deliveryData.address}, ${deliveryData.city}.\n`;
-      message += `Teléfono de contacto: ${deliveryData.phone}.\n`;
+      if (deliveryData.phone) message += `📞 Teléfono: ${deliveryData.phone}`;
     }
     
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
