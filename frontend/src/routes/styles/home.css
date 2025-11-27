@@ -23,24 +23,36 @@
   background-color: #f9f8f8; /* Match your body background */
   color: #4c5b61;
 }
-
 .hero-intro h1 {
   font-size: 3em;
   margin-bottom: 0.5em;
+  font-style: italic;
 }
-
 .hero-intro p {
-  font-size: 1.5em;
-  max-width: 600px;
+  font-size: 1.4em;
+  max-width: 900px;
 }
-
+@media (min-width: 1200px) {
+  .hero-intro h1 {
+    font-size: 5em;
+    margin-bottom: 0.5em;
+    font-style: italic;
+  }
+  .hero-intro p {
+    font-size: 1.9em;
+    max-width: 900px;
+  }
+}
+.asterisc {
+  color: #2dbcc1;
+}
 /* SVG Lines */
 .lines-svg-container {
   position: absolute;
   top: 90vh;
   left: 0;
   width: 100%;
-  height: calc(100% - 100vh);
+  height: calc(100% - 90vh);
   z-index: 0;
   pointer-events: none;
 }
@@ -69,7 +81,7 @@
   min-height: 100vh; /* Full screen height per section */
   padding: 0 5%;
   gap: 40px;
-  margin-bottom: 20vh;
+  margin-bottom: 0vh;
 }
 
 /* Alternate Layouts */
@@ -83,14 +95,17 @@
 .story-section:last-child {
   margin-bottom: 0;
 }
-
+@media (min-width: 768px) {
+  .story-section {
+    margin-bottom: 20vh;
+  }
+}
 /* Text */
 .text-box {
   flex: 1.2;
 }
-
 .story-paragraph {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   font-weight: 500;
   color: #4c5b61;
@@ -100,6 +115,20 @@
   font-size: 34px;
   font-weight: 700;
   font-style: italic;
+}
+@media (min-width: 1200px) {
+  .story-paragraph {
+    font-size: 1.9rem;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #4c5b61;
+    margin-left: 1rem;
+  }
+  .title-paragraph {
+    font-size: 44px;
+    font-weight: 700;
+    font-style: italic;
+  }
 }
 .word {
   opacity: 0.1; /* Start invisible (faint) */
@@ -113,7 +142,7 @@
   justify-content: center;
 }
 .img-a {
-  width: 500px !important;
+  max-width: 500px !important;
 }
 .product-img-home {
   width: 100%;
@@ -142,12 +171,12 @@
   .story-section {
     flex-direction: column-reverse !important;
     text-align: center;
-    padding: 100px 20px;
+    padding: 50px 20px;
   }
   .lines-svg-container {
     display: none; /* Hide complex lines on mobile */
   }
   .product-img {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
 }

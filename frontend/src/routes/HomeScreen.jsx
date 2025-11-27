@@ -39,8 +39,9 @@ export function HomeScreen() {
         const nextSection = sections[index + 1]; // Grab the next section
 
         ScrollTrigger.create({
+          // markers: true,
           trigger: img,
-          start: "top 50%", // Activate when image hits center
+          start: "top 55%", // Activate when image hits center
           
           // 2. FIX: Keep active until the NEXT section's image hits the center
           endTrigger: nextSection ? nextSection.querySelector(".product-img-home") : section,
@@ -63,7 +64,7 @@ export function HomeScreen() {
                 start: "top 5%", 
                 end: "center center", // Pin for the duration of 1 screen height
                 // scrub: true,   // Link animation to scrollbar
-                pin: true,     // Hold the section in place
+                // pin: true,     // Hold the section in place
               }
             });
         }
@@ -77,9 +78,9 @@ export function HomeScreen() {
             {
               strokeDashoffset: 0,
               scrollTrigger: {
-                markers: true,
+                // markers: true,
                 trigger: "#section-1",
-                start: "bottom 50%", // Start drawing as Section 1 leaves
+                start: "bottom 70%", // Start drawing as Section 1 leaves
                 endTrigger: "#section-2",
                 end: "center center",   // Finish when Section 2 arrives
                 scrub: 2,
@@ -95,9 +96,9 @@ export function HomeScreen() {
             {
               strokeDashoffset: 0,
               scrollTrigger: {
-                // markers: true,
+                markers: true,
                 trigger: "#section-2",
-                start: "bottom-=100 center", // Start drawing as Section 2 leaves
+                start: "bottom-=150 center", // Start drawing as Section 2 leaves
                 endTrigger: "#section-3",
                 end: "bottom 80%",
                 scrub: 1,
@@ -117,11 +118,11 @@ export function HomeScreen() {
         {/* HERO INTRO SECTION */}
         <section className="hero-intro" id="intro-section">
         <div className="intro-content">
-          <h1>¡Bienvenido a Sant'Alice!</h1>
+          <h1>¡Bienvenido a <span className="asterisc">Sant'Alice</span>!</h1>
           <p>
             Donde cada bocado cuenta una historia de tradición y sabor artesanal. 
             <br />
-            **Desliza hacia abajo** para descubrir nuestros productos.
+            <span className="asterisc">**</span>Desliza hacia abajo<span className="asterisc">**</span> para descubrir nuestros productos.
           </p>
         </div>
       </section>
