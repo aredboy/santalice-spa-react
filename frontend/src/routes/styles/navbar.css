@@ -405,6 +405,7 @@ a.myorder {
 }
 
 .css-2ao5rv-MuiBadge-badge {
+  font-family: "EB Garamond", serif !important;
   font-size: 1.1rem !important;
   font-style: normal !important;
   font-weight: 800 !important;

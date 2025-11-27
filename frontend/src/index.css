@@ -1,14 +1,18 @@
 html,
-body *, #root {
-    height: 100%;
+body {
+    height: auto;
     margin: 0 !important;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
     font-family: "EB Garamond", serif !important;
     font-optical-sizing: auto !important;
     font-style: normal !important;
     letter-spacing: .02em;
     background-color: #f9f8f8;
 }
-
 .app-wrapper {
     display: flex;
     flex-direction: column;

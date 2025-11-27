@@ -13,6 +13,7 @@
 }
 
 .modal-box {
+    background: #f8f6f6;
     padding: 30px;
     border-radius: 16px;
     width: 70%;
@@ -87,6 +88,7 @@
 input[type="text"],
 input[type="tel"]
 {
+    font-family: "EB Garamond", serif !important;
     width: 100%;
     padding: 0.55rem 0.75rem;
     border-radius: 16px;
@@ -113,7 +115,7 @@ input:focus {
 }
 
 .pickup-info {
-    background: #f9f9f9;
+    background: #f8f6f6;
     padding: 15px;
     border-radius: 6px;
     margin-bottom: 20px;

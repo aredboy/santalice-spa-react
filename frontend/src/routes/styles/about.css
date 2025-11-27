@@ -17,7 +17,7 @@
 .badge {
     display: inline-block;
     padding: 12px 12px;
-    border-radius: 999px;
+    border-radius: 20px;
     background: rgba(45, 188, 193, 0.12);
     color: #2dbcc1;
     font-weight: 600;
@@ -142,7 +142,6 @@
 }
 .divider {
     height: 1px;
-    background: rgba(76, 91, 97, 0.06);
     margin-top: 26px;
 }
 

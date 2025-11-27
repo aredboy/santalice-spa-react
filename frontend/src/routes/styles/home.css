@@ -1,0 +1,114 @@
+/* Container */
+.home-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; 
+  background: #f9f8f8; /* Ensure white background so lines show */
+}
+
+/* SVG Lines */
+.lines-svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.line-path-bg {
+  stroke: #eee; /* Faint grey for the "empty" path */
+  stroke-width: 8px;
+  fill: none;
+}
+
+.line-path-active {
+  stroke: #2dbcc1; /* Your Brand Color */
+  stroke-width: 8px;
+  fill: none;
+  stroke-linecap: round;
+  /* Dashed stroke allows us to animate the "draw" effect */
+}
+
+/* Sections */
+.story-section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full screen height per section */
+  padding: 0 5%;
+  gap: 50px;
+}
+
+/* Alternate Layouts */
+.story-section.right-img {
+  flex-direction: row;
+}
+.story-section.left-img {
+  flex-direction: row-reverse;
+}
+
+/* Text */
+.text-box {
+  flex: 1.2;
+}
+
+.story-paragraph {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #4c5b61;
+}
+
+.word {
+  opacity: 0.1; /* Start invisible (faint) */
+  display: inline-block;
+}
+
+/* Images */
+.img-box {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+.img-a {
+  width: 500px !important;
+}
+.product-img-home {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  transition: all 0.5s ease;
+  border: 5px solid transparent; 
+  filter: brightness(0.6) grayscale(20%); /* Start dim */
+  cursor: pointer;
+}
+
+/* ACTIVE STATE (Triggered by GSAP) */
+.product-img-home.active {
+  filter: brightness(1.1) grayscale(0%);
+  border-color: #2dbcc1;
+  box-shadow:
+        0 0 0 2px #2dbcc1, /* New: Solid ring of color (like the border) */
+        0 0 5px 2px rgba(45, 188, 193, 0.5), /* Soft glow (larger blur) */
+        0 0 20px 2px rgba(45, 188, 193, 0.3); /* Wide glow (even larger blur) */
+  transform: scale(1.03);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .story-section {
+    flex-direction: column-reverse !important;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  .lines-svg-container {
+    display: none; /* Hide complex lines on mobile */
+  }
+  .product-img {
+    margin-bottom: 30px;
+  }
+}

@@ -17,7 +17,7 @@
     font-weight: 700;
     font-style: italic !important;
     justify-self: center;
-    padding: 33px 0;
+    padding: 0;
 }
 
 hr {
@@ -70,7 +70,7 @@ hr {
     align-items: center;
     justify-content: center;
     padding: 10px;
-    transition: bottom 0.001s ease-out, transform 0.01s ease-in-out
+    /* transition: bottom 0.001s ease-out, transform 0.01s ease-in-out */
 }
 
 .whatsapp-float:hover {
@@ -105,7 +105,7 @@ hr {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Nice shadow */
-    transition: bottom 0.1s ease-out, transform 0.2s ease-in-out;
+    /* transition: bottom 0.1s ease-out, transform 0.2s ease-in-out; */
 }
 .order-float span {
     background: transparent;
