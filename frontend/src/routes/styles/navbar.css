@@ -6,9 +6,14 @@
   z-index: 1000;
 }
 
-.logo {
-    flex: 0;
-    width: 200px;
+@media (max-width: 400px) {
+  .nav-top {
+    padding: 0 0 0 5px !important;
+  }
+  .logo {
+      flex: 0;
+      width: 200px;
+  }
 }
 
 .nav-links {
@@ -106,8 +111,8 @@
         order: 1;
         align-self: flex-end;
         justify-self: flex-start;
-        padding: 0 0 0 18x !important;
-        margin: 0 10px 27px 0 !important;
+        padding: 0 25px 0 5px !important;
+        margin: 0 10px 29px 0 !important;
         background: none;
         border: none;
         color: #4c5b61;
@@ -153,9 +158,9 @@
     .nav-link {
       font-size: 22px !important;
     }
-  .css-2ao5rv-MuiBadge-badge {
-    padding: 16px 21px 0 0 !important;
-  }
+      .btn.main-cart.css-63ezxx-MuiBadge-root {
+        padding: 1rem 0 !important;
+      }
 }
 
 @media (min-width: 768px) {
@@ -203,9 +208,14 @@
         justify-content: space-between;
     }
     .nav-top {
-      padding-left: 2rem;
+      padding: 15px 0 0 15px !important;
     }
 }
+@media (min-width: 1015px) {
+    .nav-top {
+        padding: 0px 0 0 15px !important;
+    }
+  }
 
 @media (min-width: 768px) {
     .nav-left {
@@ -409,7 +419,7 @@ a.myorder {
   font-size: 1.1rem !important;
   font-style: normal !important;
   font-weight: 800 !important;
-  margin: 16px 21px 0 0 !important;
+  margin: 24px 12px 0 0 !important;
   height: auto !important;
 }
 
@@ -423,18 +433,8 @@ a.myorder {
     .main-cart {
       width: 2.5em;
     }
-    .css-2ao5rv-MuiBadge-badge {
-        margin: 16px 21px 0 0 !important;
-    }
 }
-@media (max-width: 1300px) {
-    a.myorder {
-        /* padding-top: 7.3px !important; */
-        font-size: 22px !important;
-    }
-    .nav-top {
-      padding: 0;
-    }
+@media (min-width: 400px) {
     .logo {
       width: 250px;
     } 

@@ -6,13 +6,41 @@
   background: #f9f8f8; /* Ensure white background so lines show */
 }
 
+/* Styling for the new introductory section */
+.hero-intro {
+  /* CRITICAL: Ensures it takes up the full screen height */
+  min-height: 100vh;
+  
+  /* Positioning and layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  /* Optional: Basic styling */
+  padding: 0 10%;
+  background-color: #f9f8f8; /* Match your body background */
+  color: #4c5b61;
+}
+
+.hero-intro h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.hero-intro p {
+  font-size: 1.5em;
+  max-width: 600px;
+}
+
 /* SVG Lines */
 .lines-svg-container {
   position: absolute;
-  top: 0;
+  top: 90vh;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 100vh);
   z-index: 0;
   pointer-events: none;
 }
@@ -40,7 +68,8 @@
   justify-content: center;
   min-height: 100vh; /* Full screen height per section */
   padding: 0 5%;
-  gap: 50px;
+  gap: 40px;
+  margin-bottom: 20vh;
 }
 
 /* Alternate Layouts */
@@ -51,18 +80,27 @@
   flex-direction: row-reverse;
 }
 
+.story-section:last-child {
+  margin-bottom: 0;
+}
+
 /* Text */
 .text-box {
   flex: 1.2;
 }
 
 .story-paragraph {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   line-height: 1.6;
   font-weight: 500;
   color: #4c5b61;
+  margin-left: 1rem;
 }
-
+.title-paragraph {
+  font-size: 34px;
+  font-weight: 700;
+  font-style: italic;
+}
 .word {
   opacity: 0.1; /* Start invisible (faint) */
   display: inline-block;
@@ -83,7 +121,8 @@
   border-radius: 16px;
   transition: all 0.5s ease;
   border: 5px solid transparent; 
-  filter: brightness(0.6) grayscale(20%); /* Start dim */
+  border: 6px solid #2dbcc1;
+  filter: brightness(0.7) grayscale(20%); /* Start dim */
   cursor: pointer;
 }
 

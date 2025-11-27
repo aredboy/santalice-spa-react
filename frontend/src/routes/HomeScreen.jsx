@@ -33,19 +33,21 @@ export function HomeScreen() {
       
       const sections = gsap.utils.toArray(".story-section");
       
-      sections.forEach((section) => {
+      sections.forEach((section, index) => {
         const img = section.querySelector(".product-img-home");
         const words = section.querySelectorAll(".word");
+        const nextSection = sections[index + 1]; // Grab the next section
 
-        // 1. IMAGE ACTIVATION (Brightness + Border)
-        // toggles class "active" when image is in center of viewport
         ScrollTrigger.create({
-          trigger: section,
-          start: "top 120%", 
-          end: "bottom top",
-          toggleClass: {targets: img, className: "active"},
+          trigger: img,
+          start: "top 50%", // Activate when image hits center
+          
+          // 2. FIX: Keep active until the NEXT section's image hits the center
+          endTrigger: nextSection ? nextSection.querySelector(".product-img-home") : section,
+          end: "bottom 20%", 
+          
+          toggleClass: "active",
           toggleActions: "play reverse play reverse",
-          // immediateRender: false,
         });
 
         // 2. TEXT REVEAL (Pinning)
@@ -53,12 +55,13 @@ export function HomeScreen() {
         if(words.length > 0) {
             gsap.to(words, {
               opacity: 1,
-              stagger: 0.05, // Speed of word reveal
+              stagger: .1, // Speed of word reveal
               ease: "none",
               scrollTrigger: {
+                // markers: true,
                 trigger: section,
-                start: "top top", 
-                end: "+=100%", // Pin for the duration of 1 screen height
+                start: "top 5%", 
+                end: "center center", // Pin for the duration of 1 screen height
                 // scrub: true,   // Link animation to scrollbar
                 pin: true,     // Hold the section in place
               }
@@ -74,11 +77,12 @@ export function HomeScreen() {
             {
               strokeDashoffset: 0,
               scrollTrigger: {
+                markers: true,
                 trigger: "#section-1",
-                start: "bottom top", // Start drawing as Section 1 leaves
+                start: "bottom 50%", // Start drawing as Section 1 leaves
                 endTrigger: "#section-2",
                 end: "center center",   // Finish when Section 2 arrives
-                scrub: 1,
+                scrub: 2,
               }
             }
           );
@@ -91,10 +95,11 @@ export function HomeScreen() {
             {
               strokeDashoffset: 0,
               scrollTrigger: {
+                // markers: true,
                 trigger: "#section-2",
-                start: "bottom top",
+                start: "bottom-=100 center", // Start drawing as Section 2 leaves
                 endTrigger: "#section-3",
-                end: "center center",
+                end: "bottom 80%",
                 scrub: 1,
               }
             }
@@ -107,9 +112,20 @@ export function HomeScreen() {
   }, []);
 
   return (
-    <div className="home-container" ref={mainRef}>
-      
-      {/* SVG LAYER: Connects the images */}
+      <div className="home-container" ref={mainRef}>
+
+        {/* HERO INTRO SECTION */}
+        <section className="hero-intro" id="intro-section">
+        <div className="intro-content">
+          <h1>¡Bienvenido a Sant'Alice!</h1>
+          <p>
+            Donde cada bocado cuenta una historia de tradición y sabor artesanal. 
+            <br />
+            **Desliza hacia abajo** para descubrir nuestros productos.
+          </p>
+        </div>
+      </section>
+
       {/* ViewBox matches approx container size. preserveAspectRatio="none" stretches it. */}
       <svg className="lines-svg-container" viewBox="0 0 1000 3000" preserveAspectRatio="none">
         
@@ -139,6 +155,11 @@ export function HomeScreen() {
       {/* SECTION 1: TORTAS (Image Right) */}
       <section className="story-section right-img" id="section-1">
         <div className="text-box">
+          <h3 className="story-paragraph title-paragraph">
+            <SplitText>
+              Tortas Especiales
+            </SplitText>
+          </h3> 
           <p className="story-paragraph">
             <SplitText>
               Nuestras tortas son una explosión de sabor artesanal. 
@@ -162,6 +183,11 @@ export function HomeScreen() {
       {/* SECTION 2: BUDINES (Image Left) */}
       <section className="story-section left-img" id="section-2">
         <div className="text-box">
+          <h3 className="story-paragraph title-paragraph">
+            <SplitText>
+              Budines
+            </SplitText>
+          </h3> 
           <p className="story-paragraph">
             <SplitText>
               Esponjosos, húmedos y con ese aroma a hogar que tanto amas. 
@@ -185,6 +211,11 @@ export function HomeScreen() {
       {/* SECTION 3: MAS DULCES (Image Right) */}
       <section className="story-section right-img" id="section-3">
         <div className="text-box">
+          <h3 className="story-paragraph title-paragraph">
+            <SplitText>
+              Otras Especialidades
+            </SplitText>
+          </h3> 
           <p className="story-paragraph">
             <SplitText>
                Para los que buscan algo más, tenemos una selección de 

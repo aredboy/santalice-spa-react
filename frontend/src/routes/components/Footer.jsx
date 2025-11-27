@@ -10,7 +10,7 @@ export const Footer = () => {
         <>
         <footer className="custom-footer py-4">
                 <div className="row">
-                    <div>
+                    <div className="col-md-4 mb-3">
                         <Link to='/' className="nav-logo">
                             <img src={logoIcon} alt="logo" className="logo"/>
                         </Link>
