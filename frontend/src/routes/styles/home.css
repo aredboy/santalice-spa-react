@@ -78,9 +78,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Full screen height per section */
+  min-height: 80vh; /* Full screen height per section */
   padding: 0 5%;
-  gap: 40px;
+  gap: 0;
   margin-bottom: 0vh;
 }
 
@@ -97,7 +97,9 @@
 }
 @media (min-width: 768px) {
   .story-section {
+    min-height: 100vh; /* Full screen height per section */
     margin-bottom: 20vh;
+    gap: 40px;
   }
 }
 /* Text */

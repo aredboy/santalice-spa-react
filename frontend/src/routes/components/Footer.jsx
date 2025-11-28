@@ -44,7 +44,7 @@ export const Footer = () => {
                         </ul>
                     </div>
                     <div className="col-md-4 mb-3">
-                        <h5>CONTACTO</h5>
+                        <h5 className="contacto">CONTACTO</h5>
                         <Link to='/' className="nav-logo">
                             <img src={email} alt="email" className="link"/>
                             <p>support@example.com</p>
@@ -62,7 +62,7 @@ export const Footer = () => {
                 <div className="mt-3">
                     <p>
                         &copy; {new Date().getFullYear()} Sant'Alice.
-                        All rights reserved.
+                        Todos los derechos reservados.
                     </p>
                 </div>
         </footer>

@@ -31,6 +31,9 @@ export const ShoppingPage = () => {
 
   const sentenceCase = (s) => {
     if (!s) return '';
+    if (s.toLowerCase() === 'masdulces') {
+      return 'Más Dulces';
+    }
     const normalized = s.replace(/[-_]+/g, ' '); // optional
     return normalized.charAt(0).toUpperCase() + normalized.slice(1).toLowerCase();
   }

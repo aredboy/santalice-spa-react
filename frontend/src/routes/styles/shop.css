@@ -1,11 +1,10 @@
 .products-grid {
     display: grid;
     gap: 1.5rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem .5rem;
     max-width: 100%;
     box-sizing: border-box;
 }
-
 .products-h4 {
     padding-left: 1rem;
     padding-bottom: 0.5rem;
@@ -29,20 +28,27 @@ hr {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     width: 100%;
-    padding: 0 0 2rem 0;
     justify-items: stretch;
     align-items: stretch;
     grid-auto-rows: 1fr;
     box-sizing: border-box;
+    padding: 0;
+    gap: 1rem;
 }
 
+
 /* tablet breakpoint */
-@media (min-width: 768px) {
+@media (min-width: 524px) {
+    .products-grid {
+        gap: 1.5rem;
+        padding: 1rem 1.5rem;
+    }
     .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         gap: 1.2rem;
+        padding: 0 0 2rem 0;
     }
 }
 
@@ -81,7 +87,7 @@ hr {
 .order-float {
     position: fixed;
     /* Allows the width to grow with the text */
-    width: auto; 
+    width: auto;
     height: auto;
     right: 25px;
     
@@ -91,7 +97,7 @@ hr {
     
     /* Pill Shape */
     border-radius: 16px;
-    padding: 0 0 0 25px;     /* Comfortable padding around text */
+    padding: 0 0 0 20px;     /* Comfortable padding around text */
     
     /* Text Styling */
     text-align: center;
@@ -105,6 +111,7 @@ hr {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Nice shadow */
+    transition: all 0.2s ease-in-out;
     /* transition: bottom 0.1s ease-out, transform 0.2s ease-in-out; */
 }
 .order-float span {
@@ -125,7 +132,7 @@ hr {
     font-weight: 500;
     cursor: pointer;
     border: none;
-    padding: 0.6rem 1.8rem 0 0 !important;
+    padding: 0.9rem .5rem 0 0 !important;
 }
 
 @media (min-width: 768px) {

@@ -126,7 +126,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
         <div className="appointment-overlay" ref={overlayRef}>
             <div className="appointment-sheet" ref={modalRef}>
             <div className="modal-header-1">
-                <h3 className="modal-h3">📅 Agendá tu Pedido</h3>
+                <h3 className="modal-h3-ap">📅 Agendá tu Pedido</h3>
                 <button className="modal-close-btn-app" onClick={onClose}>
                     &times;
                 </button>

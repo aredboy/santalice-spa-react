@@ -87,7 +87,7 @@
 
 .product-card .product-title {
   color: #4c5b61;
-  margin: 10px 0 0 1px !important;
+  margin: 10px 0 0 10px !important;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
@@ -215,7 +215,7 @@
   }
   .product-card .product-title {
     grid-area: title;
-    margin: 0;
+    margin: 10px 0 0 0 !important;
   }
   .product-card .card-desc {
     /* display: grid; */

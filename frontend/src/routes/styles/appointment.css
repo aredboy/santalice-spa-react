@@ -45,8 +45,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     width: 90%;
+}
+.modal-h3-ap {
+    margin: 0 0 .5rem 0 !important;
+    font-size: 28px;
+    color: #4c5b61;
 }
 .modal-close-btn-app {
     color: #4c5b61;
@@ -61,23 +66,16 @@
 .modal-close-btn-app:hover {
     color: #2dbcc1;
 }
-@media (min-width: 768px) {
-    .appointment-form {
-    width: 70%;
-}
-    .modal-header-1 {
-        width: 70%;
-    }
-}
+
 /* Form Styling */
 .form-row {
-    margin: 1rem auto !important;
+    margin: .5rem auto !important;
     text-align: left;
     color: #213638;
 }
 .form-row label {
     display: block;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.2rem !important;
     padding-left: .4rem;
     font-weight: 600;
     color: #4c5b61;
@@ -131,16 +129,8 @@
     display: none;
 } /* Hide the actual radio circle */
 
-.error-msg {
-    color: #b32a2a;
-    font-size: 1rem;
-    margin-top: 0.25rem !important;
-    margin-left: .45rem !important;
-    display: block;
-}
-
 .btn-proceed {
-background: #2dbcc1;
+    background: #2dbcc1;
     color: white;
     border: none;
     padding: 0.9rem 1.8rem 1rem 1.8rem !important;
@@ -152,4 +142,20 @@ background: #2dbcc1;
 }
 .btn-proceed:hover {
     background-color: #27a1a6;
+}
+
+@media (min-width: 768px) {
+    .appointment-form {
+        width: 70%;
+    }
+    .modal-header-1 {
+        margin-bottom: 5px;
+        width: 70%;
+    }
+    .form-row {
+        margin: 1rem auto !important;
+    }
+    .form-row label {
+        margin-bottom: 0.5rem !important;
+    }
 }

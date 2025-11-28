@@ -45,7 +45,9 @@ li {
     margin: auto;
     align-items: flex-start;
 }
-
+.contacto {
+    margin: initial;
+}
 .list-unstyled {
     /* background-color: #4c5b61 !important;
     color: #f9f8f8 !important; */
@@ -83,6 +85,11 @@ a.nav-logo {
 }
 .link {
     width: 1.7rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+.link:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
 }
 
 h5 {

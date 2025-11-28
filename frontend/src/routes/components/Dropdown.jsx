@@ -81,8 +81,8 @@ const updateCoords = () => {
   if (!trigger || !nav) {
     // fallback (rare): keep previous behavior
     setCoords((c) => {
-      if (c.top === 96 && c.left === 0) return c;
-      return { ...c, top: 96, left: 0, width: c.width || 220 };
+      if (c.top === 99 && c.left === 0) return c;
+      return { ...c, top: 99, left: 0, width: c.width || 220 };
     });
     return;
   }
@@ -92,7 +92,7 @@ const updateCoords = () => {
 
   const desiredWidth = Math.max(180, Math.round(trigRect.width));
   // small gap between navbar bottom and dropdown; tweak this value
-  const gap = 30; // ← increase/decrease this to move dropdown further from the nav
+  const gap = 40; // ← increase/decrease this to move dropdown further from the nav
   // left relative to navbar
   let left = Math.round(trigRect.left - navRect.left);
   const maxRight = Math.max(16, Math.round(navRect.width - 16));

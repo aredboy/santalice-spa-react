@@ -96,7 +96,7 @@ export function HomeScreen() {
             {
               strokeDashoffset: 0,
               scrollTrigger: {
-                markers: true,
+                // markers: true,
                 trigger: "#section-2",
                 start: "bottom-=150 center", // Start drawing as Section 2 leaves
                 endTrigger: "#section-3",
@@ -219,10 +219,10 @@ export function HomeScreen() {
           </h3> 
           <p className="story-paragraph">
             <SplitText>
-               Para los que buscan algo más, tenemos una selección de 
-               pequeños placeres. Desde alfajores hasta galletas decoradas, 
-               cada pieza es una pequeña obra de arte comestible lista 
-               para alegrar tu día.
+              Para los que buscan algo más, tenemos una selección de 
+              pequeños placeres. Desde alfajores hasta galletas decoradas, 
+              cada pieza es una pequeña obra de arte comestible lista 
+              para alegrar tu día.
             </SplitText>
           </p>
         </div>

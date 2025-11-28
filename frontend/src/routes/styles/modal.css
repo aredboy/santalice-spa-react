@@ -109,7 +109,7 @@ input:focus {
 .error-msg {
     color: #b32a2a;
     font-size: 1rem;
-    margin-top: 0.25rem !important;
+    margin-top: 0.13rem !important;
     margin-left: .25rem !important;
     display: block;
 }
