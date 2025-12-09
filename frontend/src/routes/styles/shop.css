@@ -97,7 +97,7 @@ hr {
     
     /* Pill Shape */
     border-radius: 16px;
-    padding: 0 0 0 20px;     /* Comfortable padding around text */
+    padding: 0 10px 0 20px;     /* Comfortable padding around text */
     
     /* Text Styling */
     text-align: center;

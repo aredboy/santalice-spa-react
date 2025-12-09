@@ -7,8 +7,7 @@ import './styles/about.css'
 
 export function AboutScreen({
   imageSrc = "images/ali.png",
-  name = "Chef Alicia Della Siega",
-  role = "Head Chef & Dueña",
+  name = "Alicia Della Siega",
 }) {
   // Parallax tilt for image on pointer move (desktop)
   const x = useMotionValue(0);
@@ -47,8 +46,7 @@ export function AboutScreen({
     >
       <div className="about-chef-container">
         <header className="about-header">
-          <span className="badge">Nuestra chef</span>
-          <h2 id="about-chef-title" className="title">{name} — <span className="role">{role}</span></h2>
+          <h2 id="about-chef-title" className="title">{name}</h2>
         </header>
 
         <div className="about-grid">
@@ -75,7 +73,7 @@ export function AboutScreen({
           <div className="text-column">
             {/* Desktop editorial float: a visual shape to make text wrap beautifully */}
             <div className="editorial-wrap" aria-hidden>
-              <div className="float-shape" />
+              <div className="float-shape"/>
             </div>
 
             <div className="bio-block">

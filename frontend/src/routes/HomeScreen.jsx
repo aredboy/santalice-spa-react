@@ -118,7 +118,7 @@ export function HomeScreen() {
         {/* HERO INTRO SECTION */}
         <section className="hero-intro" id="intro-section">
         <div className="intro-content">
-          <h1>¡Bienvenido a <span className="asterisc">Sant'Alice</span>!</h1>
+          <h1><span className="asterisc">¡Bienvenido Sant'Alice!</span></h1>
           <p>
             Donde cada bocado cuenta una historia de tradición y sabor artesanal. 
             <br />
@@ -172,7 +172,7 @@ export function HomeScreen() {
         </div>
         <div className="img-box">
           <Link to="/products/tortas" className="img-a">
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" 
               alt="Tortas" 
               className="product-img-home"

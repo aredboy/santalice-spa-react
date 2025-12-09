@@ -85,6 +85,7 @@
 .form-row input[type="tel"],
 .form-row input[type="date"],
 .form-row select {
+    font-family: "EB Garamond", serif !important;
     width: 100%;
     padding: 0.55rem 0.75rem;
     border-radius: 16px;
@@ -100,6 +101,7 @@
     color: #999999; 
 }
 .form-row input:focus {
+    color: #4c5b61;
     outline: none;
     border-color: #2dbcc1;
     box-shadow: 0 4px 14px rgba(45,188,193,0.08);

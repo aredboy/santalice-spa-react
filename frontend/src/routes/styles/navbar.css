@@ -422,10 +422,10 @@ a.myorder {
 
 .css-2ao5rv-MuiBadge-badge {
   font-family: "EB Garamond", serif !important;
-  font-size: 1.1rem !important;
+  font-size: 1rem !important;
   font-style: normal !important;
   font-weight: 800 !important;
-  margin: 24px 12px 0 0 !important;
+  margin: 24px 8px 0 0 !important;
   height: auto !important;
 }
 
@@ -722,7 +722,7 @@ a.myorder {
   }
 
   .css-2ao5rv-MuiBadge-badge {
-    margin: 19px 7px 0 0 !important;
+    margin: 21px 10px 0 0 !important;
   }
   /* hide the hamburger on desktop */
   .hamburger { display: none !important; }
