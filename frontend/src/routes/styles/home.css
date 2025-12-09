@@ -9,7 +9,7 @@
 /* Styling for the new introductory section */
 .hero-intro {
   /* CRITICAL: Ensures it takes up the full screen height */
-  min-height: 100vh;
+  min-height: 93vh;
   
   /* Positioning and layout */
   display: flex;
@@ -45,6 +45,10 @@
 }
 .asterisc {
   color: #2dbcc1;
+}
+.italic {
+  font-style: italic;
+  font-weight: 500;
 }
 /* SVG Lines */
 .lines-svg-container {
@@ -90,6 +94,7 @@
 }
 .story-section.left-img {
   flex-direction: row-reverse;
+  margin-bottom: 0;
 }
 
 .story-section:last-child {
@@ -117,6 +122,15 @@
   font-size: 34px;
   font-weight: 700;
   font-style: italic;
+}
+.title-paragraph-a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+} 
+.title-paragraph-a:hover {
+  transition: color 0.4s ease-in-out;
+  color: #2dbcc1;
 }
 @media (min-width: 1200px) {
   .story-paragraph {
@@ -162,10 +176,14 @@
   filter: brightness(1.1) grayscale(0%);
   border-color: #2dbcc1;
   box-shadow:
-        0 0 0 2px #2dbcc1, /* New: Solid ring of color (like the border) */
-        /*0 0 5px 2px rgba(45, 188, 193, 0.5),*/ /*Soft glow (larger blur)*/
-        0 0 2px 2px rgba(45, 188, 193, 0.3);/* Wide glow (even larger blur) */
+        0 0 0 2px #2dbcc1; /* New: Solid ring of color (like the border) */
   transform: scale(1.03);
+}
+.product-img-home.active:hover {
+    box-shadow:
+        0 0 0 2px #2dbcc1,
+        0 0 10px 4px rgba(45, 188, 193, 0.7),
+        0 0 6px 4px #2dbcc14d;
 }
 
 /* Mobile */

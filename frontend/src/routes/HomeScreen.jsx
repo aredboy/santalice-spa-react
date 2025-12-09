@@ -41,7 +41,7 @@ export function HomeScreen() {
         ScrollTrigger.create({
           // markers: true,
           trigger: img,
-          start: "top 55%", // Activate when image hits center
+          start: "top 75%", // Activate when image hits center
           
           // 2. FIX: Keep active until the NEXT section's image hits the center
           endTrigger: nextSection ? nextSection.querySelector(".product-img-home") : section,
@@ -61,7 +61,7 @@ export function HomeScreen() {
               scrollTrigger: {
                 // markers: true,
                 trigger: section,
-                start: "top 5%", 
+                start: "top 25%", 
                 end: "center center", // Pin for the duration of 1 screen height
                 // scrub: true,   // Link animation to scrollbar
                 // pin: true,     // Hold the section in place
@@ -80,7 +80,7 @@ export function HomeScreen() {
               scrollTrigger: {
                 // markers: true,
                 trigger: "#section-1",
-                start: "bottom 70%", // Start drawing as Section 1 leaves
+                start: "bottom-=500 center", // Start drawing as Section 1 leaves
                 endTrigger: "#section-2",
                 end: "center center",   // Finish when Section 2 arrives
                 scrub: 2,
@@ -98,7 +98,7 @@ export function HomeScreen() {
               scrollTrigger: {
                 // markers: true,
                 trigger: "#section-2",
-                start: "bottom-=150 center", // Start drawing as Section 2 leaves
+                start: "bottom-=500 center", // Start drawing as Section 2 leaves
                 endTrigger: "#section-3",
                 end: "bottom 80%",
                 scrub: 1,
@@ -122,7 +122,7 @@ export function HomeScreen() {
           <p>
             Donde cada bocado cuenta una historia de tradición y sabor artesanal. 
             <br />
-            <span className="asterisc">**</span>Desliza hacia abajo<span className="asterisc">**</span> para descubrir nuestros productos.
+            <span className="asterisc">**</span><span className="italic">Desliza hacia abajo</span><span className="asterisc">**</span> para descubrir nuestros productos.
           </p>
         </div>
       </section>
@@ -157,9 +157,11 @@ export function HomeScreen() {
       <section className="story-section right-img" id="section-1">
         <div className="text-box">
           <h3 className="story-paragraph title-paragraph">
-            <SplitText>
-              Tortas Especiales
-            </SplitText>
+            <Link to="/products/tortas" className="title-paragraph-a">
+              <SplitText>
+                Tortas Especiales
+              </SplitText>
+            </Link>
           </h3> 
           <p className="story-paragraph">
             <SplitText>
@@ -185,9 +187,11 @@ export function HomeScreen() {
       <section className="story-section left-img" id="section-2">
         <div className="text-box">
           <h3 className="story-paragraph title-paragraph">
-            <SplitText>
-              Budines
-            </SplitText>
+            <Link to="/products/budines" className="title-paragraph-a">
+              <SplitText>
+                Budines
+              </SplitText>
+            </Link>
           </h3> 
           <p className="story-paragraph">
             <SplitText>
@@ -213,9 +217,11 @@ export function HomeScreen() {
       <section className="story-section right-img" id="section-3">
         <div className="text-box">
           <h3 className="story-paragraph title-paragraph">
-            <SplitText>
-              Otras Especialidades
-            </SplitText>
+            <Link to="/products/masdulces" className="title-paragraph-a">
+              <SplitText>
+                Otras Especialidades
+              </SplitText>
+            </Link>
           </h3> 
           <p className="story-paragraph">
             <SplitText>
