@@ -75,64 +75,42 @@
 //     });
 // });
 
-
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
+
 dotenv.config();
 
-// --- 1. Initialize Express App ---
+// --- 1. Initialize Express App & Router ---
 const app = express();
-const port = 5000; // Keep port defined for local dev reference, but it won't be used by Vercel
+const apiRouter = express.Router(); // We create the router here
 
-// Middleware
+// --- 2. Middleware ---
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); // Standard JSON parsing
 
-// --- 2. Database Connection Logic (Modified) ---
-
-// Use a flag to ensure connection is only established once in a serverless environment
+// --- 3. Database Connection Logic ---
 let isConnected = false;
 
 const connectDB = async () => {
-    // Check if we are already connected (important for serverless functions)
     if (isConnected) {
         console.log("Using existing MongoDB connection.");
         return;
     }
 
     try {
-        // We use mongoose.connect and pass an object to track the connection state
         await mongoose.connect(process.env.MONGO_URI);
-        isConnected = true; // Set flag on successful connection
+        isConnected = true;
         console.log("MongoDB Connected Successfully");
     } catch (error) {
         console.error("MongoDB connection failed:", error.message);
-        // In a serverless environment, we log the error but don't call process.exit(1) 
-        // as Vercel handles the process lifecycle.
         throw error;
     }
 };
 
-// --- 3. Definition of Schema and Model ---
-// Define la estructura de tus productos
-const ProductSchema = new mongoose.Schema({
-    id: { type: Number, required: true, unique: true },
-    title: { type: String, required: true },
-    price: { type: Number, required: true },
-    description: { type: String },
-    category: { type: String },
-    image: { type: mongoose.Schema.Types.Mixed },
-});
-
-// Create model. Note: Model definition must happen BEFORE endpoints that use it.
-const Product = mongoose.model("Product", ProductSchema);
-
-
-// --- 4. Endpoints with Connection Check (Crucial for Serverless) ---
-
-// Middleware to ensure DB connection is active before processing the route
+// --- 4. Global Middleware: Ensure DB Connection ---
+// This runs for EVERY request to ensure the DB is ready
 app.use(async (req, res, next) => {
     try {
         await connectDB();
@@ -145,9 +123,26 @@ app.use(async (req, res, next) => {
     }
 });
 
+// --- 5. Schema and Model ---
+const ProductSchema = new mongoose.Schema({
+    id: { type: Number, required: true, unique: true },
+    title: { type: String, required: true },
+    price: { type: Number, required: true },
+    description: { type: String },
+    category: { type: String },
+    image: { type: mongoose.Schema.Types.Mixed },
+});
 
-// Endpoint for all products
-app.get("/products", async (req, res) => {
+// Prevent model overwrite error if the file re-executes
+const Product = mongoose.models.Product || mongoose.model("Product", ProductSchema);
+
+// --- 6. API Routes (Using Router) ---
+
+// Define routes on 'apiRouter' (NOT 'app')
+// Note: We use "/" and "/:id" here because the router will be mounted at "/api" later.
+
+// GET /api/products
+apiRouter.get("/products", async (req, res) => {
     try {
         const products = await Product.find({}).lean();
         console.log("Productos devueltos por la DB:", products.length, "documentos.");
@@ -158,8 +153,8 @@ app.get("/products", async (req, res) => {
     }
 });
 
-// Endpoint for a single product by ID
-app.get("/products/:id", async (req, res) => {
+// GET /api/products/:id
+apiRouter.get("/products/:id", async (req, res) => {
     try {
         const product = await Product.findOne({ id: parseInt(req.params.id) });
         if (!product) {
@@ -172,16 +167,9 @@ app.get("/products/:id", async (req, res) => {
     }
 });
 
-// --- 5. Export for Vercel Serverless Function ---
-// Vercel will import this 'app' instance and wrap it in its own server.
-export default app; 
+// --- 7. Mount the Router ---
+// This tells Express: "Any request starting with /api goes to apiRouter"
+app.use("/api", apiRouter);
 
-/*
-// --- 6. REMOVED BLOCK ---
-// Removed the following block:
-connectDB().then(() => {
-    app.listen(port, () => {
-        console.log(`Server running at http://localhost:${port}`);
-    });
-});
-*/
+// --- 8. Export for Vercel ---
+export default app;
