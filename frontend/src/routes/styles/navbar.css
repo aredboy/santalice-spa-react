@@ -249,12 +249,12 @@
         justify-content: space-between;
     }
     .nav-top {
-      padding: 8px 0 0 15px !important;
+      padding: 8px 0 0 10px !important;
     }
 }
 @media (min-width: 1015px) {
     .nav-top {
-        padding: 0px 0 0 15px !important;
+        padding: 0px 0 0 5px !important;
     }
   }
 
@@ -760,7 +760,7 @@ a.myorder {
 
 @media (min-width: 1200px) {
   .app-navbar {
-    padding: 0 1rem !important;
+    padding: 0 .3rem !important;
   }
     .app-navbar .nav-links,
     .nav-links {

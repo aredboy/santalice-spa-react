@@ -92,7 +92,18 @@ const updateCoords = () => {
 
   const desiredWidth = Math.max(180, Math.round(trigRect.width));
   // small gap between navbar bottom and dropdown; tweak this value
-  const gap = 40; // ← increase/decrease this to move dropdown further from the nav
+  let gap = 19; // ← increase/decrease this to move dropdown further from the nav
+  const width = window.innerWidth;
+
+  if (width > 1300) {
+        gap = 40;
+    } else if (width > 1200) {
+        gap = 25; 
+    } else if (width > 956) {
+        gap = 21;
+    } else if (width > 768) {
+        gap = 19;
+    }
   // left relative to navbar
   let left = Math.round(trigRect.left - navRect.left);
   const maxRight = Math.max(16, Math.round(navRect.width - 16));
