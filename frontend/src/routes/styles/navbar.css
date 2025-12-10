@@ -228,7 +228,7 @@
     }
     .cart-badge {
       top: -1px;   /* Ajusta esto para subir/bajar */
-      right: -4px; /* Ajusta esto para alejar/acercar */
+      right: -2px; /* Ajusta esto para alejar/acercar */
     }
 }
 .navbar-link:hover {
