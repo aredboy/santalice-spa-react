@@ -99,11 +99,12 @@ const updateCoords = () => {
         gap = 40;
     } else if (width > 1200) {
         gap = 25; 
-    } else if (width > 956) {
-        gap = 21;
+    } else if (width > 960) {
+        gap = 23;
     } else if (width > 768) {
-        gap = 19;
+        gap = 23;
     }
+    // console.log("Window width:", width, "Gap set to:", gap);
   // left relative to navbar
   let left = Math.round(trigRect.left - navRect.left);
   const maxRight = Math.max(16, Math.round(navRect.width - 16));
