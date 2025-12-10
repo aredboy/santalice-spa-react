@@ -228,7 +228,7 @@
     }
     .cart-badge {
       top: -1px;   /* Ajusta esto para subir/bajar */
-      right: -8px; /* Ajusta esto para alejar/acercar */
+      right: -4px; /* Ajusta esto para alejar/acercar */
     }
 }
 .navbar-link:hover {
@@ -447,6 +447,7 @@ a.myorder {
 .main-cart {
   color: #4c5b61 !important;
   padding: 0 0 7px 0 !important;
+  margin: 2px;
   transition: none !important;
   border: none;
   width: 2em;
