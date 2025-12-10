@@ -761,7 +761,7 @@ a.myorder {
 
 @media (min-width: 1200px) {
   .app-navbar {
-    padding: 0 .3rem !important;
+    padding: 0 .5rem 0 .3rem !important;
   }
     .app-navbar .nav-links,
     .nav-links {
