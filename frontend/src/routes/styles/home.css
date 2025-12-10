@@ -98,7 +98,7 @@
 }
 
 .story-section:last-child {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 @media (min-width: 768px) {
   .story-section {
