@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect } from "react"
 import { Card } from "../components/Card"
-import { Badge } from "@mui/material"
 import { ProductsContext } from "../context/ProductsContext"
 import { CartContext } from "../context/CartContext"
 import { useParams, Link } from "react-router-dom"
@@ -138,9 +137,12 @@ useEffect(() => {
           <span>
               Ir a tu Pedido
           </span>
-          <Badge badgeContent={cartCount} color="none" className="btn-2 main-cart" type="button">
+          <div className="cart-icon-container">
               <img src={cartIcon} alt="carrito" className="main-cart" />
-          </Badge>
+          { cartCount > 0 && (
+              <span className="cart-badge">{cartCount}</span>
+          )}
+          </div>
         </Link>
       ) : (
         <a 

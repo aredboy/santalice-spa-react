@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom"
-import { Badge } from "@mui/material"
 import { useContext, useState, useEffect } from "react"
 import { CartContext } from "../context/CartContext"
 import  Dropdown  from "./Dropdown"
@@ -51,9 +50,12 @@ export const NavBar = () => {
             <div className="nav-right">
                 <NavLink to='/cartpage' className="myorder nav-top-myorder" aria-label="Mi pedido">
                     <span className="myorder-label">MI PEDIDO</span>
-                    <Badge badgeContent={cartCount} color="none" className="btn main-cart" type="button">
+                    <div className="cart-icon-container">
                         <img src={cartIcon} alt="carrito" className="main-cart" />
-                    </Badge>
+                    { cartCount > 0 && (
+                        <span className="cart-badge">{cartCount}</span>
+                    )}
+                    </div>
                 </NavLink>
                 <button className="hamburger" onClick={toggleMenu} aria-label="Toggle-menu" aria-expanded={isMobile ? menuOpen : false}>
                     ☰{/* <span className="navbar-toggler-icon"></span> */}
@@ -87,9 +89,12 @@ export const NavBar = () => {
             <li className="nav-item">
                 <NavLink to='/cartpage' className="myorder" aria-label="Mi pedido">
                     <span className="myorder-label">MI PEDIDO</span>
-                    <Badge badgeContent={cartCount} color="none" className="btn main-cart" type="button">
+                    <div className="cart-icon-container">
                         <img src={cartIcon} alt="carrito" className="main-cart" />
-                    </Badge>
+                    { cartCount > 0 && (
+                        <span className="cart-badge">{cartCount}</span>
+                    )}
+                    </div>
                 </NavLink>
             </li>
         </ul>

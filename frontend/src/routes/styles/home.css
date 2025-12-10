@@ -83,7 +83,7 @@
   align-items: center;
   justify-content: center;
   min-height: 80vh; /* Full screen height per section */
-  padding: 0 5%;
+  padding: 0 5% 0 2%;
   gap: 0;
   margin-bottom: 0vh;
 }
@@ -104,7 +104,7 @@
   .story-section {
     min-height: 100vh; /* Full screen height per section */
     margin-bottom: 20vh;
-    gap: 40px;
+    gap: 50px;
   }
 }
 /* Text */

@@ -97,7 +97,7 @@ hr {
     
     /* Pill Shape */
     border-radius: 16px;
-    padding: 0 10px 0 20px;     /* Comfortable padding around text */
+    padding: 2px 14px 2px 20px;     /* Comfortable padding around text */
     
     /* Text Styling */
     text-align: center;
@@ -118,7 +118,7 @@ hr {
     background: transparent;
     color: #f9f8f8;
     /* margin: 0 !important; */
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 .order-float:hover {
