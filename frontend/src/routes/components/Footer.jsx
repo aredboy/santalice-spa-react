@@ -45,13 +45,13 @@ export const Footer = () => {
                     </div>
                     <div className="col-md-4 mb-3">
                         <h5 className="contacto">CONTACTO</h5>
-                        <Link to='/' className="nav-logo">
+                        <Link to='/contact' className="nav-logo">
                             <img src={email} alt="email" className="link"/>
-                            <p>support@example.com</p>
+                            <p>santalicedolcezzaeamore@gmail.com</p>
                         </Link>
                         <Link to='/' className="nav-logo">
                             <img src={whatsapp} alt="whatsapp" className="link"/>
-                            <p>Teléfono: (123) 456-7890</p>
+                            <p>Teléfono: (+54) 11-6137-7819</p>
                         </Link>
                         <Link to='https://www.instagram.com/santalicedya/' className="nav-logo">
                             <img src={insta} alt="instagram" className="link"/>
