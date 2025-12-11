@@ -85,6 +85,9 @@ a.nav-logo {
 }
 .link {
     width: 1.7rem;
+    height: 1.7rem;
+    object-fit: contain;
+    flex-shrink: 0;
     background: rgba(0, 0, 0, 0.5);
 }
 .link:hover {
