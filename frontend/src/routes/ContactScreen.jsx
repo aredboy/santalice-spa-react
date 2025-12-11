@@ -296,10 +296,10 @@ export function ContactScreen() {
           style={{ 
             marginTop: '1rem', 
             padding: '10px', 
-            borderRadius: '5px',
+            borderRadius: '12px',
             textAlign: 'center',
-            backgroundColor: result.type === "success" ? "#d4edda" : "#f8d7da",
-            color: result.type === "success" ? "#155724" : "#721c24",
+            backgroundColor: result.type === "success" ? "#e6fffb" : "#fff1f1",
+            color: result.type === "success" ? "#00695c" : "#b32a2a",
             border: result.type === "success" ? "1px solid #c3e6cb" : "1px solid #f5c6cb"
           }}
         >
