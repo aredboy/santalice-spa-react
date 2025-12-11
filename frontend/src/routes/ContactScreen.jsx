@@ -10,8 +10,6 @@ export function ContactScreen() {
   });
 
   const [errors, setErrors] = useState({});
-  const [sending, setSending] = useState(false);
-  const [result, setResult] = useState(null); // { type: 'success'|'error', message: '' }
 
   const temas = [
     "Consulta general",
@@ -41,7 +39,6 @@ export function ContactScreen() {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  setResult(null);
 
   const errs = validate();
   if (Object.keys(errs).length) {
@@ -49,61 +46,30 @@ const handleSubmit = (e) => {
     return;
   }
 
-  setSending(true);
+  // 3. SI NO HAY ERRORES:
+  // Disparamos el envío nativo del formulario HTML.
+  // Esto usa el 'action' que pusiste en el JSX y abre la nueva pestaña sin bloqueos.
+  e.target.submit();
 
-  try {
-    const actionUrl = "https://formsubmit.co/76873159ba20b128215a46e1328864af";
-
-    // crear form temporal
-    const tempForm = document.createElement("form");
-    tempForm.action = actionUrl;
-    tempForm.method = "POST";
-    tempForm.style.display = "none";
-    // abrir en nueva pestaña para no abandonar SPA:
-    tempForm.target = "_blank";
-
-    const append = (name, value) => {
-      const inp = document.createElement("input");
-      inp.type = "hidden";
-      inp.name = name;
-      inp.value = value ?? "";
-      tempForm.appendChild(inp);
-    };
-
-    // datos reales del state (no hardcode)
-    append("nombre", form.nombre);
-    append("email", form.email);
-    append("asunto", form.asunto);
-    append("comentarios", form.comentarios);
-
-    // campos especiales para FormSubmit
-    append("_captcha", "false"); // opcional
-    append("_subject", `Contacto: ${form.asunto}`); // asunto del mail
-    // append("_next", "https://tu-dominio.com/gracias"); // si quieres redirigir a /gracias
-
-    document.body.appendChild(tempForm);
-    tempForm.submit();
-    document.body.removeChild(tempForm);
-
-    setResult({ type: "success", message: "Mensaje enviado. Revisa tu correo para confirmar si es la primera vez." });
+  // Opcional: Limpiar el formulario visualmente (aunque el usuario estará en otra pestaña)
     setForm({ nombre: "", email: "", asunto: "Consulta general", comentarios: "" });
-  } catch (err) {
-    console.error(err);
-    setResult({ type: "error", message: "Error al enviar. Intenta nuevamente." });
-  } finally {
-    setSending(false);
-  }
 };
 
   return (
     <form 
       className="contact-form" 
       onSubmit={handleSubmit} 
+      target="_blank"
       noValidate
       action="https://formsubmit.co/76873159ba20b128215a46e1328864af" 
       method="POST"
       >
       <h3>Contactanos</h3>
+      {/* 1. Redirección al enviar: Cambia esta URL por la tuya de Netlify */}
+      <input type="hidden" name="_next" value="https://santalice.netlify.app/contact" />
+
+      {/* 2. Evitar Captcha (Opcional, hace el envío más rápido) */}
+      <input type="hidden" name="_captcha" value="false" />
 
       <label className="field">
         <span className="label">Nombre *</span>
@@ -156,20 +122,10 @@ const handleSubmit = (e) => {
       </label>
 
       <div className="actions">
-        <button type="submit" className="btn-send" disabled={sending}>
-          {sending ? "Enviando..." : "Enviar"}
+        <button type="submit" className="btn-send">
+          "Enviar"
         </button>
       </div>
-
-      {result && (
-        <div
-          role="status"
-          className={`result ${result.type === "success" ? "success" : "error"}`}
-          aria-live="polite"
-        >
-          {result.message}
-        </div>
-      )}
     </form>
   );
 }
