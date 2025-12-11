@@ -52,7 +52,7 @@ const handleSubmit = (e) => {
   setSending(true);
 
   try {
-    const actionUrl = "https://formsubmit.co/santalicedya@gmail.com";
+    const actionUrl = "https://formsubmit.co/76873159ba20b128215a46e1328864af";
 
     // crear form temporal
     const tempForm = document.createElement("form");
@@ -100,7 +100,7 @@ const handleSubmit = (e) => {
       className="contact-form" 
       onSubmit={handleSubmit} 
       noValidate
-      action="https://formsubmit.co/santalicedya@gmail.com" 
+      action="https://formsubmit.co/76873159ba20b128215a46e1328864af" 
       method="POST"
       >
       <h3>Contactanos</h3>
