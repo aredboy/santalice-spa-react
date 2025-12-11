@@ -191,7 +191,6 @@
   .story-section {
     flex-direction: column-reverse !important;
     text-align: center;
-    padding: 50px 20px;
   }
   .lines-svg-container {
     display: none; /* Hide complex lines on mobile */
