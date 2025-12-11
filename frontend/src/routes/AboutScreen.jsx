@@ -6,7 +6,7 @@ import SplitMaskedText from "./components/SplitMaskedText";
 import './styles/about.css'
 
 export function AboutScreen({
-  imageSrc = "images/ali.png",
+  imageSrc = "images/ali.webp",
   name = "Alicia Della Siega",
 }) {
   // Parallax tilt for image on pointer move (desktop)
@@ -19,6 +19,7 @@ export function AboutScreen({
   const splitRef = useRef(null);
 
   const [showAppointment, setShowAppointment] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   function handlePointer(e) {
     const rect = imgRef.current?.getBoundingClientRect();
@@ -64,7 +65,16 @@ export function AboutScreen({
                 src={imageSrc}
                 alt={`Portrait of ${name}`}
                 className="portrait-img"
-                loading="lazy"
+                loading="eager"
+                initial={{ opacity: 0, scale: 0.95 }} // Empieza transparente y un pelín chica
+                animate={{ 
+                    opacity: imgLoaded ? 1 : 0, 
+                    scale: imgLoaded ? 1 : 0.95 
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }} // Transición suave
+                
+                // DETECTOR DE CARGA
+                onLoad={() => setImgLoaded(true)}
             />
 
             <p className="portrait-tag">Estacional, local & preparado con amor.</p>

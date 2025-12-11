@@ -100,7 +100,7 @@ const handleSubmit = (e) => {
       className="contact-form" 
       onSubmit={handleSubmit} 
       noValidate
-      action="https://formsubmit.co/germanrojo.biologistic@gmail.com" 
+      action="https://formsubmit.co/santalicedya@gmail.com" 
       method="POST"
       >
       <h3>Contactanos</h3>
