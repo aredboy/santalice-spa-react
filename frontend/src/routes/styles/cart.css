@@ -47,22 +47,6 @@ body {
   color: #4c5b61;
 }
 
-@media (min-width: 992px) {
-  .table-cart{
-    margin: 2.5rem 10px auto !important;
-  }
-  .table-row th {
-    font-size: 22px !important;
-  }
-  
-  .table-row th,
-  .table-row td {
-    padding: 12px;
-  }
-  .btn-quantity {
-    min-width: 40px;
-  }
-}
 /* === BUTTON GROUP FOR QUANTITY === */
 .table-content-btn-container {
   /* display: flex; */
@@ -163,10 +147,12 @@ button {
   padding-left: 10px;
   font-size: 20px;
 }
+
 /* === RESPONSIVE UPGRADE ON BIGGER SCREENS === */
 @media (min-width: 768px) {
   .table-cart {
-    width: 90%;
+    width: 95% !important;
+    margin: 2.5rem auto !important;
   }
   
   .table-row th,
@@ -176,5 +162,21 @@ button {
   }
   .table-price-total{
     padding-left: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .table-cart{
+    margin: 5rem auto !important;
+  }
+  .table-row th {
+    font-size: 22px !important;
+  }
+  
+  .table-row th,
+  .table-row td {
+    padding: 12px;
+  }
+  .btn-quantity {
+    min-width: 40px;
   }
 }

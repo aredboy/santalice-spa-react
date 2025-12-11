@@ -52,7 +52,7 @@ const handleSubmit = (e) => {
   setSending(true);
 
   try {
-    const actionUrl = "https://formsubmit.co/germanrojo.biologistic@gmail.com";
+    const actionUrl = "https://formsubmit.co/santalicedya@gmail.com";
 
     // crear form temporal
     const tempForm = document.createElement("form");

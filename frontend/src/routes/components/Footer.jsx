@@ -47,7 +47,7 @@ export const Footer = () => {
                         <h5 className="contacto">CONTACTO</h5>
                         <Link to='/contact' className="nav-logo">
                             <img src={email} alt="email" className="link"/>
-                            <p>santalicedolcezzaeamore@gmail.com</p>
+                            <p>santalicedya@gmail.com</p>
                         </Link>
                         <Link to='/' className="nav-logo">
                             <img src={whatsapp} alt="whatsapp" className="link"/>
