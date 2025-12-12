@@ -27,12 +27,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .modal-h3 {
     margin: 0 !important;
-    font-size: 24px;
+    font-size: 20px;
     color: #4c5b61;
 }
 
@@ -52,7 +52,6 @@
 .modal-tabs {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
     border-bottom: 1px solid #eee;
 }
 
@@ -75,7 +74,7 @@
 
 /* Form Styles */
 .form-group {
-    margin: .8rem auto !important;
+    margin: .5rem auto !important;
     text-align: left;
     color: #213638;
 }
@@ -125,6 +124,9 @@ input:focus {
 p {
     margin: 0.5rem 0;
 }
+span.label-m.info-text {
+    margin-bottom: 10px;
+}
 
 .btn-confirm-modal {
     background: #2dbcc1;
@@ -145,12 +147,21 @@ p {
     .form-group {
         margin: 1rem auto !important;
     }
+    .modal-header {
+        margin-bottom: 15px;
+    }
     .modal-h3 {
         font-size: 28px;
         margin: 0 0 1rem 0 !important;
     }
+    .modal-tabs {
+        margin-bottom: 20px;
+    }
     .tab {
         font-size: 20px;
+    }
+    .form-group {
+        margin: .8rem auto !important;
     }
     .form-group .label-m {
         font-size: 20px;
@@ -159,6 +170,9 @@ p {
     input[type="tel"]
     {
         font-size: 18px;    
+    }
+    span.label-m.info-text {
+        margin-bottom: 40px;
     }
     .btn-confirm-modal {
         font-size: 24px;

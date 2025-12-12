@@ -214,7 +214,7 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
                                 <span className="label-m info-text">
                                     El costo y tiempo del envío dependerá de la distancia y será informado una vez calculado.<br></br>
                                     Los pedidos se confirman con el 50% de adelanto.
-                                </span><br />
+                                </span>
                             </div>
                         </>
                     )}
