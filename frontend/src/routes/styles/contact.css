@@ -97,6 +97,10 @@ textarea:focus {
   font-weight: 500;
 }
 
+.btn-send:hover {
+  background-color: #27a1a6;
+}
+
 .btn-send[disabled] {
   opacity: 0.6;
   cursor: not-allowed;

@@ -3,6 +3,7 @@ import { Card } from "../components/Card"
 import { ProductsContext } from "../context/ProductsContext"
 import { CartContext } from "../context/CartContext"
 import { useParams, Link } from "react-router-dom"
+import PageTransition from "../components/PageTransition";
 import whatsapp from "../../assets/whatsapp_edited.png"
 import cartIcon from "../../assets/bag3.png"
 import '../styles/shop.css'
@@ -95,6 +96,7 @@ useEffect(() => {
 
   return (
     <>
+    <PageTransition>
       <div className="products-grid">
         <h4 className="products-h4">
           {category ? sentenceCase(category) : 'Nuestros productos'}
@@ -166,6 +168,7 @@ useEffect(() => {
           />
         </a>
       )}
+    </PageTransition>
     </>
   )
 }

@@ -126,6 +126,7 @@
     color: white;
     font-size: 24px;
     border: 1px solid transparent;
+    transition: ease-in-out 0.4s;
 }
 .btn.primary:hover {
     background: transparent;
@@ -137,7 +138,7 @@
     background: transparent;
     color: #2dbcc1;
     border: 1px solid rgba(45, 188, 193, 0.25);
-    /* padding: 0.9rem 1.8rem 1rem 1.8rem !important; */
+    transition: ease-in-out 0.4s;
 }
 .btn.outline:hover {
     background: #2dbcc1;

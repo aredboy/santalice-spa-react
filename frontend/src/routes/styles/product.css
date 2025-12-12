@@ -145,7 +145,9 @@
   font-size: 24px;
   font-weight: 500;
 }
-
+.btn-add-to-cart:hover {
+  background-color: #27a1a6;
+}
 
 /* ------ breadcrumb and carousel indicators ------ */
 

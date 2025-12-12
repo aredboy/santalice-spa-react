@@ -113,6 +113,7 @@ export function HomeScreen() {
   }, []);
 
   return (
+
       <div className="home-container" ref={mainRef}>
 
         {/* HERO INTRO SECTION */}
@@ -242,7 +243,6 @@ export function HomeScreen() {
           </Link>
         </div>
       </section>
-
-    </div>
+      </div>
   );
 }
