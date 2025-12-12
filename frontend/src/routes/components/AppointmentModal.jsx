@@ -134,7 +134,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
 
             <form onSubmit={handleSubmit} className="appointment-form" noValidate>
                 <div className={`form-row ${errors.date ? 'form-row-error' : ''}`}>
-                    <label htmlFor="date">Seleciona la fecha *</label>
+                    <label className="label-app" htmlFor="date">Seleciona la fecha *</label>
                     <input
                         type="date"
                         name="date"
@@ -153,7 +153,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                     {errors.date && <span className="error-msg">{errors.date}</span>}
                 </div>
                 <div className={`form-row ${errors.name ? 'form-row-error' : ''}`}>
-                    <label htmlFor="name">Nombre *</label>
+                    <label className="label-app" htmlFor="name">Nombre *</label>
                     <input
                         type="text"
                         name="name"
@@ -168,7 +168,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                     {errors.name && <span className="error-msg">{errors.name}</span>}
                 </div>
                 <div className={`form-row ${errors.phone ? 'form-row-error' : ''}`}>
-                    <label htmlFor="phone">Teléfono *</label>
+                    <label className="label-app" htmlFor="phone">Teléfono *</label>
                     <input
                         type="tel"
                         name="phone"
@@ -184,7 +184,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                 </div>
 
                 <div className="form-row">
-                    <label htmlFor="eventType">Tipo de Evento</label>
+                    <label className="label-app" htmlFor="eventType">Tipo de Evento</label>
                     <select
                         name="eventType"
                         id="eventType"
@@ -231,7 +231,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                 {form.deliveryType === "delivery" && (
                 <>
                     <div className={`form-row ${errors.address ? 'form-row-error' : ''}`}>
-                        <label htmlFor="address">Dirección de entrega *</label>
+                        <label className="label-app" htmlFor="address">Dirección de entrega *</label>
                         <input
                             type="text"
                             name="address"
@@ -246,7 +246,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                         {errors.address && <span className="error-msg">{errors.address}</span>}
                     </div>
                     <div className={`form-row ${errors.city ? 'form-row-error' : ''}`}>
-                        <label htmlFor="city">Localidad / Barrio *</label>
+                        <label className="label-app" htmlFor="city">Localidad / Barrio *</label>
                         <input
                             type="text"
                             name="city"
