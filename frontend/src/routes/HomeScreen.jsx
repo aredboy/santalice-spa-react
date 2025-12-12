@@ -205,7 +205,7 @@ export function HomeScreen() {
         <div className="img-box">
           <Link to="/products/budines" className="img-a">
             <img 
-              src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80" 
+              src="images/budinmandarina1.webp" 
               alt="Budines" 
               className="product-img-home"
             />
