@@ -141,7 +141,7 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
                 <form onSubmit={handleSubmit} noValidate>
                     {/* Common Field: Name */}
                     <div className="form-group">
-                        <span className="label">Tu Nombre *</span>
+                        <span className="label-m">Tu Nombre *</span>
                         <input
                             type="text"
                             name="name"
@@ -161,7 +161,7 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
                             <p>🕒 <b>Horarios:</b> A convenir.</p>
                         </div>
                         <div className="form-group">
-                            <span className="label info-text">
+                            <span className="label-m info-text">
                                 Los pedidos se confirman con el 50% de adelanto.
                             </span><br />
                         </div>
@@ -169,7 +169,7 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
                     ) : (
                         <>
                             <div className="form-group">
-                                <span className="label">Dirección *</span>
+                                <span className="label-m">Dirección *</span>
                                 <input
                                     type="text"
                                     name="address"
@@ -183,7 +183,7 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
                             </div>
 
                             <div className="form-group">
-                                <span className="label">Localidad / Barrio *</span>
+                                <span className="label-m">Localidad / Barrio *</span>
                                 <input
                                     type="text"
                                     name="city"
@@ -197,7 +197,7 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
                             </div>
 
                             <div className="form-group">
-                                <span className="label">Teléfono de contacto *</span>
+                                <span className="label-m">Teléfono de contacto *</span>
                                 <input
                                     type="tel"
                                     name="phone"
@@ -211,7 +211,7 @@ export const AddressModal = ({ isOpen, onClose, onConfirm }) => {
                             </div>
 
                             <div className="form-group">
-                                <span className="label info-text">
+                                <span className="label-m info-text">
                                     El costo y tiempo del envío dependerá de la distancia y será informado una vez calculado.<br></br>
                                     Los pedidos se confirman con el 50% de adelanto.
                                 </span><br />
