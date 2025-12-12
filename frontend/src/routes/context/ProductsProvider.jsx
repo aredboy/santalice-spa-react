@@ -12,7 +12,7 @@ export const ProductsProvider = ({children}) => {
             // Si no (en tu PC), usa localhost.
             const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
             
-            console.log("Conectando a:", baseUrl); // Para depurar
+            // console.log("Conectando a:", baseUrl); // Para depurar
 
             // 2. Hacemos el fetch concatenando la URL base con el endpoint
             const response = await fetch(`${baseUrl}/products`)
@@ -21,7 +21,7 @@ export const ProductsProvider = ({children}) => {
                 throw new Error(`HTTP error! Status: ${response.status}`)
             }
             const data = await response.json()
-            console.log(data)
+            // console.log(data)
             setProducts(data)
         } catch (error) {
             console.log('Error fetching products:', error)

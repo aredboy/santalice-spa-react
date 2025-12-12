@@ -7,6 +7,10 @@ import "./styles/home.css";
 // Register Plugin
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+})
+
 // Helper to split text into words for animation
 const SplitText = ({ children }) => {
   if (typeof children !== "string") return null;
