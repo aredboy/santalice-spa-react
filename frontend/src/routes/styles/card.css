@@ -80,6 +80,7 @@
 
 .product-title-link {
   padding-top: 10px;
+  padding-right: 10px;
   border-radius: 16px;
   text-decoration: none;
   grid-area: title;
