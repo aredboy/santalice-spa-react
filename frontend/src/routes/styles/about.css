@@ -11,6 +11,7 @@
 .about-header {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     margin-bottom: 18px !important;
 }
@@ -24,8 +25,7 @@
     font-size: 20px;
 }
 .title {
-    font-size: 34px;
-    margin: 0 0 5% 5%;
+    font-size: 38px;
     font-weight: 700;
     font-style: italic;
     color: #2dbcc1;
