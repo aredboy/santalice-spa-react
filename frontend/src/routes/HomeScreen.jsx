@@ -180,7 +180,7 @@ export function HomeScreen() {
         <div className="img-box">
           <Link to="/products/tortas" className="img-a">
             <img
-              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" 
+              src="images/redvelvet.webp" 
               alt="Tortas" 
               className="product-img-home"
             />
