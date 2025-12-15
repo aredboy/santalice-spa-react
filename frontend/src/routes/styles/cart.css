@@ -9,7 +9,7 @@ body {
   display: table !important;
   table-layout: auto !important;
   width: 100% !important;
-  margin: 2.5rem 0 !important;
+  margin: 4rem 0 2.5rem 0 !important;
   height: auto !important;
   border-collapse: collapse;
   background: white;
@@ -134,7 +134,7 @@ button {
 .gap-2.col-6.mx-auto.mb-5 {
     display: block;
     justify-self: center;
-    margin: 2.5rem 0 !important;
+    margin: 2.5rem 0 4rem 0 !important;
 }
 
 .table-row-total {

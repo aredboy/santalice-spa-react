@@ -43,7 +43,7 @@ export const CartPage = () => {
     message += `--------------------------\n`;
     if (deliveryData.type === "pickup") {
       message += `Tipo de entrega: 📦 *Retiro en local*.\n`;
-      message += `(Coordiná la dirección y el horario de retiro con nuestro representante.)\n`;
+      message += `Quisiera coordinar el lugar y horario de retiro de mi pedido con vos.)\n`;
     } else {
       message += `Tipo de entrega: *Envío a domicilio*.\n`;
       message += `Dirección: ${deliveryData.address}, ${deliveryData.city}.\n`;
