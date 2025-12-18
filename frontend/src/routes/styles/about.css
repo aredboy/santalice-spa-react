@@ -108,8 +108,10 @@
 
 .cta-row {
     display: flex;
+    flex-direction: column;
+    align-items: anchor-center;
     gap: 12px;
-    margin-top: 30px !important;
+    margin-top: 4rem !important;
     flex-wrap: wrap;
 }
 .btn {
@@ -156,6 +158,9 @@
     .about-chef-root {
         padding: 48px 32px;
         margin-bottom: 5rem !important;
+    }
+    .about-header {
+        justify-content: flex-start;
     }
     .about-grid {
         display: grid;
@@ -208,7 +213,8 @@
     font-size: 1.4rem !important;
     }
     .cta-row {
-        margin-top: 28px !important;
+        flex-direction: row;
+        align-items: unset;
     }
 }
 
