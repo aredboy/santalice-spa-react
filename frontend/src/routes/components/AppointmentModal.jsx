@@ -21,7 +21,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
         deliveryType: "delivery",
         address: "",
         city: "",
-        eventType: "Cena Familiar", // default
+        eventType: "", // default
     });
 
     // GSAP Slide Up Animation
@@ -189,12 +189,14 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                         name="eventType"
                         id="eventType"
                         value={form.eventType}
-                        onChange={handleChange}    
+                        onChange={handleChange}
+                        className={form.eventType === "" ? "placeholder-selected" : ""}
                     >
-                        <option>Cena Familiar</option>
-                        <option>Cumpleaños</option>
-                        <option>Evento Corporativo</option>
-                        <option>Otro</option>
+                        <option value="Selecciona" hidden>Seleccioná un evento</option>
+                        <option value="Cena Familiar">Cena Familiar</option>
+                        <option value="Cumpleaños">Cumpleaños</option>
+                        <option value="Evento Corporativo">Evento Corporativo</option>
+                        <option value="Otro">Otro</option>
                     </select>
                 </div>
 

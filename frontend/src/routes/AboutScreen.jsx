@@ -77,7 +77,7 @@ export function AboutScreen({
                 onLoad={() => setImgLoaded(true)}
             />
 
-            <p className="portrait-tag">Estacional, local & preparado con amor.</p>
+            <p className="portrait-tag"></p>
           </div>
 
           <div className="text-column">

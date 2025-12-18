@@ -197,11 +197,8 @@
       margin: 10px 12px 1px 0 !important; 
     }
   /* hide the label on very narrow screens */
-  .nav-top .nav-top-myorder .myorder-label { 
-    display: none; 
-  }
-    .nav-link {
-      font-size: 22px !important;
+    .nav-top .nav-top-myorder .myorder-label { 
+      display: none; 
     }
 }
 

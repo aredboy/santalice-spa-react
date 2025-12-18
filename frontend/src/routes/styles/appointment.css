@@ -98,8 +98,20 @@
 }
 .form-row input[type="text"]::placeholder,
 .form-row input[type="tel"]::placeholder,
-.form-row input[type="date"]::placeholder {
+.native-date-input::-webkit-datetime-edit-text,
+.native-date-input::-webkit-datetime-edit-month-field,
+.native-date-input::-webkit-datetime-edit-day-field,
+.native-date-input::-webkit-datetime-edit-year-field,
+select.placeholder-selected {
     color: #999999; 
+}
+/* Cuando el usuario ya eligió una fecha, volvemos al color normal */
+.native-date-input:not([value=""])::-webkit-datetime-edit-text,
+.native-date-input:not([value=""])::-webkit-datetime-edit-month-field,
+.native-date-input:not([value=""])::-webkit-datetime-edit-day-field,
+.native-date-input:not([value=""])::-webkit-datetime-edit-year-field,
+select option {
+    color: #4c5b61;
 }
 .form-row input:focus {
     color: #4c5b61;
