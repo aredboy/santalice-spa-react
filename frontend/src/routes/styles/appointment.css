@@ -96,22 +96,43 @@
     font-size: 16px;
     color: #4c5b61;
 }
+.native-date-input::-webkit-calendar-picker-indicator {
+    display: block !important;
+    background-size: contain;
+    cursor: pointer;
+    opacity: 0.6; /* Para que no brille tanto como el texto */
+    filter: invert(0.5); /* Ajusta esto si tu fondo es oscuro */
+}
+.native-date-input {
+    -webkit-appearance: listbox !important; /* En lugar de 'none' */
+    appearance: auto; 
+}
 .form-row input[type="text"]::placeholder,
 .form-row input[type="tel"]::placeholder,
 .native-date-input::-webkit-datetime-edit-text,
 .native-date-input::-webkit-datetime-edit-month-field,
 .native-date-input::-webkit-datetime-edit-day-field,
 .native-date-input::-webkit-datetime-edit-year-field,
+.form-row input::placeholder,
 select.placeholder-selected {
-    color: #999999; 
+    color: #999999;
+}
+.native-date-input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
 }
 /* Cuando el usuario ya eligió una fecha, volvemos al color normal */
-.native-date-input:not([value=""])::-webkit-datetime-edit-text,
-.native-date-input:not([value=""])::-webkit-datetime-edit-month-field,
-.native-date-input:not([value=""])::-webkit-datetime-edit-day-field,
-.native-date-input:not([value=""])::-webkit-datetime-edit-year-field,
+.native-date-input.date-selected::-webkit-datetime-edit-text,
+.native-date-input.date-selected::-webkit-datetime-edit-month-field,
+.native-date-input.date-selected::-webkit-datetime-edit-day-field,
+.native-date-input.date-selected::-webkit-datetime-edit-year-field,
 select option {
     color: #4c5b61;
+}
+/* 3. Force the Calendar Icon (and hide the arrow) */
+.native-date-input::-webkit-calendar-picker-indicator {
+    display: block !important;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23999999" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+    cursor: pointer;
 }
 .form-row input:focus {
     color: #4c5b61;

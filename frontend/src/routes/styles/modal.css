@@ -97,7 +97,6 @@ input[type="tel"]
     background: #fafafa;
     box-sizing: border-box;
     font-size: .9rem;
-
     color: #4c5b61;
 }
 input[type="text"]::placeholder,

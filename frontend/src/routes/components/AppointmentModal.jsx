@@ -138,6 +138,20 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                     <input
                         type="date"
                         name="date"
+                        id="date"
+                        required
+                        min={today}
+                        value={date}
+                        onChange={(e) => {
+                            setDate(e.target.value);
+                            if (errors.date) setErrors({ ...errors, date: undefined });
+                        }}
+                        /* Added 'date-selected' class if date has a value */
+                        className={`native-date-input ${date ? "date-selected" : ""} ${errors.date ? "input-error" : ""}`}
+                    />
+                    {/* <input
+                        type="date"
+                        name="date"
                         required
                         id="date"
                         min={today}
@@ -149,7 +163,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                             }}}
                         className={errors.date ? "native-date-input input-error" : "native-date-input"}
                         aria-invalid={errors.date ? "true" : "false"}
-                    />
+                    /> */}
                     {errors.date && <span className="error-msg">{errors.date}</span>}
                 </div>
                 <div className={`form-row ${errors.name ? 'form-row-error' : ''}`}>
