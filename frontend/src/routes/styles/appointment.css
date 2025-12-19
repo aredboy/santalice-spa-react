@@ -122,25 +122,28 @@
     border-top: 7px solid #999999; /* Your placeholder color */
     pointer-events: none; /* Crucial: clicks pass through to the select */
 }
+
 input.native-date-input {
     position: relative;
-    -webkit-appearance: none;
-    appearance: none;
-    display: block;
-    width: 100%;
-    -webkit-appearance: none;
+    appearance: auto;
+    -webkit-appearance: listbox;
+
+    display: flex;
+    align-items: center;
+    /* min-height: 48px; */
     padding-right: 12px !important;
     color: #4c5b61;
 }
 .native-date-input::-webkit-datetime-edit {
+    display: inline-flex !important;
+    opacity: 1 !important;
     color: #999999;
 }
 /* 4. Fix for Android/iPhone "White Space" (Internal Padding) */
 .native-date-input::-webkit-datetime-edit-fields-wrapper {
     display: flex !important;
     padding: 0;
-    flex-grow: 1;
-    align-items: center;
+    flex: 1;
 }
 /* When the user has selected a date (using the class from React) */
 .native-date-input.date-selected::-webkit-datetime-edit {
