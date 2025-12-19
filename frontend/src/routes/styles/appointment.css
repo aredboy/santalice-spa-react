@@ -112,7 +112,7 @@
 .select-container::after {
     content: "";
     position: absolute;
-    right: 20px; /* <--- CONTROL YOUR SEPARATION HERE */
+    right: 12px; /* <--- CONTROL YOUR SEPARATION HERE */
     bottom: 16px; /* Adjust based on your input height */
     width: 0; 
     height: 0; 
