@@ -96,17 +96,75 @@
     font-size: 16px;
     color: #4c5b61;
 }
+.select-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.select-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 40px !important; /* Space for the manual arrow */
+}
+
+/* Create the arrow using CSS only (no SVG, no imports) */
+.select-container::after {
+    content: "";
+    position: absolute;
+    right: 20px; /* <--- CONTROL YOUR SEPARATION HERE */
+    bottom: 16px; /* Adjust based on your input height */
+    width: 0; 
+    height: 0; 
+    border-radius: 18px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid #999999; /* Your placeholder color */
+    pointer-events: none; /* Crucial: clicks pass through to the select */
+}
+input.native-date-input {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-appearance: none;
+    padding-right: 12px !important;
+    color: #4c5b61;
+}
+.native-date-input::-webkit-datetime-edit {
+    color: #999999;
+}
+/* 4. Fix for Android/iPhone "White Space" (Internal Padding) */
+.native-date-input::-webkit-datetime-edit-fields-wrapper {
+    display: flex !important;
+    padding: 0;
+    flex-grow: 1;
+    align-items: center;
+}
+/* When the user has selected a date (using the class from React) */
+.native-date-input.date-selected::-webkit-datetime-edit {
+    color: #4c5b61;
+}
 .native-date-input::-webkit-calendar-picker-indicator {
-    display: block !important;
+/* This removes the default arrow/icon */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: contain;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>');
     cursor: pointer;
-    opacity: 0.6; /* Para que no brille tanto como el texto */
-    filter: invert(0.5); /* Ajusta esto si tu fondo es oscuro */
+    width: 20px;
+    height: 20px;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-appearance: none !important;
+    opacity: 1; /* Ensures it's visible */
 }
-.native-date-input {
-    -webkit-appearance: listbox !important; /* En lugar de 'none' */
-    appearance: auto; 
-}
+
 .form-row input[type="text"]::placeholder,
 .form-row input[type="tel"]::placeholder,
 .native-date-input::-webkit-datetime-edit-text,
@@ -117,10 +175,7 @@
 select.placeholder-selected {
     color: #999999;
 }
-.native-date-input::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-}
-/* Cuando el usuario ya eligió una fecha, volvemos al color normal */
+    /* Cuando el usuario ya eligió una fecha, volvemos al color normal */
 .native-date-input.date-selected::-webkit-datetime-edit-text,
 .native-date-input.date-selected::-webkit-datetime-edit-month-field,
 .native-date-input.date-selected::-webkit-datetime-edit-day-field,
@@ -128,12 +183,7 @@ select.placeholder-selected {
 select option {
     color: #4c5b61;
 }
-/* 3. Force the Calendar Icon (and hide the arrow) */
-.native-date-input::-webkit-calendar-picker-indicator {
-    display: block !important;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23999999" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
-    cursor: pointer;
-}
+
 .form-row input:focus {
     color: #4c5b61;
     outline: none;

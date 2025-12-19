@@ -21,7 +21,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
         deliveryType: "delivery",
         address: "",
         city: "",
-        eventType: "", // default
+        eventType: "",
     });
 
     // GSAP Slide Up Animation
@@ -149,21 +149,6 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                         /* Added 'date-selected' class if date has a value */
                         className={`native-date-input ${date ? "date-selected" : ""} ${errors.date ? "input-error" : ""}`}
                     />
-                    {/* <input
-                        type="date"
-                        name="date"
-                        required
-                        id="date"
-                        min={today}
-                        value={date}
-                        onChange={(e) => {
-                            setDate(e.target.value)
-                            if (errors.date) {
-                                setErrors({ ...errors, date: undefined })
-                            }}}
-                        className={errors.date ? "native-date-input input-error" : "native-date-input"}
-                        aria-invalid={errors.date ? "true" : "false"}
-                    /> */}
                     {errors.date && <span className="error-msg">{errors.date}</span>}
                 </div>
                 <div className={`form-row ${errors.name ? 'form-row-error' : ''}`}>
@@ -197,7 +182,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                     {errors.phone && <span className="error-msg">{errors.phone}</span>}
                 </div>
 
-                <div className="form-row">
+                <div className="form-row select-container">
                     <label className="label-app" htmlFor="eventType">Tipo de Evento</label>
                     <select
                         name="eventType"
@@ -206,7 +191,7 @@ export const AppointmentModal = ({ isOpen, onClose }) => {
                         onChange={handleChange}
                         className={form.eventType === "" ? "placeholder-selected" : ""}
                     >
-                        <option value="Selecciona" hidden>Seleccioná un evento</option>
+                        <option value="" hidden>Seleccioná un evento</option>
                         <option value="Cena Familiar">Cena Familiar</option>
                         <option value="Cumpleaños">Cumpleaños</option>
                         <option value="Evento Corporativo">Evento Corporativo</option>
