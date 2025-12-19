@@ -139,7 +139,6 @@ input.native-date-input {
     color: transparent !important; /* This creates the 'empty' look you prefer */
 }
 
-
 .native-date-input::-webkit-datetime-edit {
     display: inline-flex !important;
     opacity: 1 !important;

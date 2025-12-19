@@ -70,6 +70,33 @@ textarea:focus {
   box-shadow: 0 4px 14px rgba(45,188,193,0.08);
 }
 
+.select-contain {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.select-contain select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 40px !important; /* Space for the manual arrow */
+}
+
+/* Create the arrow using CSS only (no SVG, no imports) */
+.select-contain::after {
+    content: "";
+    position: absolute;
+    right: 12px; /* <--- CONTROL YOUR SEPARATION HERE */
+    bottom: 27px; /* Adjust based on your input height */
+    width: 0; 
+    height: 0; 
+    border-radius: 18px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid #999999; /* Your placeholder color */
+    pointer-events: none; /* Crucial: clicks pass through to the select */
+}
+
 .error {
     color: #b32a2a;
     font-size: 1rem;

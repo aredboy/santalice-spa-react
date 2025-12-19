@@ -84,7 +84,6 @@ hr {
 
 .whatsapp-float:hover {
     transform: scale(1.005); /* Slight zoom on hover */
-    background-color: none;
 }
 
 .order-float {

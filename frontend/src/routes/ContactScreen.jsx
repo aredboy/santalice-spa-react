@@ -129,16 +129,18 @@ export function ContactScreen() {
         {errors.email && <small className="error">{errors.email}</small>}
       </label>
 
-      <label className="field">
-        <span className="label">Asunto</span>
-        <select name="asunto" 
-          value={form.asunto} 
-          onChange={handleChange} >
-          {temas.map((t) => (
-            <option key={t} value={t}>{t}</option>
-          ))}
-        </select>
-      </label>
+      <div className="form-row select-contain">
+        <label className="field">
+          <span className="label">Asunto</span>
+          <select name="asunto" 
+            value={form.asunto} 
+            onChange={handleChange} >
+            {temas.map((t) => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
+        </label>
+      </div>
 
       <label className="field">
         <span className="label">Comentarios</span>
