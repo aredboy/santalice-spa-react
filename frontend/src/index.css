@@ -1,3 +1,5 @@
+@import './theme.css';
+
 html,
 body {
     height: auto;
@@ -7,11 +9,11 @@ body {
 }
 
 body {
-    font-family: "EB Garamond", serif !important;
+    font-family: var(--font-family) !important;
     font-optical-sizing: auto !important;
     font-style: normal !important;
     letter-spacing: .02em;
-    background-color: #f9f8f8;
+    background-color: var(--color-bg);
 }
 .app-wrapper {
     display: flex;

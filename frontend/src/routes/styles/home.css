@@ -2,26 +2,21 @@
 .home-container {
   position: relative;
   width: 100%;
-  overflow: hidden; 
-  background: #f9f8f8; /* Ensure white background so lines show */
+  overflow: hidden;
+  background: var(--color-bg);
 }
 
 /* Styling for the new introductory section */
 .hero-intro {
-  /* CRITICAL: Ensures it takes up the full screen height */
   min-height: 93vh;
-  
-  /* Positioning and layout */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  
-  /* Optional: Basic styling */
   padding: 0 10%;
-  background-color: #f9f8f8; /* Match your body background */
-  color: #4c5b61;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 .hero-intro h1 {
   font-size: 3em;
@@ -44,12 +39,13 @@
   }
 }
 .asterisc {
-  color: #2dbcc1;
+  color: var(--color-primary);
 }
 .italic {
   font-style: italic;
   font-weight: 500;
 }
+
 /* SVG Lines */
 .lines-svg-container {
   position: absolute;
@@ -62,17 +58,16 @@
 }
 
 .line-path-bg {
-  stroke: #eee; /* Faint grey for the "empty" path */
+  stroke: #eee;
   stroke-width: 8px;
   fill: none;
 }
 
 .line-path-active {
-  stroke: #2dbcc1; /* Your Brand Color */
+  stroke: var(--color-primary);
   stroke-width: 8px;
   fill: none;
   stroke-linecap: round;
-  /* Dashed stroke allows us to animate the "draw" effect */
 }
 
 /* Sections */
@@ -82,13 +77,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh; /* Full screen height per section */
+  min-height: 80vh;
   padding: 0 5% 0 2%;
   gap: 0;
   margin-bottom: 0vh;
 }
 
-/* Alternate Layouts */
 .story-section.right-img {
   flex-direction: row;
 }
@@ -102,11 +96,12 @@
 }
 @media (min-width: 768px) {
   .story-section {
-    min-height: 100vh; /* Full screen height per section */
+    min-height: 100vh;
     margin-bottom: 20vh;
     gap: 50px;
   }
 }
+
 /* Text */
 .text-box {
   flex: 1.2;
@@ -115,7 +110,7 @@
   font-size: 1.3rem;
   line-height: 1.6;
   font-weight: 500;
-  color: #4c5b61;
+  color: var(--color-text);
   margin-left: 1rem;
 }
 .title-paragraph {
@@ -127,17 +122,17 @@
   text-decoration: none;
   color: inherit;
   display: block;
-} 
+}
 .title-paragraph-a:hover {
   transition: color 0.4s ease-in-out;
-  color: #2dbcc1;
+  color: var(--color-primary);
 }
 @media (min-width: 1200px) {
   .story-paragraph {
     font-size: 1.9rem;
     line-height: 1.6;
     font-weight: 500;
-    color: #4c5b61;
+    color: var(--color-text);
     margin-left: 1rem;
   }
   .title-paragraph {
@@ -147,7 +142,7 @@
   }
 }
 .word {
-  opacity: 0.1; /* Start invisible (faint) */
+  opacity: 0.1;
   display: inline-block;
 }
 
@@ -163,27 +158,25 @@
 .product-img-home {
   width: 100%;
   max-width: 500px;
-  border-radius: 28px;
+  border-radius: var(--radius-xl);
   transition: all 0.5s ease;
-  border: 5px solid transparent; 
-  border: 6px solid #2dbcc1;
-  filter: brightness(0.7) grayscale(20%); /* Start dim */
+  border: 6px solid var(--color-primary);
+  filter: brightness(0.7) grayscale(20%);
   cursor: pointer;
 }
 
 /* ACTIVE STATE (Triggered by GSAP) */
 .product-img-home.active {
   filter: brightness(1.1) grayscale(0%);
-  border-color: #2dbcc1;
-  box-shadow:
-        0 0 0 2px #2dbcc1; /* New: Solid ring of color (like the border) */
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
   transform: scale(1.03);
 }
 .product-img-home.active:hover {
-    box-shadow:
-        0 0 0 2px #2dbcc1,
-        0 0 10px 4px rgba(45, 188, 193, 0.7),
-        0 0 6px 4px #2dbcc14d;
+  box-shadow:
+    0 0 0 2px var(--color-primary),
+    0 0 10px 4px var(--color-primary-glow),
+    0 0 6px 4px rgba(45, 188, 193, 0.3);
 }
 
 /* Mobile */
@@ -194,7 +187,7 @@
     margin: 0 0 4rem 0 !important;
   }
   .lines-svg-container {
-    display: none; /* Hide complex lines on mobile */
+    display: none;
   }
   .product-img {
     margin-bottom: 0px;

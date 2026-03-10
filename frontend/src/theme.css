@@ -1,0 +1,40 @@
+/* ============================================================
+   theme.css — Variables de diseño centralizadas
+   ============================================================
+   Para cambiar el look del sitio entero, editá solo este archivo.
+   Todos los demás CSS usan estas variables con var(--nombre).
+   ============================================================ */
+
+:root {
+  /* --- Colores principales --- */
+  --color-primary: #2dbcc1;
+  --color-primary-hover: #27a1a6;
+  --color-primary-light: rgba(45, 188, 193, 0.8);
+  --color-primary-glow: rgba(45, 188, 193, 0.7);
+  --color-primary-subtle: #b9e7e9;
+
+  /* --- Colores de texto --- */
+  --color-text: #4c5b61;
+  --color-text-dark: #213638;
+  --color-text-white: #f9f8f8;
+
+  /* --- Fondos --- */
+  --color-bg: #f9f8f8;
+  --color-bg-input: #fafafa;
+  --color-border: #e3e3e3;
+
+  /* --- Errores --- */
+  --color-error: #b32a2a;
+  --color-error-bg: #fff1f1;
+  --color-success-bg: #e6fffb;
+  --color-success-text: #00695c;
+
+  /* --- Tipografía --- */
+  --font-family: "EB Garamond", serif;
+
+  /* --- Bordes --- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+}
