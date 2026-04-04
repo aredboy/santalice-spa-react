@@ -180,7 +180,7 @@ export function HomeScreen() {
         <div className="img-box">
           <Link to="/products/tortas" className="img-a">
             <img
-              src="images/redvelvet.webp" 
+              src="images/keylimepie.webp" 
               alt="Tortas" 
               className="product-img-home"
             />
@@ -240,7 +240,7 @@ export function HomeScreen() {
         <div className="img-box">
           <Link to="/products/masdulces" className="img-a">
             <img 
-              src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80" 
+              src="images/alfajorganache.webp" 
               alt="Dulces" 
               className="product-img-home"
             />
