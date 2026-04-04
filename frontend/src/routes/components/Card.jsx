@@ -32,7 +32,7 @@ export const Card = ({image, title, price, id, handleAdd, description}) => {
     <>
     <article className="product-card" tabIndex="0" aria-label={`title-${id}`}>
       <Link to={`/product/${id}`} className="img-container">
-        <img src={image} alt={title} className="product-img"/>
+        <img src={image} alt={title} className="product-img" loading="lazy" />
       </Link>
         <div className="product-content">
           <Link to={`/product/${id}`} className="product-title-link">
