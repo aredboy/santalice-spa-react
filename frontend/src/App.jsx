@@ -37,7 +37,7 @@ export const App = () => {
                             <Route path='/about' element={ <AboutScreen></AboutScreen> }></Route>
                             <Route path='/contact' element={ <ContactScreen></ContactScreen> }></Route>
                             <Route path='/FAQ' element={ <FAQScreen></FAQScreen> }></Route>
-                            <Route path='/cart' element={ <Cart></Cart> }></Route>
+                            <Route path='/cart' element={ <ShoppingPage></ShoppingPage> }></Route>
                             <Route path='/products' element={ <ShoppingPage></ShoppingPage> }></Route>
                             <Route path='/products/:category' element={ <ShoppingPage></ShoppingPage> }></Route>
                             <Route path='/product/:id' element={ <Product></Product> }></Route>
