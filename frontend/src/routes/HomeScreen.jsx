@@ -123,7 +123,7 @@ export function HomeScreen() {
         {/* HERO INTRO SECTION */}
         <section className="hero-intro" id="intro-section">
         <div className="intro-content">
-          <h1><span className="asterisc">¡Bienvenido a Sant'Alice!</span></h1>
+          <h1><span className="asterisc">¡Bienvenidos a Sant'Alice!</span></h1>
           <p>
             Donde cada bocado cuenta una historia de tradición y sabor artesanal. 
             <br />
