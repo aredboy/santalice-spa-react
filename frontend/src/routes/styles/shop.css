@@ -4,6 +4,7 @@
     padding: 1rem 0;
     max-width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 .products-h4 {
     padding: 0;
@@ -24,7 +25,7 @@ hr {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
     width: 100%;
     justify-items: stretch;
     align-items: stretch;
