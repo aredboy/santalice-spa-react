@@ -4,8 +4,6 @@ import { NavBar } from "./routes/components/NavBar"
 import { HomeScreen } from "./routes/HomeScreen"
 import { AboutScreen } from "./routes/AboutScreen"
 import { ContactScreen } from "./routes/ContactScreen"
-import { FAQScreen } from "./routes/FAQScreen"
-import { UsuarioProvider } from "./routes/context/UsuarioProvider"
 import { LoginScreen } from "./routes/LoginScreen"
 import { ShoppingPage } from "./routes/pages/ShoppingPage"
 import { CartPage } from "./routes/pages/CartPage"
@@ -35,7 +33,6 @@ export const App = () => {
                             <Route path='/login' element={ <LoginScreen></LoginScreen> }></Route>
                             <Route path='/about' element={ <AboutScreen></AboutScreen> }></Route>
                             <Route path='/contact' element={ <ContactScreen></ContactScreen> }></Route>
-                            <Route path='/FAQ' element={ <FAQScreen></FAQScreen> }></Route>
                             <Route path='/cart' element={ <ShoppingPage></ShoppingPage> }></Route>
                             <Route path='/products' element={ <ShoppingPage></ShoppingPage> }></Route>
                             <Route path='/products/:category' element={ <ShoppingPage></ShoppingPage> }></Route>
