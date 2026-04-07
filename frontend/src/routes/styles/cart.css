@@ -22,7 +22,7 @@ body {
 .table-row td {
   font-size: 14px;
   border-bottom: 1px solid #eee;
-  padding: 2px;
+  padding: 2px 0  !important;
 }
 
 .table-cart thead {
