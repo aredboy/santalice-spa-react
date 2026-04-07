@@ -4,7 +4,6 @@ import { NavBar } from "./routes/components/NavBar"
 import { HomeScreen } from "./routes/HomeScreen"
 import { AboutScreen } from "./routes/AboutScreen"
 import { ContactScreen } from "./routes/ContactScreen"
-import { LoginScreen } from "./routes/LoginScreen"
 import { ShoppingPage } from "./routes/pages/ShoppingPage"
 import { CartPage } from "./routes/pages/CartPage"
 import { Product } from "./routes/components/Product"
@@ -30,7 +29,6 @@ export const App = () => {
                     <AnimatePresence mode="wait">
                         <Routes location={location} key={location.pathname}>
                             <Route path='/' element={ <HomeScreen></HomeScreen> }></Route>
-                            <Route path='/login' element={ <LoginScreen></LoginScreen> }></Route>
                             <Route path='/about' element={ <AboutScreen></AboutScreen> }></Route>
                             <Route path='/contact' element={ <ContactScreen></ContactScreen> }></Route>
                             <Route path='/cart' element={ <ShoppingPage></ShoppingPage> }></Route>
