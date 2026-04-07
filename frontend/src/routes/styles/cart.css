@@ -7,22 +7,32 @@ body {
 
 .table-cart {
   display: table !important;
-  table-layout: auto !important;
+  table-layout: fixed !important;
   width: 100% !important;
   margin: 4rem 0 2.5rem 0 !important;
   height: auto !important;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   background: white;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
+
+/* Column widths for mobile — keep quantity and delete visible */
+.table-cart th:nth-child(2),
+.table-cart td:nth-child(2) { width: 22%; }   /* Precio */
+
+.table-cart th:nth-child(3),
+.table-cart td:nth-child(3) { width: 28%; }   /* Cantidad */
+
+.table-cart th:nth-child(4),
+.table-cart td:nth-child(4) { width: 15%; }   /* Eliminar */
 
 .table-row th,
 .table-row td {
   font-size: 14px;
   border-bottom: 1px solid #eee;
-  padding: 2px 0  !important;
+  padding: 2px !important;
 }
 
 .table-cart thead {
@@ -151,6 +161,7 @@ button {
 /* === RESPONSIVE UPGRADE ON BIGGER SCREENS === */
 @media (min-width: 768px) {
   .table-cart {
+    table-layout: auto !important;
     width: 95% !important;
     margin: 2.5rem auto !important;
   }
