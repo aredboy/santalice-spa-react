@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react"
+import { useContext, useState, useEffect, useRef } from "react"
 import { Card } from "../components/Card"
 import { ProductsContext } from "../context/ProductsContext"
 import { CartContext } from "../context/CartContext"
@@ -19,14 +19,41 @@ export const ShoppingPage = () => {
   const { addItem, eliminateItem, appointment, cartCount } = useContext(CartContext)
   const [bottomOffset, setBottomOffset] = useState(FLOATING_BUTTON_RESTING_OFFSET)
   const [timedOut, setTimedOut] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const rafRef = useRef(null)
+  const startRef = useRef(null)
 
   const filteredProducts = category
     ? products.filter(p => p.category.toLowerCase() === category.toLowerCase())
     : products
 
   const isLoading = products.length === 0 && !timedOut
+  const loaded = products.length > 0
 
-  // Timeout: after 40s without products, show "no products" message
+  // Simulated progress: eases toward ~92% over 60s, jumps to 100% when products arrive
+  useEffect(() => {
+    if (loaded || timedOut) {
+      setProgress(loaded ? 100 : 0)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      return
+    }
+
+    startRef.current = Date.now()
+
+    const tick = () => {
+      const elapsed = Date.now() - startRef.current
+      // Ease-out curve: fast at start, slows down, maxes ~92%
+      const t = Math.min(elapsed / LOADING_TIMEOUT_MS, 1)
+      const simulated = Math.round(92 * (1 - Math.pow(1 - t, 2.5)))
+      setProgress(simulated)
+      if (t < 1) rafRef.current = requestAnimationFrame(tick)
+    }
+
+    rafRef.current = requestAnimationFrame(tick)
+    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
+  }, [loaded, timedOut])
+
+  // Timeout
   useEffect(() => {
     if (products.length > 0) return
     const timer = setTimeout(() => setTimedOut(true), LOADING_TIMEOUT_MS)
@@ -57,6 +84,10 @@ export const ShoppingPage = () => {
 
   const whatsappUrl = buildWhatsappUrl()
 
+  // clipPath: reveals kite from bottom to top based on progress
+  const clipY = 100 - progress
+  const kiteClip = `inset(${clipY}% 0 0 0)`
+
   return (
     <>
     <PageTransition>
@@ -67,18 +98,28 @@ export const ShoppingPage = () => {
         <div className="grid-container">
           {isLoading ? (
             <div className="loading-container">
-              <svg className="kite-spinner" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <g className="kite-orbit">
-                  {/* Kite body — diamond shape */}
-                  <g className="kite-body">
-                    <polygon points="50,20 62,45 50,55 38,45" fill="var(--color-primary)" opacity="0.9" />
-                    <polygon points="50,20 62,45 50,40 38,45" fill="var(--color-primary)" opacity="0.6" />
-                    {/* Kite tail */}
-                    <path d="M50,55 Q54,65 48,72 Q52,78 47,85" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+              <div className="kite-wrapper">
+                {/* Ghost kite (dim background shape) */}
+                <svg className="kite-spinner kite-ghost" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <g className="kite-orbit">
+                    <g className="kite-body">
+                      <polygon points="50,20 62,45 50,55 38,45" fill="var(--color-primary)" opacity="0.15" />
+                      <path d="M50,55 Q54,65 48,72 Q52,78 47,85" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" opacity="0.15" />
+                    </g>
                   </g>
-                </g>
-              </svg>
-              <p className="loading-text">Cargando productos...</p>
+                </svg>
+                {/* Filled kite (clips upward as progress grows) */}
+                <svg className="kite-spinner kite-fill" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{ clipPath: kiteClip }}>
+                  <g className="kite-orbit">
+                    <g className="kite-body">
+                      <polygon points="50,20 62,45 50,55 38,45" fill="var(--color-primary)" opacity="0.9" />
+                      <polygon points="50,20 62,45 50,40 38,45" fill="var(--color-primary)" opacity="0.6" />
+                      <path d="M50,55 Q54,65 48,72 Q52,78 47,85" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <p className="loading-text">Cargando productos... {progress}%</p>
             </div>
           ) : filteredProducts.length > 0 ? (
             filteredProducts.map(product => (

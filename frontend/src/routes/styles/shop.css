@@ -6,17 +6,13 @@
     box-sizing: border-box;
 }
 .products-h4 {
-    padding-left: 1rem;
-    padding-bottom: 0.5rem;
-    color: #4c5b61;
+    padding: 0;
+    color: var(--color-text);
     top: 107px;
-    font-weight: 600;
-    font-size: 30px;
-    border-bottom: #4c5b61 1px;
     font-weight: 700;
+    font-size: 30px;
     font-style: italic !important;
     justify-self: center;
-    padding: 0;
 }
 
 hr {
@@ -38,8 +34,6 @@ hr {
     gap: 2.5rem;
 }
 
-
-/* tablet breakpoint */
 @media (min-width: 524px) {
     .products-grid {
         gap: 1.5rem;
@@ -55,7 +49,6 @@ hr {
     }
 }
 
-/* desktop breakpoint */
 @media (min-width: 1200px) {
     .grid-container {
         gap: 1.75rem;
@@ -69,63 +62,51 @@ hr {
     width: 50px;
     height: 50px;
     right: 15px;
-    background-color: transparent; 
+    background-color: transparent;
     color: transparent;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    z-index: 1000; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    /* transition: bottom 0.001s ease-out, transform 0.01s ease-in-out */
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.005); /* Slight zoom on hover */
-}
-
-.order-float {
-    position: fixed;
-    /* Allows the width to grow with the text */
-    width: auto;
-    height: auto;
-    right: 25px;
-    
-    /* VISIBLE Colors */
-    background-color: var(--color-primary); /* Black background */
-    color: none;            /* White text */
-    
-    /* Pill Shape */
-    border-radius: var(--radius-md);
-    padding: 2px 14px 2px 20px;     /* Comfortable padding around text */
-    
-    /* Text Styling */
-    text-align: center;
-    font-size: 16px;        /* Readable text size */
-    font-weight: bold;
-    text-decoration: none;  /* Removes the underline from the Link */
-    
-    /* Layering and Animation */
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Nice shadow */
+    padding: 10px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.005);
+}
+
+.order-float {
+    position: fixed;
+    width: auto;
+    height: auto;
+    right: 25px;
+    background-color: var(--color-primary);
+    color: none;
+    border-radius: var(--radius-md);
+    padding: 2px 14px 2px 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease-in-out;
-    /* transition: bottom 0.1s ease-out, transform 0.2s ease-in-out; */
 }
 .order-float span {
     background: transparent;
     color: var(--color-text-white);
-    /* margin: 0 !important; */
     font-size: 1.3rem;
     font-weight: 400;
 }
 .order-float:hover {
     transform: scale(1.05);
-    background-color: #333; /* Dark grey on hover */
+    background-color: #333;
     color: #fff;
 }
 .btn-2 {
@@ -134,7 +115,7 @@ hr {
     font-weight: 500;
     cursor: pointer;
     border: none;
-    padding: 0.9rem .5rem 0 0 !important;
+    padding: 0.9rem 0.5rem 0 0 !important;
 }
 
 @media (min-width: 768px) {
@@ -142,7 +123,7 @@ hr {
         padding: 0 12px 0 20px;
     }
     .btn-2 {
-        padding: .6rem .4rem 0 0 !important;
+        padding: 0.6rem 0.4rem 0 0 !important;
     }
 }
 
@@ -157,10 +138,29 @@ hr {
     gap: 1.5rem;
 }
 
+.kite-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
 .kite-spinner {
     width: 80px;
     height: 80px;
     animation: kite-circle 2.2s linear infinite;
+}
+
+/* Both layers stack on top of each other */
+.kite-ghost,
+.kite-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* The fill layer clips smoothly as progress changes */
+.kite-fill {
+    transition: clip-path 0.3s ease-out;
 }
 
 .kite-orbit {
@@ -181,16 +181,29 @@ hr {
 }
 
 @keyframes kite-circle {
-    from { transform: rotate(0deg) translateX(12px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(12px) rotate(-360deg); }
+    from {
+        transform: rotate(0deg) translateX(12px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(12px) rotate(-360deg);
+    }
 }
 
 @keyframes kite-wobble {
-    0%   { transform: rotate(-8deg) scale(0.95); }
-    100% { transform: rotate(8deg) scale(1.05); }
+    0% {
+        transform: rotate(-8deg) scale(0.95);
+    }
+    100% {
+        transform: rotate(8deg) scale(1.05);
+    }
 }
 
 @keyframes pulse-text {
-    0%, 100% { opacity: 0.5; }
-    50%      { opacity: 1; }
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
 }
