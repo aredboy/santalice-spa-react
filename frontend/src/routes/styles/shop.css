@@ -94,11 +94,11 @@ hr {
     right: 25px;
     
     /* VISIBLE Colors */
-    background-color: #2dbcc1; /* Black background */
+    background-color: var(--color-primary); /* Black background */
     color: none;            /* White text */
     
     /* Pill Shape */
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 2px 14px 2px 20px;     /* Comfortable padding around text */
     
     /* Text Styling */
@@ -118,7 +118,7 @@ hr {
 }
 .order-float span {
     background: transparent;
-    color: #f9f8f8;
+    color: var(--color-text-white);
     /* margin: 0 !important; */
     font-size: 1.3rem;
     font-weight: 400;
@@ -129,7 +129,7 @@ hr {
     color: #fff;
 }
 .btn-2 {
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     font-size: 24px;
     font-weight: 500;
     cursor: pointer;
@@ -144,5 +144,53 @@ hr {
     .btn-2 {
         padding: .6rem .4rem 0 0 !important;
     }
-    
+}
+
+/* === Loading Kite Spinner === */
+.loading-container {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    gap: 1.5rem;
+}
+
+.kite-spinner {
+    width: 80px;
+    height: 80px;
+    animation: kite-circle 2.2s linear infinite;
+}
+
+.kite-orbit {
+    transform-origin: 50% 50%;
+}
+
+.kite-body {
+    animation: kite-wobble 1.1s ease-in-out infinite alternate;
+    transform-origin: 50px 40px;
+}
+
+.loading-text {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    animation: pulse-text 1.8s ease-in-out infinite;
+}
+
+@keyframes kite-circle {
+    from { transform: rotate(0deg) translateX(12px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(12px) rotate(-360deg); }
+}
+
+@keyframes kite-wobble {
+    0%   { transform: rotate(-8deg) scale(0.95); }
+    100% { transform: rotate(8deg) scale(1.05); }
+}
+
+@keyframes pulse-text {
+    0%, 100% { opacity: 0.5; }
+    50%      { opacity: 1; }
 }
