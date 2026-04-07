@@ -20,7 +20,6 @@ export const App = () => {
     return (
     <>
     <div className="app-wrapper">
-    <UsuarioProvider>
         <ProductsProvider>
             <CartProvider>
                 <ScrollToTop/>
@@ -43,7 +42,6 @@ export const App = () => {
                 <Footer></Footer>
             </CartProvider>
         </ProductsProvider>
-    </UsuarioProvider>
     </div>
     </>
     )
